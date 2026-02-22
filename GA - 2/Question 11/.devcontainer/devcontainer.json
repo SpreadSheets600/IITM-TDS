@@ -1,0 +1,16 @@
+{
+  "name": "ga2-e1b522",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "features": {
+    "ghcr.io/devcontainers/features/python:1": {}
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "astral-sh.uv"
+      ]
+    }
+  },
+  "postCreateCommand": "pip install uv && uv pip install fastapi"
+}
