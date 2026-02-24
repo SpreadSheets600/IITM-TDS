@@ -1,0 +1,77 @@
+{
+  "totalRows": 1000,
+  "validRows": 1000,
+  "missingCostRows": 104,
+  "missingDateRows": 0,
+  "totalSales": 4913704.0,
+  "totalCost": 2224444.0,
+  "totalProfit": 2151741.0,
+  "topCountries": [
+    [
+      "France",
+      190
+    ],
+    [
+      "India",
+      171
+    ],
+    [
+      "United Arab Emirates",
+      165
+    ],
+    [
+      "United Kingdom",
+      163
+    ],
+    [
+      "USA",
+      157
+    ],
+    [
+      "Brazil",
+      154
+    ]
+  ],
+  "topProducts": [
+    [
+      "Delta",
+      109
+    ],
+    [
+      "Iota",
+      107
+    ],
+    [
+      "Theta",
+      106
+    ],
+    [
+      "Beta",
+      105
+    ],
+    [
+      "Eta",
+      102
+    ],
+    [
+      "Gamma",
+      102
+    ],
+    [
+      "Epsilon",
+      98
+    ],
+    [
+      "Kappa",
+      94
+    ],
+    [
+      "Alpha",
+      91
+    ],
+    [
+      "Zeta",
+      86
+    ]
+  ]
+}

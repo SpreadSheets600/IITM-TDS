@@ -1,0 +1,1001 @@
+transactionId,customer,country,date,product,code,sales,cost,profit
+0001,Alice Johnson,USA,2023-11-21,Delta,2vfv2i,6062.0,2264.0,3798.0
+0002,Frank Thomas,USA,2022-06-04,Epsilon,bhg161,9749.0,2178.0,7571.0
+0003,Jane Smith,France,2022-01-20,Alpha,doxx29,1768.0,1041.0,727.0
+0004,Charlie Davis,United Arab Emirates,2023-09-01,Epsilon,hn7hv2,8897.0,,
+0005,John Doe,Brazil,2023-02-04,Theta,z68cb0,2264.0,653.0,1611.0
+0006,Charlie Davis,United Kingdom,2022-05-08,Iota,viwvxq,6160.0,3273.0,2887.0
+0007,Alice Johnson,USA,2023-11-22,Beta,dqlo0j,1897.0,4253.0,-2356.0
+0008,John Doe,France,2022-02-03,Eta,5okrfj,2138.0,2777.0,-639.0
+0009,Frank Thomas,United Arab Emirates,2022-08-25,Delta,cj2o75,3811.0,666.0,3145.0
+0010,Alice Johnson,United Arab Emirates,2022-01-07,Kappa,nr9s6h,3544.0,3946.0,-402.0
+0011,Alice Johnson,India,2023-02-11,Alpha,j37k85,7422.0,1380.0,6042.0
+0012,Eve Wilson,France,2023-10-23,Gamma,rxyzmt,149.0,2191.0,-2042.0
+0013,Bob Brown,India,2023-09-18,Delta,i7tfad,6376.0,,
+0014,Jane Smith,India,2023-07-10,Eta,hchxv5,6550.0,2517.0,4033.0
+0015,Eve Wilson,France,2023-09-20,Gamma,roq0e8,8442.0,3091.0,5351.0
+0016,Eve Wilson,United Kingdom,2023-09-14,Iota,u70sm2,1111.0,758.0,353.0
+0017,Bob Brown,USA,2022-06-06,Gamma,xxot4o,6837.0,,
+0018,John Doe,United Arab Emirates,2022-06-06,Delta,69btth,8306.0,,
+0019,Jane Smith,USA,2023-04-26,Eta,2jlgvp,1274.0,3374.0,-2100.0
+0020,John Doe,United Arab Emirates,2022-06-18,Zeta,7zhami,1279.0,2165.0,-886.0
+0021,Bob Brown,India,2022-05-22,Epsilon,456ro9,9105.0,2464.0,6641.0
+0022,Bob Brown,USA,2022-02-02,Theta,5re5ds,3376.0,4482.0,-1106.0
+0023,Charlie Davis,India,2023-06-03,Epsilon,qe44w7,6153.0,2120.0,4033.0
+0024,Alice Johnson,United Arab Emirates,2022-09-15,Beta,gw6tyn,6578.0,3254.0,3324.0
+0025,Charlie Davis,United Kingdom,2022-01-28,Epsilon,83g9wq,5039.0,3970.0,1069.0
+0026,Alice Johnson,Brazil,2022-04-10,Zeta,ac4w0p,8830.0,1242.0,7588.0
+0027,Charlie Davis,United Arab Emirates,2022-05-09,Delta,6qg5b1,8157.0,2231.0,5926.0
+0028,Frank Thomas,India,2022-04-18,Kappa,5zdj7x,5909.0,2688.0,3221.0
+0029,Charlie Davis,United Arab Emirates,2023-08-11,Gamma,k0nde4,2009.0,3929.0,-1920.0
+0030,John Doe,United Kingdom,2023-01-10,Zeta,8c15b0,996.0,4814.0,-3818.0
+0031,Eve Wilson,India,2022-01-27,Gamma,5tecgt,9272.0,96.0,9176.0
+0032,John Doe,USA,2022-11-26,Zeta,211nv8,9891.0,423.0,9468.0
+0033,Bob Brown,United Kingdom,2023-10-13,Alpha,2e399x,4937.0,2048.0,2889.0
+0034,Frank Thomas,Brazil,2022-09-05,Gamma,yy9nt1,6661.0,996.0,5665.0
+0035,Bob Brown,India,2023-07-23,Gamma,v1v1u4,9026.0,2514.0,6512.0
+0036,Eve Wilson,United Arab Emirates,2022-08-19,Epsilon,zxdp3k,9557.0,2354.0,7203.0
+0037,John Doe,India,2022-11-05,Delta,rhhe9j,3438.0,,
+0038,Eve Wilson,France,2022-03-05,Kappa,2s4kjc,5966.0,4755.0,1211.0
+0039,Eve Wilson,India,2023-09-28,Kappa,8uhql9,7285.0,2999.0,4286.0
+0040,Bob Brown,USA,2023-02-11,Delta,wpqga7,6269.0,765.0,5504.0
+0041,Bob Brown,USA,2022-11-03,Beta,ab8cvl,4781.0,3562.0,1219.0
+0042,Alice Johnson,France,2022-09-09,Alpha,yy9o75,2719.0,3606.0,-887.0
+0043,Bob Brown,United Arab Emirates,2022-04-01,Beta,aiy8ew,1781.0,3826.0,-2045.0
+0044,Frank Thomas,United Arab Emirates,2023-11-05,Zeta,a18owm,8384.0,3800.0,4584.0
+0045,Frank Thomas,India,2022-02-08,Epsilon,ycy6o1,5657.0,4559.0,1098.0
+0046,Frank Thomas,France,2022-01-18,Eta,pfe275,7123.0,1160.0,5963.0
+0047,Eve Wilson,Brazil,2022-01-29,Epsilon,k371ln,4673.0,4357.0,316.0
+0048,Jane Smith,USA,2023-07-01,Beta,o54e9k,1644.0,4005.0,-2361.0
+0049,John Doe,Brazil,2023-10-01,Beta,6xni04,1063.0,2286.0,-1223.0
+0050,John Doe,France,2022-03-18,Epsilon,4b8reh,9817.0,2157.0,7660.0
+0051,Jane Smith,France,2023-01-22,Kappa,ml54h3,9092.0,,
+0052,Alice Johnson,France,2022-04-14,Zeta,ndadx0,7870.0,2418.0,5452.0
+0053,Eve Wilson,United Kingdom,2023-07-18,Zeta,9wyti3,9463.0,,
+0054,Jane Smith,USA,2022-01-30,Alpha,t0n6l9,6917.0,3265.0,3652.0
+0055,Charlie Davis,USA,2022-12-10,Zeta,s4zm8w,3012.0,480.0,2532.0
+0056,Bob Brown,United Kingdom,2023-07-04,Gamma,tuchxc,7087.0,675.0,6412.0
+0057,Eve Wilson,India,2023-01-01,Kappa,bobqg7,409.0,3507.0,-3098.0
+0058,Eve Wilson,Brazil,2022-11-29,Delta,fz81y7,2848.0,1583.0,1265.0
+0059,Eve Wilson,France,2022-01-15,Beta,jmttew,9075.0,3935.0,5140.0
+0060,Eve Wilson,Brazil,2022-01-15,Alpha,agtplt,4621.0,4409.0,212.0
+0061,Bob Brown,United Arab Emirates,2022-04-03,Delta,5w8cn2,1752.0,463.0,1289.0
+0062,Frank Thomas,United Kingdom,2023-12-22,Alpha,bbor7y,6503.0,2485.0,4018.0
+0063,Eve Wilson,USA,2022-01-01,Eta,u0isjh,4778.0,4252.0,526.0
+0064,Alice Johnson,France,2023-07-27,Epsilon,cai7l8,2421.0,4951.0,-2530.0
+0065,Charlie Davis,Brazil,2022-12-27,Gamma,ryhgs2,5988.0,916.0,5072.0
+0066,Eve Wilson,USA,2023-01-30,Kappa,5qhjeo,1517.0,,
+0067,Frank Thomas,USA,2023-04-25,Iota,mzgh53,7003.0,3117.0,3886.0
+0068,Jane Smith,India,2023-10-14,Zeta,j11ltr,9059.0,3132.0,5927.0
+0069,Jane Smith,USA,2023-06-11,Zeta,o0ngzp,7476.0,3115.0,4361.0
+0070,Alice Johnson,Brazil,2023-11-14,Delta,sy4pn4,2470.0,3017.0,-547.0
+0071,Bob Brown,Brazil,2022-05-27,Gamma,98k56o,325.0,3938.0,-3613.0
+0072,Eve Wilson,Brazil,2023-08-03,Theta,hmeb6v,860.0,2541.0,-1681.0
+0073,Jane Smith,United Arab Emirates,2022-06-04,Iota,ulpj85,9476.0,691.0,8785.0
+0074,Frank Thomas,United Kingdom,2022-09-23,Alpha,2h2o8o,2433.0,4891.0,-2458.0
+0075,Charlie Davis,France,2023-06-22,Zeta,7wq8rp,5247.0,1946.0,3301.0
+0076,John Doe,USA,2022-11-22,Kappa,khu3qi,5489.0,1089.0,4400.0
+0077,John Doe,United Kingdom,2023-06-25,Kappa,enxqfe,1957.0,2344.0,-387.0
+0078,John Doe,USA,2023-06-09,Alpha,v58fv1,7636.0,3190.0,4446.0
+0079,Bob Brown,France,2022-09-13,Gamma,to2i7m,7892.0,390.0,7502.0
+0080,John Doe,USA,2022-12-20,Alpha,vpxo64,9847.0,,
+0081,Bob Brown,USA,2023-01-02,Alpha,szhjwk,1731.0,,
+0082,Frank Thomas,United Kingdom,2023-09-12,Beta,uebj7m,9240.0,216.0,9024.0
+0083,Eve Wilson,France,2022-11-21,Zeta,n1pzjv,6728.0,3073.0,3655.0
+0084,Charlie Davis,France,2022-10-20,Epsilon,2lec80,645.0,159.0,486.0
+0085,Alice Johnson,United Kingdom,2023-06-02,Iota,e0r4b7,6517.0,1280.0,5237.0
+0086,Eve Wilson,Brazil,2022-09-22,Gamma,3jex7p,7703.0,,
+0087,Eve Wilson,United Arab Emirates,2022-11-13,Gamma,lk2nbr,3691.0,4451.0,-760.0
+0088,Eve Wilson,USA,2022-02-07,Alpha,jnzop4,7614.0,955.0,6659.0
+0089,Bob Brown,United Kingdom,2022-05-02,Kappa,mh2s3f,9634.0,4389.0,5245.0
+0090,Alice Johnson,USA,2023-07-17,Beta,eyv7dz,9804.0,289.0,9515.0
+0091,Frank Thomas,France,2023-04-23,Beta,jl0c9z,1428.0,4487.0,-3059.0
+0092,Charlie Davis,France,2022-04-23,Kappa,2j8e8j,9328.0,4500.0,4828.0
+0093,Bob Brown,United Arab Emirates,2023-11-15,Iota,xu4ty5,5619.0,1418.0,4201.0
+0094,Frank Thomas,USA,2023-02-05,Eta,3ualzz,8797.0,2162.0,6635.0
+0095,Bob Brown,United Arab Emirates,2022-09-28,Zeta,2szhxb,8114.0,3077.0,5037.0
+0096,Bob Brown,India,2022-09-29,Beta,63pg3d,1264.0,2634.0,-1370.0
+0097,Charlie Davis,India,2022-05-30,Beta,5cvo76,3096.0,1386.0,1710.0
+0098,Eve Wilson,USA,2022-03-21,Epsilon,29pkm1,5761.0,493.0,5268.0
+0099,Bob Brown,India,2022-03-16,Alpha,vk7y3k,2893.0,2122.0,771.0
+0100,Charlie Davis,United Kingdom,2023-06-19,Beta,lm91av,1009.0,1026.0,-17.0
+0101,Charlie Davis,Brazil,2023-09-06,Kappa,cp4y9h,9644.0,,
+0102,Charlie Davis,India,2023-06-24,Epsilon,l4uj8b,4260.0,994.0,3266.0
+0103,Eve Wilson,France,2023-11-01,Kappa,u21lv3,8409.0,3941.0,4468.0
+0104,Bob Brown,India,2023-08-27,Eta,pvi93e,3993.0,4167.0,-174.0
+0105,Alice Johnson,United Kingdom,2022-07-28,Delta,8ujzc4,5007.0,1465.0,3542.0
+0106,Alice Johnson,Brazil,2022-10-13,Delta,haykiy,3205.0,4049.0,-844.0
+0107,Alice Johnson,United Arab Emirates,2022-06-27,Alpha,300vv5,9158.0,1742.0,7416.0
+0108,Charlie Davis,India,2023-03-30,Zeta,3v2n8c,915.0,2207.0,-1292.0
+0109,John Doe,United Arab Emirates,2022-04-08,Delta,kiq0qx,112.0,1325.0,-1213.0
+0110,Alice Johnson,United Arab Emirates,2023-01-09,Alpha,bfi3z6,2014.0,2419.0,-405.0
+0111,Charlie Davis,United Arab Emirates,2023-09-20,Eta,1ih0qh,6016.0,1882.0,4134.0
+0112,Charlie Davis,India,2022-02-21,Delta,xmxpuu,1032.0,2173.0,-1141.0
+0113,Alice Johnson,France,2023-06-12,Gamma,1bibgw,9218.0,3737.0,5481.0
+0114,Frank Thomas,France,2022-08-14,Eta,arhbob,2696.0,383.0,2313.0
+0115,John Doe,France,2023-11-23,Eta,r4dy22,1049.0,1188.0,-139.0
+0116,Bob Brown,India,2022-04-26,Kappa,66pj46,265.0,2526.0,-2261.0
+0117,Alice Johnson,USA,2022-10-15,Gamma,32ngk1,6508.0,3318.0,3190.0
+0118,Charlie Davis,Brazil,2022-07-21,Kappa,3xyccz,1262.0,1515.0,-253.0
+0119,Frank Thomas,India,2022-12-28,Epsilon,n2xk62,1711.0,70.0,1641.0
+0120,John Doe,India,2022-04-27,Gamma,4sigwc,8583.0,4603.0,3980.0
+0121,Charlie Davis,United Arab Emirates,2023-04-25,Alpha,zne1r9,5200.0,4884.0,316.0
+0122,Frank Thomas,United Kingdom,2023-02-12,Gamma,2o4a2y,2074.0,,
+0123,Bob Brown,United Kingdom,2023-01-06,Iota,3l5rfp,253.0,1493.0,-1240.0
+0124,Frank Thomas,Brazil,2022-11-19,Epsilon,vbw64l,7174.0,3087.0,4087.0
+0125,Jane Smith,India,2022-12-03,Theta,a6nce4,4663.0,1183.0,3480.0
+0126,Frank Thomas,United Arab Emirates,2023-09-19,Kappa,g4vgbd,1040.0,,
+0127,John Doe,USA,2022-12-28,Eta,9pdppp,2267.0,504.0,1763.0
+0128,Bob Brown,United Arab Emirates,2022-10-18,Zeta,qeescl,2381.0,718.0,1663.0
+0129,John Doe,USA,2022-11-03,Delta,bnb4zu,6989.0,232.0,6757.0
+0130,John Doe,Brazil,2022-10-15,Theta,4gzqcv,4362.0,2045.0,2317.0
+0131,Frank Thomas,USA,2022-10-08,Eta,oyf02n,1738.0,503.0,1235.0
+0132,Alice Johnson,Brazil,2022-11-07,Iota,fw7beg,1830.0,2857.0,-1027.0
+0133,Frank Thomas,France,2023-02-16,Delta,wjpczl,1879.0,3870.0,-1991.0
+0134,Charlie Davis,USA,2023-10-09,Epsilon,x3wtev,7644.0,2614.0,5030.0
+0135,Alice Johnson,USA,2022-08-05,Delta,p9brgu,868.0,4963.0,-4095.0
+0136,Eve Wilson,India,2022-11-22,Zeta,6n6f8g,7017.0,3524.0,3493.0
+0137,Bob Brown,France,2022-07-29,Theta,occlkc,1653.0,4829.0,-3176.0
+0138,Jane Smith,USA,2022-11-23,Theta,l7bsgu,3109.0,,
+0139,Jane Smith,Brazil,2023-01-06,Delta,j5reao,9598.0,3039.0,6559.0
+0140,Charlie Davis,USA,2023-04-27,Eta,7zm9z6,6614.0,2374.0,4240.0
+0141,Charlie Davis,India,2023-07-11,Theta,tg78mz,2519.0,4442.0,-1923.0
+0142,John Doe,United Arab Emirates,2023-03-23,Delta,qy43g1,4400.0,2050.0,2350.0
+0143,Charlie Davis,France,2023-10-14,Kappa,dacn6m,5822.0,2822.0,3000.0
+0144,Alice Johnson,France,2023-11-27,Kappa,70nrpn,1081.0,4923.0,-3842.0
+0145,Jane Smith,USA,2022-08-03,Kappa,4bty9k,2116.0,,
+0146,Jane Smith,Brazil,2023-09-01,Epsilon,9zvodu,7210.0,66.0,7144.0
+0147,Bob Brown,United Kingdom,2023-07-22,Iota,4d6qll,5347.0,4977.0,370.0
+0148,Charlie Davis,USA,2022-11-06,Zeta,tk7d8f,9035.0,126.0,8909.0
+0149,Charlie Davis,United Arab Emirates,2022-01-04,Theta,8bsivs,6199.0,3048.0,3151.0
+0150,Bob Brown,Brazil,2022-10-10,Epsilon,j3kdcp,7339.0,3041.0,4298.0
+0151,Eve Wilson,USA,2023-01-13,Kappa,4vrpf4,881.0,760.0,121.0
+0152,Eve Wilson,Brazil,2022-06-18,Kappa,4icj20,5233.0,2727.0,2506.0
+0153,Jane Smith,USA,2023-07-15,Alpha,vmj5zt,3917.0,2110.0,1807.0
+0154,John Doe,India,2023-12-12,Beta,tl11j9,6840.0,1569.0,5271.0
+0155,John Doe,USA,2022-09-03,Eta,xv6wjq,8659.0,4935.0,3724.0
+0156,Eve Wilson,India,2023-01-02,Iota,v5bha5,6043.0,1133.0,4910.0
+0157,John Doe,United Arab Emirates,2023-10-10,Delta,erjg1i,2099.0,1485.0,614.0
+0158,Jane Smith,United Kingdom,2022-12-26,Epsilon,7k5ogk,9273.0,3885.0,5388.0
+0159,Eve Wilson,United Arab Emirates,2023-05-28,Epsilon,m0ycme,8545.0,2152.0,6393.0
+0160,Charlie Davis,France,2022-01-09,Zeta,d39xk4,9816.0,,
+0161,Bob Brown,United Arab Emirates,2022-05-21,Alpha,u1a1ps,5952.0,1556.0,4396.0
+0162,John Doe,USA,2022-03-29,Kappa,794f5c,9923.0,2411.0,7512.0
+0163,Charlie Davis,Brazil,2023-03-07,Alpha,tzd4n3,9836.0,4864.0,4972.0
+0164,Charlie Davis,Brazil,2023-12-19,Delta,476vxp,7175.0,3104.0,4071.0
+0165,Frank Thomas,India,2022-10-25,Gamma,fgwn50,8282.0,505.0,7777.0
+0166,John Doe,India,2022-06-04,Theta,qls1yb,4228.0,2756.0,1472.0
+0167,Jane Smith,USA,2023-10-02,Beta,amfb4s,3314.0,,
+0168,Charlie Davis,USA,2023-09-12,Zeta,6klegt,4913.0,1000.0,3913.0
+0169,Jane Smith,USA,2022-04-01,Eta,y60dwa,6134.0,1835.0,4299.0
+0170,Jane Smith,India,2022-02-03,Beta,hlabr2,3713.0,2918.0,795.0
+0171,Jane Smith,United Kingdom,2022-09-26,Eta,dg8r2o,3993.0,1631.0,2362.0
+0172,Bob Brown,India,2022-02-05,Iota,3bp15n,3989.0,189.0,3800.0
+0173,John Doe,France,2023-01-28,Eta,mhqebz,3072.0,2024.0,1048.0
+0174,Jane Smith,United Kingdom,2022-10-02,Gamma,n7o6lo,9472.0,,
+0175,Eve Wilson,India,2023-10-09,Iota,yzu1dr,883.0,,
+0176,Bob Brown,France,2022-10-19,Zeta,2gbfj9,923.0,4877.0,-3954.0
+0177,Jane Smith,United Arab Emirates,2023-04-24,Theta,ui492j,3787.0,4133.0,-346.0
+0178,Frank Thomas,France,2023-02-11,Alpha,ls6s0t,4894.0,,
+0179,Eve Wilson,France,2023-01-02,Alpha,ola0jg,5826.0,,
+0180,Jane Smith,India,2023-07-04,Kappa,l30kc8,7643.0,394.0,7249.0
+0181,Bob Brown,France,2023-07-19,Alpha,xn9l9m,2583.0,2460.0,123.0
+0182,Bob Brown,USA,2023-09-08,Beta,xkk7wl,5080.0,244.0,4836.0
+0183,Bob Brown,United Kingdom,2022-03-08,Eta,hamzij,8885.0,,
+0184,John Doe,Brazil,2023-02-19,Epsilon,9mthzv,1893.0,,
+0185,Charlie Davis,USA,2023-11-02,Kappa,m850wf,548.0,593.0,-45.0
+0186,Alice Johnson,India,2023-11-02,Kappa,t24lb9,1244.0,4518.0,-3274.0
+0187,Eve Wilson,United Arab Emirates,2022-02-26,Beta,88epiy,5206.0,225.0,4981.0
+0188,John Doe,USA,2023-04-21,Beta,b7kesf,6578.0,,
+0189,Alice Johnson,France,2022-01-21,Kappa,comz5s,4450.0,2132.0,2318.0
+0190,Eve Wilson,United Kingdom,2022-02-23,Zeta,dwgmao,5958.0,4372.0,1586.0
+0191,Frank Thomas,India,2022-04-08,Epsilon,zgj5c9,7571.0,3370.0,4201.0
+0192,John Doe,USA,2023-09-07,Beta,ve80lc,1119.0,,
+0193,Alice Johnson,Brazil,2022-02-05,Gamma,s0qoc0,3501.0,,
+0194,Alice Johnson,United Kingdom,2023-12-29,Epsilon,6rgrbi,7479.0,3676.0,3803.0
+0195,Frank Thomas,France,2022-04-21,Eta,hl84wr,2005.0,3407.0,-1402.0
+0196,Eve Wilson,India,2022-08-11,Alpha,9vq83e,5462.0,4538.0,924.0
+0197,Eve Wilson,France,2023-06-25,Kappa,hbh5p4,4531.0,1709.0,2822.0
+0198,Frank Thomas,USA,2022-09-17,Delta,laisbk,432.0,2157.0,-1725.0
+0199,Jane Smith,Brazil,2023-04-09,Gamma,uxylbd,2121.0,3900.0,-1779.0
+0200,Frank Thomas,United Arab Emirates,2023-06-03,Delta,7ey89a,8260.0,,
+0201,Charlie Davis,United Arab Emirates,2023-11-23,Alpha,62m2t5,6496.0,1076.0,5420.0
+0202,Alice Johnson,France,2022-04-12,Kappa,h51rai,1708.0,4261.0,-2553.0
+0203,Eve Wilson,India,2022-04-25,Beta,q8sd21,6451.0,4529.0,1922.0
+0204,Alice Johnson,United Arab Emirates,2022-12-12,Eta,n3v5d5,8069.0,2676.0,5393.0
+0205,Eve Wilson,United Arab Emirates,2022-11-23,Theta,mup6to,877.0,2912.0,-2035.0
+0206,John Doe,France,2022-02-12,Gamma,wt32a1,3016.0,1073.0,1943.0
+0207,Bob Brown,France,2022-09-22,Theta,n74sg0,2309.0,2752.0,-443.0
+0208,John Doe,France,2022-03-18,Kappa,thpmty,2919.0,1778.0,1141.0
+0209,Jane Smith,France,2022-05-17,Gamma,zqr13v,3836.0,,
+0210,Charlie Davis,United Kingdom,2022-07-04,Gamma,sf4kp3,156.0,701.0,-545.0
+0211,Jane Smith,United Arab Emirates,2022-12-19,Theta,h1ocsk,2098.0,241.0,1857.0
+0212,Bob Brown,USA,2022-12-01,Epsilon,rqc7o6,2650.0,,
+0213,Bob Brown,India,2023-08-05,Gamma,54wkdb,620.0,244.0,376.0
+0214,Eve Wilson,Brazil,2023-06-12,Gamma,we3nyw,6909.0,,
+0215,Jane Smith,USA,2023-08-07,Gamma,6qpwl2,7099.0,763.0,6336.0
+0216,Jane Smith,India,2023-08-21,Alpha,tw7yin,726.0,,
+0217,Alice Johnson,India,2022-04-24,Beta,4a4szw,6628.0,902.0,5726.0
+0218,John Doe,USA,2023-09-19,Zeta,730iw7,879.0,3723.0,-2844.0
+0219,Bob Brown,Brazil,2023-03-13,Epsilon,wnmy0w,6339.0,3527.0,2812.0
+0220,Frank Thomas,Brazil,2022-02-10,Alpha,fkypkb,8246.0,1565.0,6681.0
+0221,Charlie Davis,India,2022-12-18,Iota,jailwj,307.0,,
+0222,John Doe,France,2022-09-05,Epsilon,pd0gi0,6079.0,1476.0,4603.0
+0223,Jane Smith,France,2022-12-31,Eta,a1ex9l,6725.0,2352.0,4373.0
+0224,Jane Smith,United Arab Emirates,2022-01-23,Epsilon,eodfsx,9057.0,1203.0,7854.0
+0225,Bob Brown,United Arab Emirates,2023-07-29,Delta,3j6cnp,9583.0,2094.0,7489.0
+0226,John Doe,United Kingdom,2023-11-12,Alpha,5p6ydw,2874.0,2524.0,350.0
+0227,Frank Thomas,France,2023-02-13,Beta,vfbuve,1966.0,4299.0,-2333.0
+0228,Bob Brown,India,2022-08-14,Iota,zq63se,4823.0,,
+0229,John Doe,United Arab Emirates,2023-09-05,Iota,l5bm7x,847.0,1074.0,-227.0
+0230,Alice Johnson,India,2022-09-11,Alpha,pxe5of,5420.0,732.0,4688.0
+0231,Alice Johnson,India,2023-10-12,Iota,qscuk4,4423.0,325.0,4098.0
+0232,Bob Brown,United Kingdom,2023-04-22,Eta,giajmc,4382.0,825.0,3557.0
+0233,Eve Wilson,USA,2022-06-03,Iota,9ukvwy,5985.0,652.0,5333.0
+0234,Alice Johnson,United Kingdom,2022-11-27,Theta,darqhh,3270.0,4841.0,-1571.0
+0235,Jane Smith,India,2022-07-09,Beta,h51xwy,1570.0,771.0,799.0
+0236,John Doe,United Kingdom,2022-03-07,Delta,mtoa2l,3497.0,1984.0,1513.0
+0237,Eve Wilson,India,2023-02-14,Eta,s29pbb,670.0,4267.0,-3597.0
+0238,Charlie Davis,Brazil,2023-09-19,Delta,jx5eok,2858.0,2123.0,735.0
+0239,Charlie Davis,India,2022-10-12,Iota,u4z51t,3547.0,861.0,2686.0
+0240,Frank Thomas,United Arab Emirates,2022-05-08,Epsilon,3d5gvp,8807.0,1171.0,7636.0
+0241,Eve Wilson,USA,2023-06-05,Alpha,ot4gpc,7071.0,3082.0,3989.0
+0242,Alice Johnson,United Arab Emirates,2023-09-22,Iota,i7ijmg,5237.0,263.0,4974.0
+0243,Alice Johnson,India,2023-10-03,Eta,av028e,9675.0,916.0,8759.0
+0244,John Doe,United Kingdom,2022-01-11,Kappa,kztxpt,8550.0,1589.0,6961.0
+0245,Alice Johnson,United Kingdom,2022-11-24,Eta,pbww5x,2821.0,4191.0,-1370.0
+0246,Bob Brown,Brazil,2022-12-23,Beta,nq3s7t,4078.0,4368.0,-290.0
+0247,John Doe,Brazil,2022-12-19,Gamma,fj9jc5,142.0,4830.0,-4688.0
+0248,Charlie Davis,France,2023-08-20,Beta,w2o54r,381.0,687.0,-306.0
+0249,Charlie Davis,United Kingdom,2023-01-06,Alpha,uaqade,8338.0,509.0,7829.0
+0250,Charlie Davis,United Arab Emirates,2022-09-01,Zeta,oyq9el,5586.0,2114.0,3472.0
+0251,Frank Thomas,Brazil,2023-11-07,Kappa,m4mobh,4877.0,3453.0,1424.0
+0252,Bob Brown,Brazil,2023-04-23,Kappa,grs2zf,6440.0,389.0,6051.0
+0253,Jane Smith,France,2023-01-18,Theta,ccklzo,9415.0,,
+0254,Alice Johnson,USA,2023-01-08,Theta,8i9969,2052.0,3950.0,-1898.0
+0255,Alice Johnson,India,2023-02-24,Delta,bg7qgo,4560.0,586.0,3974.0
+0256,Charlie Davis,India,2023-04-28,Delta,4mglwx,7766.0,803.0,6963.0
+0257,Eve Wilson,Brazil,2022-02-25,Gamma,rhtnni,4728.0,4650.0,78.0
+0258,Jane Smith,France,2022-09-13,Alpha,am5i82,3403.0,2441.0,962.0
+0259,John Doe,United Arab Emirates,2023-07-25,Epsilon,ksg0en,9601.0,3457.0,6144.0
+0260,Bob Brown,France,2023-12-27,Delta,ha7pyh,1191.0,3201.0,-2010.0
+0261,Frank Thomas,USA,2022-03-17,Beta,l371wl,6073.0,3162.0,2911.0
+0262,Bob Brown,United Arab Emirates,2022-04-04,Epsilon,96107c,2410.0,3189.0,-779.0
+0263,Jane Smith,United Arab Emirates,2023-02-14,Zeta,xcqrty,2783.0,1830.0,953.0
+0264,Alice Johnson,United Kingdom,2022-11-09,Delta,v1tg2z,6811.0,558.0,6253.0
+0265,John Doe,United Kingdom,2023-03-24,Gamma,jl279v,4946.0,2272.0,2674.0
+0266,Charlie Davis,Brazil,2023-01-09,Alpha,vdwmpo,6968.0,4926.0,2042.0
+0267,Jane Smith,United Kingdom,2023-07-09,Eta,ragwe8,7661.0,3121.0,4540.0
+0268,Bob Brown,India,2023-08-25,Eta,p4xlog,3159.0,1101.0,2058.0
+0269,Bob Brown,France,2022-05-29,Delta,1hn0qh,9258.0,1903.0,7355.0
+0270,Jane Smith,USA,2023-12-18,Gamma,tv3c4r,8851.0,935.0,7916.0
+0271,Bob Brown,United Kingdom,2023-11-28,Theta,gp6lrh,6572.0,510.0,6062.0
+0272,Charlie Davis,USA,2022-04-17,Zeta,ztil03,9902.0,4675.0,5227.0
+0273,Eve Wilson,India,2022-01-19,Kappa,evp9y5,3759.0,2207.0,1552.0
+0274,Eve Wilson,United Kingdom,2022-11-10,Eta,d20a51,5391.0,2165.0,3226.0
+0275,Alice Johnson,United Arab Emirates,2023-02-06,Iota,qa12ks,1251.0,1187.0,64.0
+0276,Frank Thomas,Brazil,2023-10-26,Beta,aj068z,5636.0,4021.0,1615.0
+0277,Bob Brown,Brazil,2022-10-26,Delta,4xk2id,1485.0,1771.0,-286.0
+0278,John Doe,United Kingdom,2022-07-25,Delta,164da1,2233.0,1990.0,243.0
+0279,Eve Wilson,United Kingdom,2023-06-18,Beta,n09tvd,1994.0,1145.0,849.0
+0280,Eve Wilson,United Arab Emirates,2022-12-13,Delta,d6vr70,4321.0,2211.0,2110.0
+0281,Eve Wilson,United Arab Emirates,2022-02-22,Zeta,zax2n5,4176.0,401.0,3775.0
+0282,Frank Thomas,Brazil,2022-08-12,Kappa,651rha,2570.0,3038.0,-468.0
+0283,Frank Thomas,United Arab Emirates,2022-04-06,Delta,fq9jfj,9863.0,2262.0,7601.0
+0284,Bob Brown,India,2022-07-17,Beta,b2wwnl,6150.0,4790.0,1360.0
+0285,Bob Brown,USA,2022-12-08,Iota,p01xgn,9658.0,1822.0,7836.0
+0286,Frank Thomas,United Kingdom,2023-02-20,Iota,0l3e9a,3306.0,800.0,2506.0
+0287,Alice Johnson,Brazil,2023-07-18,Eta,5080kb,8222.0,1366.0,6856.0
+0288,Frank Thomas,India,2023-10-25,Zeta,ldo4yf,8851.0,4792.0,4059.0
+0289,Charlie Davis,India,2023-07-23,Kappa,vo3f6w,5999.0,990.0,5009.0
+0290,Frank Thomas,USA,2023-07-15,Epsilon,ro155c,218.0,855.0,-637.0
+0291,Jane Smith,Brazil,2023-11-29,Kappa,n9eh68,7071.0,2863.0,4208.0
+0292,Eve Wilson,USA,2023-08-13,Iota,6sramp,1073.0,,
+0293,John Doe,USA,2023-03-16,Alpha,rih4d6,9596.0,357.0,9239.0
+0294,Frank Thomas,United Kingdom,2023-10-14,Theta,x57skk,1770.0,4991.0,-3221.0
+0295,Frank Thomas,India,2022-02-26,Alpha,hbb272,9297.0,85.0,9212.0
+0296,Frank Thomas,United Arab Emirates,2023-02-23,Epsilon,7r0m69,7966.0,,
+0297,John Doe,United Arab Emirates,2023-10-15,Alpha,06pizt,2456.0,1587.0,869.0
+0298,Jane Smith,Brazil,2022-02-01,Iota,tc87r5,6039.0,3794.0,2245.0
+0299,Jane Smith,United Arab Emirates,2023-04-28,Theta,ys3l7g,6018.0,3240.0,2778.0
+0300,Eve Wilson,USA,2022-10-05,Iota,9i1k5i,575.0,2035.0,-1460.0
+0301,John Doe,USA,2023-03-04,Epsilon,eaii3c,1082.0,194.0,888.0
+0302,Bob Brown,India,2022-02-10,Zeta,k1xyth,8215.0,2576.0,5639.0
+0303,John Doe,United Kingdom,2022-04-15,Delta,glz5cn,9824.0,4404.0,5420.0
+0304,Alice Johnson,France,2023-10-04,Theta,f2ldrw,8062.0,4394.0,3668.0
+0305,Bob Brown,India,2023-10-01,Alpha,43oau4,1941.0,3528.0,-1587.0
+0306,Bob Brown,Brazil,2022-09-20,Alpha,4335u6,3045.0,4870.0,-1825.0
+0307,Bob Brown,India,2023-09-21,Kappa,eefuko,5405.0,3336.0,2069.0
+0308,Eve Wilson,Brazil,2022-08-04,Eta,kndqfq,1361.0,864.0,497.0
+0309,John Doe,USA,2023-08-19,Iota,5b1qe8,7768.0,3553.0,4215.0
+0310,Charlie Davis,United Arab Emirates,2023-06-20,Epsilon,qsffo0,454.0,2938.0,-2484.0
+0311,Frank Thomas,India,2022-06-05,Beta,g18lar,753.0,4926.0,-4173.0
+0312,Charlie Davis,France,2022-08-09,Zeta,33hzm9,5877.0,696.0,5181.0
+0313,Frank Thomas,France,2023-03-13,Delta,h45aje,6687.0,3243.0,3444.0
+0314,Charlie Davis,Brazil,2022-10-30,Zeta,5flx4w,8007.0,3593.0,4414.0
+0315,Alice Johnson,France,2022-07-07,Alpha,rlsu7l,9794.0,3215.0,6579.0
+0316,Eve Wilson,United Kingdom,2022-06-18,Beta,d7wpak,3098.0,1630.0,1468.0
+0317,John Doe,France,2022-03-14,Gamma,jrnecl,5074.0,,
+0318,Frank Thomas,France,2023-09-16,Epsilon,epsu8j,9642.0,2916.0,6726.0
+0319,Bob Brown,India,2023-11-26,Gamma,ye2vpf,1089.0,1530.0,-441.0
+0320,Bob Brown,United Kingdom,2023-05-10,Eta,tresv7,3209.0,3650.0,-441.0
+0321,Frank Thomas,United Kingdom,2022-01-09,Kappa,0rra9o,9775.0,4808.0,4967.0
+0322,Charlie Davis,India,2023-04-22,Beta,8x20eh,6359.0,3657.0,2702.0
+0323,Jane Smith,France,2022-04-05,Iota,mkdbfx,4438.0,563.0,3875.0
+0324,Alice Johnson,United Arab Emirates,2022-03-14,Epsilon,ls772y,3232.0,4846.0,-1614.0
+0325,Alice Johnson,India,2023-10-01,Iota,e6mxql,756.0,932.0,-176.0
+0326,Charlie Davis,United Kingdom,2022-08-14,Eta,b8orpj,5426.0,682.0,4744.0
+0327,Jane Smith,France,2022-07-30,Delta,s769u2,5268.0,735.0,4533.0
+0328,Charlie Davis,United Kingdom,2023-09-12,Gamma,llhpty,6046.0,3450.0,2596.0
+0329,Eve Wilson,Brazil,2023-05-09,Beta,wbp9go,8237.0,3252.0,4985.0
+0330,Eve Wilson,USA,2023-10-11,Zeta,mp2q37,8585.0,3231.0,5354.0
+0331,John Doe,United Arab Emirates,2022-11-24,Alpha,rs9iim,5103.0,79.0,5024.0
+0332,Frank Thomas,USA,2022-04-17,Delta,4fil5h,9968.0,4404.0,5564.0
+0333,Jane Smith,France,2022-10-15,Eta,1gtrm9,9594.0,4295.0,5299.0
+0334,Jane Smith,United Arab Emirates,2023-04-16,Alpha,234z3a,1999.0,2949.0,-950.0
+0335,Alice Johnson,France,2023-02-12,Beta,riceai,8176.0,1353.0,6823.0
+0336,Bob Brown,United Kingdom,2023-10-27,Gamma,0zh5tj,1580.0,3192.0,-1612.0
+0337,Bob Brown,United Arab Emirates,2022-10-02,Eta,uddks2,2541.0,549.0,1992.0
+0338,Bob Brown,United Kingdom,2022-05-31,Alpha,qso52c,6684.0,562.0,6122.0
+0339,Alice Johnson,United Arab Emirates,2022-12-18,Alpha,kwj9kr,3220.0,4370.0,-1150.0
+0340,Jane Smith,India,2022-06-09,Eta,ppbd8c,1985.0,2152.0,-167.0
+0341,Frank Thomas,United Kingdom,2022-04-19,Gamma,6h0gdt,5550.0,,
+0342,Jane Smith,France,2023-11-04,Eta,7b383l,3990.0,4964.0,-974.0
+0343,John Doe,United Kingdom,2023-08-30,Theta,uxjcj7,9481.0,2507.0,6974.0
+0344,Bob Brown,United Arab Emirates,2023-12-27,Kappa,uztl9a,2823.0,4375.0,-1552.0
+0345,Charlie Davis,USA,2023-06-26,Gamma,misyui,3667.0,1432.0,2235.0
+0346,Charlie Davis,United Kingdom,2023-02-09,Beta,q1tvvr,5793.0,1835.0,3958.0
+0347,Eve Wilson,India,2023-11-25,Alpha,8sv0f1,7298.0,2187.0,5111.0
+0348,Frank Thomas,United Kingdom,2022-07-05,Eta,4pi605,8097.0,1880.0,6217.0
+0349,Charlie Davis,India,2022-12-05,Beta,sk4fod,3266.0,3477.0,-211.0
+0350,Bob Brown,USA,2022-05-04,Eta,rntiuw,2959.0,290.0,2669.0
+0351,John Doe,France,2023-03-04,Epsilon,04u9n9,9270.0,,
+0352,Charlie Davis,Brazil,2023-05-25,Eta,r3iycx,6838.0,2926.0,3912.0
+0353,Charlie Davis,USA,2022-06-03,Eta,m4yw0d,9430.0,253.0,9177.0
+0354,Bob Brown,India,2023-03-08,Iota,xh74eo,4191.0,356.0,3835.0
+0355,Alice Johnson,India,2022-03-18,Theta,uvs9kx,1553.0,2643.0,-1090.0
+0356,Frank Thomas,Brazil,2023-05-02,Theta,7a5g7e,1094.0,2762.0,-1668.0
+0357,Jane Smith,Brazil,2022-10-30,Eta,8gsq43,7539.0,,
+0358,Bob Brown,India,2023-10-16,Beta,owxqtv,9171.0,,
+0359,Frank Thomas,India,2023-06-21,Iota,tz43g7,6287.0,831.0,5456.0
+0360,Charlie Davis,United Kingdom,2022-03-15,Alpha,8872un,5691.0,2804.0,2887.0
+0361,Bob Brown,France,2023-05-21,Kappa,804c33,353.0,4895.0,-4542.0
+0362,Jane Smith,India,2023-03-07,Delta,j273ax,1489.0,2998.0,-1509.0
+0363,Alice Johnson,United Kingdom,2023-12-24,Eta,nki3ae,3747.0,1414.0,2333.0
+0364,Eve Wilson,India,2023-05-23,Eta,9t5us4,8377.0,4972.0,3405.0
+0365,Alice Johnson,France,2022-10-21,Eta,rvhb2m,1962.0,3733.0,-1771.0
+0366,Charlie Davis,United Arab Emirates,2023-02-16,Theta,9ywekj,3419.0,4210.0,-791.0
+0367,Frank Thomas,United Arab Emirates,2023-05-02,Kappa,0nb8gq,8318.0,625.0,7693.0
+0368,Alice Johnson,India,2023-10-31,Beta,tvy7b5,4645.0,3362.0,1283.0
+0369,John Doe,United Kingdom,2022-04-27,Beta,lf8ibr,5382.0,1902.0,3480.0
+0370,Bob Brown,France,2023-11-09,Beta,2o59fi,491.0,3191.0,-2700.0
+0371,Jane Smith,United Kingdom,2022-04-02,Beta,8uvkfl,4873.0,,
+0372,Alice Johnson,India,2022-07-08,Kappa,dsabr7,2807.0,133.0,2674.0
+0373,Bob Brown,United Kingdom,2022-04-24,Kappa,li4v6f,2735.0,3923.0,-1188.0
+0374,Eve Wilson,Brazil,2023-01-15,Iota,i5qud1,8066.0,4909.0,3157.0
+0375,Frank Thomas,United Arab Emirates,2022-09-28,Beta,d0qpws,3715.0,3000.0,715.0
+0376,Eve Wilson,United Kingdom,2022-10-05,Epsilon,8y4kxf,2335.0,2849.0,-514.0
+0377,Eve Wilson,France,2022-09-23,Theta,5biur3,5749.0,2470.0,3279.0
+0378,Jane Smith,United Arab Emirates,2022-09-29,Epsilon,wje03n,2676.0,2927.0,-251.0
+0379,John Doe,Brazil,2023-11-03,Beta,pvw0oa,652.0,2115.0,-1463.0
+0380,Frank Thomas,United Arab Emirates,2022-02-18,Zeta,bta1bl,5836.0,,
+0381,Charlie Davis,USA,2022-07-21,Theta,alzshp,430.0,173.0,257.0
+0382,Bob Brown,France,2023-12-22,Epsilon,y86wet,869.0,4677.0,-3808.0
+0383,Jane Smith,India,2022-07-18,Zeta,bmn1r7,5539.0,4386.0,1153.0
+0384,Alice Johnson,India,2023-07-03,Delta,0agl4b,483.0,3951.0,-3468.0
+0385,Charlie Davis,India,2022-12-11,Eta,tt3n4x,2803.0,4146.0,-1343.0
+0386,Charlie Davis,France,2022-05-17,Eta,bcia34,8245.0,2556.0,5689.0
+0387,John Doe,France,2023-08-03,Delta,i1wn10,2183.0,4304.0,-2121.0
+0388,Alice Johnson,United Arab Emirates,2023-11-25,Theta,odefy6,786.0,836.0,-50.0
+0389,Bob Brown,USA,2023-11-30,Delta,yfvb0t,8525.0,,
+0390,Eve Wilson,United Arab Emirates,2022-10-11,Alpha,v0xp36,6162.0,,
+0391,Eve Wilson,India,2022-06-11,Kappa,vs3w73,2526.0,817.0,1709.0
+0392,Jane Smith,United Arab Emirates,2022-04-14,Gamma,3prmbr,9678.0,2271.0,7407.0
+0393,Alice Johnson,United Arab Emirates,2023-03-18,Zeta,tgofg8,7431.0,428.0,7003.0
+0394,Jane Smith,USA,2023-10-29,Beta,wmsrgr,301.0,1736.0,-1435.0
+0395,John Doe,Brazil,2023-04-03,Beta,ockdrm,5275.0,821.0,4454.0
+0396,Jane Smith,France,2023-06-02,Beta,3mpjvx,9233.0,1977.0,7256.0
+0397,John Doe,Brazil,2023-11-29,Epsilon,6xx68l,7758.0,140.0,7618.0
+0398,Charlie Davis,Brazil,2022-11-01,Beta,oaxphc,674.0,2982.0,-2308.0
+0399,Jane Smith,United Kingdom,2023-06-25,Eta,o6hgl9,1168.0,1281.0,-113.0
+0400,Jane Smith,United Kingdom,2022-05-24,Delta,f8dnyu,1361.0,3456.0,-2095.0
+0401,Frank Thomas,United Kingdom,2022-04-24,Theta,bwmrpx,8410.0,4076.0,4334.0
+0402,Alice Johnson,United Kingdom,2022-05-17,Beta,7ga6jm,9680.0,,
+0403,John Doe,Brazil,2023-11-25,Theta,3poas7,1022.0,4707.0,-3685.0
+0404,Eve Wilson,USA,2023-11-04,Delta,iw1c7s,9191.0,4582.0,4609.0
+0405,Frank Thomas,India,2023-04-03,Delta,eyd7uc,6959.0,2323.0,4636.0
+0406,Jane Smith,India,2023-10-06,Kappa,0ogihg,1603.0,,
+0407,Frank Thomas,France,2023-08-18,Beta,iwclob,2874.0,1365.0,1509.0
+0408,Eve Wilson,France,2023-04-25,Zeta,owe6ep,2158.0,507.0,1651.0
+0409,Eve Wilson,United Arab Emirates,2022-09-18,Beta,16i8yx,453.0,2017.0,-1564.0
+0410,Eve Wilson,Brazil,2022-04-19,Gamma,wniljs,5492.0,4438.0,1054.0
+0411,Bob Brown,Brazil,2023-09-27,Delta,a0tn0f,4798.0,,
+0412,Alice Johnson,France,2023-04-10,Alpha,ovalkr,9594.0,,
+0413,Charlie Davis,India,2022-03-29,Beta,xvdzy7,2147.0,658.0,1489.0
+0414,Alice Johnson,France,2022-01-28,Kappa,uak5lr,6897.0,4695.0,2202.0
+0415,Eve Wilson,United Kingdom,2022-11-12,Beta,l9ahjk,3479.0,3697.0,-218.0
+0416,Frank Thomas,USA,2022-12-28,Gamma,427gf4,5697.0,1524.0,4173.0
+0417,Bob Brown,United Kingdom,2023-04-19,Theta,cg51co,3906.0,2126.0,1780.0
+0418,Eve Wilson,United Arab Emirates,2022-12-06,Zeta,kk30fb,1165.0,4359.0,-3194.0
+0419,Jane Smith,United Kingdom,2022-02-16,Epsilon,hojk1m,1158.0,3239.0,-2081.0
+0420,Eve Wilson,United Arab Emirates,2022-10-18,Eta,3j0ttf,7155.0,4832.0,2323.0
+0421,Charlie Davis,USA,2022-05-03,Delta,qr2he0,583.0,2128.0,-1545.0
+0422,Alice Johnson,Brazil,2023-11-03,Eta,o3s2a5,2078.0,1586.0,492.0
+0423,Charlie Davis,United Arab Emirates,2022-11-13,Iota,j1nu38,4993.0,,
+0424,Charlie Davis,Brazil,2022-01-16,Gamma,mr54bv,5484.0,1644.0,3840.0
+0425,Frank Thomas,USA,2022-09-07,Zeta,vktxpv,3825.0,2134.0,1691.0
+0426,John Doe,France,2023-12-07,Iota,a12emk,9967.0,3028.0,6939.0
+0427,Frank Thomas,United Kingdom,2023-07-09,Alpha,58sfs6,8900.0,726.0,8174.0
+0428,Bob Brown,India,2023-02-20,Epsilon,dtmdth,610.0,1095.0,-485.0
+0429,Frank Thomas,USA,2022-01-13,Theta,39zgp3,2291.0,4057.0,-1766.0
+0430,Frank Thomas,United Arab Emirates,2023-11-03,Gamma,d56yrl,7026.0,4048.0,2978.0
+0431,Jane Smith,India,2022-12-05,Theta,q3icb6,8591.0,,
+0432,Charlie Davis,Brazil,2022-05-15,Epsilon,rhnehf,396.0,4428.0,-4032.0
+0433,Frank Thomas,France,2022-12-02,Gamma,7y7x1e,9465.0,1014.0,8451.0
+0434,Charlie Davis,France,2023-05-28,Zeta,x9xfg5,8762.0,4522.0,4240.0
+0435,John Doe,United Arab Emirates,2022-05-31,Epsilon,0fk63o,485.0,3436.0,-2951.0
+0436,Frank Thomas,United Kingdom,2022-09-21,Beta,33flcd,3155.0,3716.0,-561.0
+0437,Bob Brown,United Arab Emirates,2022-06-20,Alpha,d7tvyw,7986.0,2347.0,5639.0
+0438,Charlie Davis,Brazil,2022-09-24,Epsilon,vg01d9,1738.0,2434.0,-696.0
+0439,Eve Wilson,India,2023-01-05,Kappa,1itxbb,6101.0,2438.0,3663.0
+0440,Alice Johnson,United Kingdom,2022-06-11,Kappa,rxpzp4,4395.0,1597.0,2798.0
+0441,Alice Johnson,France,2022-07-17,Eta,n8kyxn,7300.0,944.0,6356.0
+0442,John Doe,India,2022-02-07,Iota,8899n9,6992.0,2547.0,4445.0
+0443,Bob Brown,India,2022-09-26,Theta,y7xdbz,3482.0,4994.0,-1512.0
+0444,Charlie Davis,France,2023-04-16,Delta,0syr0q,2735.0,2520.0,215.0
+0445,Alice Johnson,India,2023-02-14,Delta,wxyfa3,8405.0,4014.0,4391.0
+0446,Jane Smith,India,2023-10-19,Epsilon,kaam7q,8731.0,2678.0,6053.0
+0447,Jane Smith,Brazil,2022-11-18,Iota,l4k6sa,132.0,1577.0,-1445.0
+0448,Frank Thomas,USA,2023-10-19,Iota,ia5hep,3578.0,3472.0,106.0
+0449,Frank Thomas,France,2022-03-18,Iota,mfdooc,4885.0,2698.0,2187.0
+0450,Eve Wilson,United Kingdom,2023-10-16,Gamma,qqcmbr,2406.0,2227.0,179.0
+0451,John Doe,USA,2023-01-16,Eta,jcni85,4110.0,3418.0,692.0
+0452,Alice Johnson,France,2023-10-04,Kappa,pjdt1j,5868.0,,
+0453,Eve Wilson,Brazil,2022-11-18,Beta,r43my4,2658.0,2225.0,433.0
+0454,Charlie Davis,United Kingdom,2023-07-21,Theta,ghe6nh,4034.0,548.0,3486.0
+0455,Eve Wilson,USA,2023-05-25,Eta,50d1hn,1061.0,3812.0,-2751.0
+0456,Frank Thomas,France,2022-05-17,Theta,cfi6fq,1769.0,1819.0,-50.0
+0457,Charlie Davis,USA,2022-06-21,Kappa,2yfo0z,6911.0,2152.0,4759.0
+0458,Jane Smith,France,2023-08-25,Eta,e75qg3,7212.0,2960.0,4252.0
+0459,Frank Thomas,India,2022-07-15,Gamma,7c4899,1396.0,2547.0,-1151.0
+0460,Charlie Davis,India,2022-10-28,Epsilon,1ouaze,7570.0,2523.0,5047.0
+0461,Frank Thomas,USA,2022-08-15,Gamma,3g7rlz,1598.0,4828.0,-3230.0
+0462,Charlie Davis,USA,2022-09-27,Kappa,zddj07,8929.0,,
+0463,John Doe,Brazil,2023-05-17,Delta,nusp4s,661.0,3596.0,-2935.0
+0464,Charlie Davis,USA,2022-08-24,Epsilon,j5g1vd,5167.0,4879.0,288.0
+0465,Jane Smith,Brazil,2022-07-19,Epsilon,pam29i,4083.0,3386.0,697.0
+0466,Jane Smith,India,2023-03-04,Iota,a8iv7p,621.0,,
+0467,Alice Johnson,United Kingdom,2023-06-09,Iota,cifmw7,7396.0,3246.0,4150.0
+0468,Frank Thomas,United Kingdom,2023-03-31,Beta,e4wisi,8376.0,4137.0,4239.0
+0469,Alice Johnson,United Arab Emirates,2022-08-16,Epsilon,vleywp,4741.0,4227.0,514.0
+0470,Frank Thomas,United Kingdom,2022-01-09,Eta,7fkjtr,2487.0,4239.0,-1752.0
+0471,Alice Johnson,USA,2023-01-03,Zeta,zxnr1n,3271.0,3787.0,-516.0
+0472,Alice Johnson,USA,2023-11-27,Beta,cgi16u,3115.0,967.0,2148.0
+0473,Eve Wilson,Brazil,2023-11-10,Beta,183cdk,7568.0,261.0,7307.0
+0474,Charlie Davis,France,2022-09-29,Delta,53pvll,9482.0,3908.0,5574.0
+0475,Alice Johnson,India,2022-10-24,Zeta,cmxqe0,1819.0,2693.0,-874.0
+0476,Bob Brown,USA,2022-01-25,Gamma,g7co3z,7886.0,2034.0,5852.0
+0477,John Doe,India,2023-07-25,Kappa,9hzj42,948.0,2974.0,-2026.0
+0478,Eve Wilson,United Kingdom,2022-04-21,Eta,u9sbzc,4515.0,524.0,3991.0
+0479,Jane Smith,India,2023-05-18,Iota,4ppnbq,680.0,4744.0,-4064.0
+0480,Frank Thomas,France,2022-05-03,Zeta,as27pz,7010.0,536.0,6474.0
+0481,Frank Thomas,United Arab Emirates,2022-04-19,Theta,n7hqht,4217.0,232.0,3985.0
+0482,Jane Smith,United Kingdom,2023-03-04,Beta,rqnrv4,3406.0,477.0,2929.0
+0483,Alice Johnson,United Arab Emirates,2022-07-12,Zeta,7wkra5,465.0,1847.0,-1382.0
+0484,Eve Wilson,India,2023-03-05,Theta,p2ob6l,5761.0,2631.0,3130.0
+0485,Jane Smith,United Arab Emirates,2022-04-22,Kappa,h7xbds,5349.0,2140.0,3209.0
+0486,Jane Smith,United Arab Emirates,2022-06-29,Iota,yxmcm5,9429.0,2897.0,6532.0
+0487,Bob Brown,United Arab Emirates,2023-10-17,Beta,jt327l,4306.0,4086.0,220.0
+0488,John Doe,United Arab Emirates,2023-07-22,Epsilon,w7tjvp,6713.0,1312.0,5401.0
+0489,Alice Johnson,United Arab Emirates,2023-08-17,Beta,f9czx4,1005.0,,
+0490,Charlie Davis,Brazil,2023-03-08,Zeta,vgpho1,3887.0,3953.0,-66.0
+0491,Eve Wilson,United Arab Emirates,2023-02-14,Gamma,a3zxqw,1508.0,4859.0,-3351.0
+0492,Charlie Davis,India,2023-12-02,Epsilon,9m96m1,3848.0,2470.0,1378.0
+0493,Jane Smith,France,2023-11-06,Alpha,d05r3l,7420.0,377.0,7043.0
+0494,Charlie Davis,Brazil,2022-08-23,Zeta,s2pnqn,252.0,,
+0495,Alice Johnson,United Kingdom,2022-12-18,Iota,qknrba,122.0,1444.0,-1322.0
+0496,John Doe,United Arab Emirates,2023-08-26,Alpha,e24gmq,8977.0,3720.0,5257.0
+0497,Eve Wilson,France,2023-04-06,Epsilon,bx55v9,4914.0,4219.0,695.0
+0498,Charlie Davis,USA,2022-09-24,Theta,g6t7rh,2702.0,2582.0,120.0
+0499,Bob Brown,Brazil,2023-10-31,Zeta,9e84ao,4765.0,1411.0,3354.0
+0500,Charlie Davis,Brazil,2023-07-11,Gamma,l5sotc,1439.0,522.0,917.0
+0501,Eve Wilson,France,2022-09-01,Theta,fimhzx,4235.0,3775.0,460.0
+0502,Eve Wilson,Brazil,2022-10-07,Gamma,cndg4f,1913.0,1248.0,665.0
+0503,Frank Thomas,United Kingdom,2022-02-05,Theta,etdt1y,4148.0,1300.0,2848.0
+0504,John Doe,USA,2023-07-19,Delta,z76ev4,4463.0,3907.0,556.0
+0505,Bob Brown,India,2023-05-24,Kappa,yyy0kg,6139.0,4150.0,1989.0
+0506,Alice Johnson,United Kingdom,2023-06-19,Theta,01ji7f,5105.0,106.0,4999.0
+0507,John Doe,India,2023-09-05,Kappa,d18nqy,2777.0,3288.0,-511.0
+0508,Alice Johnson,United Arab Emirates,2022-07-14,Gamma,q33qf1,8780.0,870.0,7910.0
+0509,Eve Wilson,India,2023-12-17,Iota,9sgcys,8873.0,1486.0,7387.0
+0510,Frank Thomas,United Arab Emirates,2023-04-29,Beta,ky4axb,9008.0,2565.0,6443.0
+0511,Jane Smith,France,2022-02-06,Zeta,8e8cmw,5037.0,1635.0,3402.0
+0512,John Doe,France,2022-09-18,Iota,093314,9559.0,1391.0,8168.0
+0513,Charlie Davis,United Kingdom,2023-03-15,Epsilon,7zmj2w,6366.0,76.0,6290.0
+0514,Eve Wilson,India,2023-01-04,Delta,0kyfad,2841.0,927.0,1914.0
+0515,Alice Johnson,United Kingdom,2022-11-09,Beta,y8ux82,7426.0,2409.0,5017.0
+0516,Eve Wilson,USA,2022-01-23,Epsilon,jll7wa,2995.0,4393.0,-1398.0
+0517,John Doe,France,2022-06-24,Theta,69zhap,8920.0,1526.0,7394.0
+0518,Eve Wilson,United Arab Emirates,2023-08-24,Iota,hjzo7p,8271.0,2955.0,5316.0
+0519,John Doe,United Kingdom,2023-11-30,Alpha,41lxbx,437.0,2145.0,-1708.0
+0520,Jane Smith,United Kingdom,2022-08-10,Epsilon,odzgi5,2458.0,,
+0521,Bob Brown,France,2023-04-06,Beta,pc25pw,5967.0,3129.0,2838.0
+0522,Frank Thomas,Brazil,2023-04-09,Eta,23lcd0,9117.0,1102.0,8015.0
+0523,John Doe,India,2023-12-06,Theta,981g9r,6159.0,3134.0,3025.0
+0524,Bob Brown,Brazil,2022-06-11,Gamma,zge63o,9977.0,595.0,9382.0
+0525,Bob Brown,United Kingdom,2022-06-19,Kappa,5i6vjb,387.0,4942.0,-4555.0
+0526,Alice Johnson,India,2023-02-22,Gamma,yj2hjy,5292.0,3149.0,2143.0
+0527,Alice Johnson,USA,2022-05-06,Alpha,d9tzwa,8290.0,1413.0,6877.0
+0528,Charlie Davis,USA,2022-09-14,Iota,krzz09,9915.0,1739.0,8176.0
+0529,Alice Johnson,United Kingdom,2023-01-04,Alpha,shc27g,3848.0,,
+0530,John Doe,United Kingdom,2023-07-28,Delta,vrjj7h,4262.0,3890.0,372.0
+0531,Charlie Davis,Brazil,2023-07-21,Gamma,bryvec,1615.0,1687.0,-72.0
+0532,Jane Smith,Brazil,2022-08-27,Iota,hp8rww,5311.0,4410.0,901.0
+0533,Charlie Davis,Brazil,2022-06-21,Kappa,mu9wkh,612.0,4668.0,-4056.0
+0534,Alice Johnson,Brazil,2022-01-06,Eta,96ngnr,9120.0,4773.0,4347.0
+0535,Frank Thomas,India,2022-06-01,Iota,vam8o4,2888.0,1680.0,1208.0
+0536,Charlie Davis,United Arab Emirates,2023-03-26,Beta,hoj7zq,2591.0,1746.0,845.0
+0537,Jane Smith,United Arab Emirates,2022-07-26,Theta,6y6xgi,6921.0,3691.0,3230.0
+0538,Bob Brown,United Kingdom,2022-07-23,Epsilon,ld4x11,5324.0,3215.0,2109.0
+0539,Eve Wilson,USA,2022-08-28,Iota,kpf5s2,3524.0,2444.0,1080.0
+0540,John Doe,India,2023-07-12,Alpha,jamvlo,1531.0,3203.0,-1672.0
+0541,Charlie Davis,United Kingdom,2023-08-01,Delta,y9eobs,1782.0,807.0,975.0
+0542,Frank Thomas,France,2022-05-28,Alpha,mz54eu,1167.0,3529.0,-2362.0
+0543,Alice Johnson,USA,2022-12-11,Beta,9ssx9n,1368.0,4626.0,-3258.0
+0544,Bob Brown,United Kingdom,2023-01-01,Delta,i4b4lq,8081.0,3178.0,4903.0
+0545,Jane Smith,USA,2023-03-10,Gamma,zqw7bk,8310.0,4524.0,3786.0
+0546,John Doe,France,2022-04-07,Iota,8fdvbo,6132.0,2051.0,4081.0
+0547,Alice Johnson,United Kingdom,2023-06-25,Theta,itxzuo,5220.0,2848.0,2372.0
+0548,John Doe,USA,2022-10-26,Epsilon,0wxbna,481.0,4111.0,-3630.0
+0549,Eve Wilson,Brazil,2023-06-06,Eta,lf23r9,253.0,,
+0550,Jane Smith,United Kingdom,2022-03-29,Theta,am5gc4,1187.0,,
+0551,John Doe,United Kingdom,2022-05-04,Iota,qasao0,7058.0,568.0,6490.0
+0552,Alice Johnson,India,2023-03-30,Eta,vmg30e,6895.0,3585.0,3310.0
+0553,John Doe,United Kingdom,2023-12-09,Iota,kcbd84,1891.0,4483.0,-2592.0
+0554,Bob Brown,USA,2023-05-31,Zeta,4eilcz,9460.0,2745.0,6715.0
+0555,Bob Brown,France,2022-03-28,Eta,gavawi,800.0,1321.0,-521.0
+0556,Charlie Davis,USA,2022-04-05,Eta,wg3ipf,1700.0,,
+0557,John Doe,USA,2022-01-23,Kappa,r3hin6,9505.0,776.0,8729.0
+0558,Jane Smith,USA,2022-05-15,Delta,59zc7o,8379.0,4759.0,3620.0
+0559,Frank Thomas,France,2023-02-28,Iota,19xgf0,1077.0,,
+0560,Alice Johnson,France,2022-12-18,Iota,34oyn9,3325.0,3774.0,-449.0
+0561,Charlie Davis,USA,2023-10-09,Iota,zz1x4b,9553.0,823.0,8730.0
+0562,Charlie Davis,Brazil,2022-08-09,Beta,746hvf,9454.0,2019.0,7435.0
+0563,Alice Johnson,United Kingdom,2023-12-09,Theta,0uhufs,1929.0,1001.0,928.0
+0564,Frank Thomas,United Arab Emirates,2023-09-29,Theta,a7stwa,5246.0,,
+0565,Bob Brown,India,2022-05-01,Kappa,pet07t,9849.0,1103.0,8746.0
+0566,Charlie Davis,United Kingdom,2023-02-17,Alpha,o1jhln,7110.0,4168.0,2942.0
+0567,Alice Johnson,India,2022-03-21,Alpha,8nlmgy,1782.0,2797.0,-1015.0
+0568,Eve Wilson,France,2022-09-13,Theta,edb6b1,2813.0,2150.0,663.0
+0569,Frank Thomas,United Arab Emirates,2022-06-06,Eta,izx49q,344.0,3709.0,-3365.0
+0570,John Doe,USA,2023-05-24,Delta,kwju5b,3661.0,4509.0,-848.0
+0571,Alice Johnson,India,2022-03-15,Zeta,00b1fq,7996.0,2553.0,5443.0
+0572,Bob Brown,Brazil,2023-10-09,Alpha,rrk0u7,5362.0,775.0,4587.0
+0573,Charlie Davis,India,2023-01-22,Kappa,ay51ze,6237.0,727.0,5510.0
+0574,Bob Brown,India,2023-07-04,Alpha,eer0qd,876.0,4548.0,-3672.0
+0575,John Doe,United Arab Emirates,2022-12-09,Theta,0u4dxb,4559.0,2372.0,2187.0
+0576,Frank Thomas,France,2023-10-08,Gamma,uoy5iq,4638.0,4905.0,-267.0
+0577,Eve Wilson,Brazil,2023-02-07,Kappa,czdb98,1234.0,3735.0,-2501.0
+0578,Frank Thomas,France,2022-07-02,Gamma,dptgec,2385.0,639.0,1746.0
+0579,Jane Smith,Brazil,2023-03-07,Gamma,p1r548,1514.0,3163.0,-1649.0
+0580,Frank Thomas,USA,2022-04-01,Delta,yaf2yq,6215.0,1501.0,4714.0
+0581,Jane Smith,USA,2022-05-21,Beta,qzxuut,2611.0,3132.0,-521.0
+0582,Eve Wilson,Brazil,2022-11-30,Kappa,6hvsla,3000.0,304.0,2696.0
+0583,Frank Thomas,India,2022-12-04,Kappa,m3u75f,4491.0,3161.0,1330.0
+0584,John Doe,United Kingdom,2023-12-16,Eta,c5ntix,1246.0,4220.0,-2974.0
+0585,Bob Brown,France,2023-05-17,Epsilon,sejkzw,7622.0,,
+0586,John Doe,USA,2022-10-09,Iota,kk465d,2897.0,4291.0,-1394.0
+0587,Bob Brown,USA,2022-04-20,Eta,2srjlb,7324.0,3062.0,4262.0
+0588,John Doe,France,2023-06-14,Gamma,s9ej8r,5130.0,,
+0589,Frank Thomas,Brazil,2023-03-14,Iota,8gtqdh,1746.0,179.0,1567.0
+0590,Bob Brown,United Arab Emirates,2022-01-12,Iota,0mlst6,236.0,2560.0,-2324.0
+0591,Jane Smith,Brazil,2022-09-03,Iota,juddsl,7904.0,1491.0,6413.0
+0592,Eve Wilson,France,2023-04-06,Eta,ewjd23,782.0,2817.0,-2035.0
+0593,Bob Brown,Brazil,2023-04-06,Kappa,zvsgq0,7284.0,3670.0,3614.0
+0594,Alice Johnson,France,2022-08-08,Kappa,reizcr,7966.0,1042.0,6924.0
+0595,John Doe,France,2023-01-08,Alpha,b1ul4f,662.0,2323.0,-1661.0
+0596,Charlie Davis,USA,2022-04-24,Gamma,pmfw16,3144.0,4528.0,-1384.0
+0597,Bob Brown,Brazil,2022-08-24,Eta,dbgait,4024.0,2610.0,1414.0
+0598,Charlie Davis,United Arab Emirates,2022-01-31,Gamma,dd09wq,8552.0,282.0,8270.0
+0599,John Doe,United Kingdom,2023-10-14,Iota,9qpozp,3684.0,1180.0,2504.0
+0600,Bob Brown,United Kingdom,2022-01-19,Eta,uhycgh,1898.0,3563.0,-1665.0
+0601,Frank Thomas,France,2023-08-22,Alpha,hck17k,1499.0,3034.0,-1535.0
+0602,John Doe,United Kingdom,2022-05-02,Delta,2g7hq1,8871.0,83.0,8788.0
+0603,Bob Brown,United Kingdom,2022-11-25,Iota,t7kpi3,3807.0,2495.0,1312.0
+0604,John Doe,France,2023-01-26,Beta,08x6hf,9615.0,3273.0,6342.0
+0605,Alice Johnson,United Arab Emirates,2022-08-04,Eta,suuj6d,9836.0,65.0,9771.0
+0606,Jane Smith,India,2023-10-30,Eta,lkpp85,2066.0,2330.0,-264.0
+0607,Charlie Davis,USA,2023-03-17,Iota,cnizwy,2555.0,910.0,1645.0
+0608,Alice Johnson,India,2023-11-20,Beta,3sgosc,7756.0,3700.0,4056.0
+0609,Bob Brown,India,2023-05-23,Epsilon,3pdpz4,8824.0,1950.0,6874.0
+0610,Charlie Davis,India,2022-09-19,Epsilon,x63k90,3838.0,1017.0,2821.0
+0611,Alice Johnson,Brazil,2022-02-23,Kappa,zeunxz,291.0,4637.0,-4346.0
+0612,Eve Wilson,India,2023-08-22,Alpha,h7l7xx,7197.0,3212.0,3985.0
+0613,Alice Johnson,USA,2023-08-02,Gamma,idpra7,6737.0,155.0,6582.0
+0614,Charlie Davis,United Arab Emirates,2023-10-27,Epsilon,0aoc9h,7752.0,3136.0,4616.0
+0615,John Doe,France,2022-11-30,Theta,rhe6cp,3779.0,1370.0,2409.0
+0616,Jane Smith,Brazil,2022-10-18,Delta,h4hich,5427.0,4682.0,745.0
+0617,Bob Brown,Brazil,2022-02-21,Gamma,074pp5,8909.0,3209.0,5700.0
+0618,Alice Johnson,France,2023-10-07,Zeta,0c4djq,2148.0,260.0,1888.0
+0619,Charlie Davis,France,2022-03-12,Delta,damc0e,8581.0,4771.0,3810.0
+0620,Jane Smith,France,2023-11-17,Beta,fc98jr,2837.0,1622.0,1215.0
+0621,Jane Smith,United Arab Emirates,2022-01-14,Gamma,joz37d,2595.0,1390.0,1205.0
+0622,Jane Smith,India,2022-07-21,Eta,kspoh2,4313.0,289.0,4024.0
+0623,Eve Wilson,France,2022-01-15,Gamma,vcu67g,6133.0,4817.0,1316.0
+0624,John Doe,France,2023-04-14,Epsilon,665ym7,4228.0,1880.0,2348.0
+0625,John Doe,USA,2022-09-28,Gamma,iansq7,7859.0,4051.0,3808.0
+0626,Eve Wilson,United Arab Emirates,2022-12-05,Epsilon,6ld8xk,977.0,1301.0,-324.0
+0627,Bob Brown,United Kingdom,2022-06-30,Zeta,3pdtly,5422.0,1364.0,4058.0
+0628,Charlie Davis,France,2022-03-01,Epsilon,dwqm3z,1425.0,4669.0,-3244.0
+0629,Charlie Davis,USA,2023-03-04,Epsilon,dnrn6r,3234.0,2831.0,403.0
+0630,John Doe,United Kingdom,2022-12-24,Epsilon,vvsakv,707.0,116.0,591.0
+0631,Eve Wilson,United Kingdom,2022-05-26,Eta,j31nkt,8963.0,2109.0,6854.0
+0632,Charlie Davis,United Arab Emirates,2022-01-21,Eta,kfcd6j,1153.0,2183.0,-1030.0
+0633,Eve Wilson,Brazil,2023-02-25,Theta,3gwkbw,4414.0,2568.0,1846.0
+0634,Charlie Davis,Brazil,2022-07-08,Epsilon,zxuz1c,7957.0,2682.0,5275.0
+0635,Jane Smith,Brazil,2022-07-17,Gamma,zx8wdr,5422.0,,
+0636,Bob Brown,India,2023-11-10,Iota,balffj,746.0,2001.0,-1255.0
+0637,Charlie Davis,USA,2022-02-13,Epsilon,t0vlgn,5368.0,217.0,5151.0
+0638,Bob Brown,France,2023-12-29,Theta,sn2r8r,4295.0,4517.0,-222.0
+0639,John Doe,United Kingdom,2022-11-26,Delta,ed3og7,3397.0,1216.0,2181.0
+0640,Frank Thomas,India,2023-03-11,Delta,rdc9kb,2410.0,698.0,1712.0
+0641,Alice Johnson,United Kingdom,2023-04-18,Theta,x77d84,8319.0,2317.0,6002.0
+0642,Alice Johnson,France,2023-01-23,Gamma,4xytjr,4176.0,3360.0,816.0
+0643,Alice Johnson,United Arab Emirates,2023-07-02,Gamma,w8gsy8,5250.0,3002.0,2248.0
+0644,Charlie Davis,France,2023-05-06,Eta,qojwro,6984.0,1371.0,5613.0
+0645,Eve Wilson,United Kingdom,2022-12-13,Gamma,umjbvg,5381.0,2119.0,3262.0
+0646,Jane Smith,India,2022-05-10,Alpha,7m0bkc,5116.0,1150.0,3966.0
+0647,Bob Brown,USA,2022-05-31,Iota,d8ljh2,9780.0,3589.0,6191.0
+0648,Frank Thomas,United Arab Emirates,2022-09-12,Iota,0c0far,6013.0,996.0,5017.0
+0649,Bob Brown,Brazil,2023-03-04,Theta,r79d5e,7653.0,4753.0,2900.0
+0650,Jane Smith,France,2022-02-04,Zeta,nmfxl9,2279.0,720.0,1559.0
+0651,Charlie Davis,United Arab Emirates,2023-11-10,Epsilon,jjc1bo,684.0,4324.0,-3640.0
+0652,Frank Thomas,USA,2022-11-04,Beta,x7j4xs,9952.0,1287.0,8665.0
+0653,Alice Johnson,United Kingdom,2023-07-30,Epsilon,aemzjy,7321.0,1882.0,5439.0
+0654,Frank Thomas,United Arab Emirates,2023-10-31,Theta,2kcntm,5081.0,2392.0,2689.0
+0655,Eve Wilson,France,2023-03-10,Iota,vv5ed9,7594.0,2242.0,5352.0
+0656,John Doe,USA,2022-07-23,Iota,zrf4zh,4541.0,3401.0,1140.0
+0657,Bob Brown,France,2022-09-13,Delta,kafe0e,6474.0,4218.0,2256.0
+0658,Jane Smith,France,2022-08-14,Theta,gn8h27,1435.0,4738.0,-3303.0
+0659,John Doe,United Kingdom,2022-08-28,Kappa,hvx8ns,4907.0,4963.0,-56.0
+0660,Jane Smith,India,2022-06-02,Epsilon,z6rq0v,2117.0,3847.0,-1730.0
+0661,Eve Wilson,USA,2022-08-09,Theta,mi8q7m,1218.0,741.0,477.0
+0662,John Doe,India,2023-06-09,Alpha,j3cmxz,3398.0,611.0,2787.0
+0663,Jane Smith,USA,2022-12-24,Kappa,mjv0kp,916.0,391.0,525.0
+0664,John Doe,France,2022-09-10,Beta,j43j1y,5041.0,4541.0,500.0
+0665,Charlie Davis,United Kingdom,2023-12-18,Kappa,2oskrz,7764.0,4134.0,3630.0
+0666,Frank Thomas,United Arab Emirates,2023-07-02,Alpha,zuknry,4389.0,,
+0667,John Doe,USA,2023-08-09,Zeta,hb26jv,1001.0,3267.0,-2266.0
+0668,Bob Brown,United Kingdom,2023-06-28,Delta,02ps4d,8499.0,4850.0,3649.0
+0669,Charlie Davis,USA,2023-02-24,Theta,imxm2s,7379.0,2442.0,4937.0
+0670,Jane Smith,United Arab Emirates,2023-12-06,Alpha,o7zk9v,2681.0,2774.0,-93.0
+0671,Charlie Davis,France,2023-01-30,Gamma,vr4rho,4459.0,252.0,4207.0
+0672,Eve Wilson,United Kingdom,2022-11-30,Iota,5l6vev,3093.0,161.0,2932.0
+0673,Charlie Davis,Brazil,2022-12-31,Beta,gah9bp,8255.0,194.0,8061.0
+0674,Charlie Davis,France,2023-01-22,Epsilon,wjlz1d,8650.0,4312.0,4338.0
+0675,Bob Brown,Brazil,2023-06-17,Beta,9h0zub,2065.0,1642.0,423.0
+0676,Eve Wilson,United Kingdom,2023-09-13,Alpha,idvem4,9365.0,1013.0,8352.0
+0677,Eve Wilson,United Kingdom,2022-03-10,Delta,dkctis,7047.0,3318.0,3729.0
+0678,Alice Johnson,France,2022-09-12,Delta,2spnwr,2743.0,4315.0,-1572.0
+0679,Eve Wilson,United Kingdom,2023-07-03,Theta,sgmoxq,5739.0,4952.0,787.0
+0680,Eve Wilson,India,2022-05-22,Beta,ockvvm,2758.0,2048.0,710.0
+0681,Charlie Davis,United Kingdom,2022-10-02,Theta,i04yqj,4676.0,,
+0682,Alice Johnson,USA,2022-03-13,Gamma,zb0pe2,3547.0,,
+0683,Bob Brown,India,2022-08-29,Eta,kzb5zz,6666.0,164.0,6502.0
+0684,Jane Smith,Brazil,2022-07-22,Zeta,m37ap8,4408.0,1061.0,3347.0
+0685,John Doe,Brazil,2023-11-14,Epsilon,2azw1c,4007.0,1912.0,2095.0
+0686,Alice Johnson,United Arab Emirates,2022-10-03,Iota,xci7xr,662.0,,
+0687,Jane Smith,United Kingdom,2023-11-15,Beta,86nbw1,9116.0,2412.0,6704.0
+0688,Bob Brown,France,2023-04-13,Iota,wuvmol,634.0,1612.0,-978.0
+0689,John Doe,France,2022-12-15,Epsilon,6r2uoh,3011.0,4251.0,-1240.0
+0690,Eve Wilson,United Arab Emirates,2023-12-02,Eta,pkfami,2555.0,913.0,1642.0
+0691,Alice Johnson,United Kingdom,2023-06-10,Theta,yae491,6428.0,,
+0692,Alice Johnson,United Arab Emirates,2022-10-20,Alpha,09rnjk,4765.0,3316.0,1449.0
+0693,Charlie Davis,United Kingdom,2022-10-02,Kappa,wxmk5u,2800.0,2996.0,-196.0
+0694,John Doe,Brazil,2022-08-21,Epsilon,vn3g17,6655.0,4732.0,1923.0
+0695,Eve Wilson,India,2023-09-03,Theta,7pwrj7,4333.0,4230.0,103.0
+0696,Eve Wilson,United Arab Emirates,2022-04-09,Alpha,zyesjm,7429.0,664.0,6765.0
+0697,Bob Brown,USA,2022-04-28,Eta,4kecj2,9886.0,,
+0698,Alice Johnson,Brazil,2023-05-11,Kappa,0xnr2b,1501.0,,
+0699,Eve Wilson,USA,2022-07-26,Kappa,t90hml,2003.0,2265.0,-262.0
+0700,Eve Wilson,France,2023-07-14,Alpha,o2z087,2959.0,2945.0,14.0
+0701,Alice Johnson,Brazil,2023-07-01,Iota,82jqbg,8040.0,364.0,7676.0
+0702,Charlie Davis,USA,2023-10-21,Delta,tduurg,1270.0,410.0,860.0
+0703,Bob Brown,United Kingdom,2022-11-01,Gamma,nynphs,4737.0,1639.0,3098.0
+0704,Eve Wilson,Brazil,2023-01-04,Delta,l6b93c,8093.0,3197.0,4896.0
+0705,Charlie Davis,Brazil,2022-09-17,Theta,4z7cw3,9974.0,,
+0706,Charlie Davis,India,2023-07-06,Epsilon,2vgo4t,7801.0,3882.0,3919.0
+0707,Charlie Davis,USA,2023-07-16,Iota,sbz4sn,4679.0,751.0,3928.0
+0708,John Doe,United Arab Emirates,2023-07-17,Zeta,y37w4m,1805.0,2833.0,-1028.0
+0709,Bob Brown,United Arab Emirates,2022-03-26,Eta,a77m29,691.0,2984.0,-2293.0
+0710,Alice Johnson,United Kingdom,2022-02-16,Eta,l895q6,6340.0,4307.0,2033.0
+0711,Eve Wilson,United Arab Emirates,2023-10-05,Iota,egc4g1,8113.0,77.0,8036.0
+0712,Eve Wilson,France,2023-07-01,Gamma,ilqkb0,4033.0,3276.0,757.0
+0713,John Doe,France,2023-01-18,Theta,pfsmj1,6815.0,3017.0,3798.0
+0714,Frank Thomas,USA,2023-10-03,Eta,xvdgxp,7484.0,2838.0,4646.0
+0715,Charlie Davis,United Kingdom,2022-12-02,Beta,bvu1ns,2212.0,1973.0,239.0
+0716,John Doe,France,2022-06-26,Iota,8bac5n,5781.0,682.0,5099.0
+0717,John Doe,USA,2023-05-05,Kappa,ywrvqz,7282.0,2093.0,5189.0
+0718,Bob Brown,USA,2022-05-17,Iota,jwvtow,4726.0,275.0,4451.0
+0719,John Doe,USA,2022-09-26,Iota,vqr2rz,2790.0,4225.0,-1435.0
+0720,Alice Johnson,United Arab Emirates,2022-11-01,Eta,8v5kkb,8715.0,600.0,8115.0
+0721,Alice Johnson,United Arab Emirates,2023-10-01,Beta,ucn6cb,322.0,,
+0722,Charlie Davis,United Kingdom,2022-12-16,Zeta,0tx0io,3530.0,4039.0,-509.0
+0723,Charlie Davis,France,2022-05-26,Iota,utc6q6,8550.0,2341.0,6209.0
+0724,John Doe,United Kingdom,2023-05-18,Eta,2961nk,5855.0,3271.0,2584.0
+0725,Frank Thomas,France,2023-05-01,Theta,ecs0ga,9878.0,,
+0726,Charlie Davis,France,2022-03-09,Theta,yxixtl,2929.0,2818.0,111.0
+0727,John Doe,United Kingdom,2022-12-20,Epsilon,047sww,3901.0,1357.0,2544.0
+0728,Jane Smith,Brazil,2023-08-05,Delta,0i4wvo,6760.0,288.0,6472.0
+0729,Bob Brown,France,2022-05-23,Delta,t7x843,5678.0,,
+0730,Jane Smith,Brazil,2022-10-31,Epsilon,jx1e14,5489.0,3100.0,2389.0
+0731,Alice Johnson,United Arab Emirates,2023-08-07,Theta,21gvb3,147.0,2386.0,-2239.0
+0732,Charlie Davis,USA,2022-10-20,Delta,citwhl,2601.0,763.0,1838.0
+0733,Jane Smith,United Kingdom,2023-10-01,Kappa,wt3220,9822.0,3671.0,6151.0
+0734,John Doe,United Kingdom,2022-04-12,Zeta,scnnfg,8437.0,4776.0,3661.0
+0735,Eve Wilson,France,2022-08-22,Beta,iyfuvy,7034.0,,
+0736,Jane Smith,Brazil,2022-07-27,Delta,ecfskw,6235.0,4211.0,2024.0
+0737,Charlie Davis,United Kingdom,2022-04-18,Epsilon,l0p7sd,2574.0,3402.0,-828.0
+0738,Alice Johnson,United Kingdom,2023-09-05,Epsilon,akqgiv,4310.0,2021.0,2289.0
+0739,Frank Thomas,France,2022-03-15,Epsilon,s0ckk3,7792.0,566.0,7226.0
+0740,Frank Thomas,Brazil,2023-05-11,Zeta,e9lpla,3823.0,2057.0,1766.0
+0741,John Doe,United Kingdom,2022-11-04,Iota,7a8x6n,9849.0,2459.0,7390.0
+0742,Charlie Davis,United Arab Emirates,2023-01-04,Delta,q7b0hm,7748.0,236.0,7512.0
+0743,Charlie Davis,India,2023-07-20,Iota,gxfhea,6195.0,1419.0,4776.0
+0744,Frank Thomas,Brazil,2023-01-21,Alpha,kp6ii1,3395.0,2527.0,868.0
+0745,Charlie Davis,USA,2023-10-18,Theta,fmdfgm,3053.0,1026.0,2027.0
+0746,Alice Johnson,United Arab Emirates,2023-08-24,Theta,vfryzj,9496.0,4585.0,4911.0
+0747,John Doe,France,2022-08-03,Delta,4u04hm,4788.0,,
+0748,Charlie Davis,Brazil,2023-07-16,Kappa,wh8l1g,3259.0,1903.0,1356.0
+0749,Charlie Davis,India,2022-12-07,Iota,xfp6jo,7583.0,3815.0,3768.0
+0750,Eve Wilson,India,2023-07-24,Delta,9l1ri1,3284.0,1729.0,1555.0
+0751,Eve Wilson,France,2023-06-04,Kappa,z4isou,2148.0,3991.0,-1843.0
+0752,Eve Wilson,India,2023-06-05,Delta,j6cu7i,1650.0,2192.0,-542.0
+0753,Jane Smith,India,2022-09-25,Alpha,ksx0l3,5894.0,92.0,5802.0
+0754,Alice Johnson,United Arab Emirates,2022-06-03,Epsilon,2fot66,6242.0,,
+0755,Jane Smith,United Arab Emirates,2022-05-25,Iota,rlrh76,9189.0,1053.0,8136.0
+0756,Eve Wilson,United Arab Emirates,2022-04-12,Delta,s597vx,8158.0,1975.0,6183.0
+0757,Frank Thomas,France,2023-04-27,Delta,pwdbl5,9544.0,782.0,8762.0
+0758,Bob Brown,India,2022-11-14,Gamma,qliq80,6672.0,2581.0,4091.0
+0759,John Doe,USA,2023-02-20,Kappa,pv17pm,1950.0,1691.0,259.0
+0760,Charlie Davis,United Kingdom,2023-06-13,Delta,c4yhpp,4988.0,2255.0,2733.0
+0761,John Doe,Brazil,2023-06-13,Iota,c0byup,6291.0,2315.0,3976.0
+0762,John Doe,United Kingdom,2023-06-14,Theta,jvziaw,9953.0,3784.0,6169.0
+0763,Eve Wilson,India,2023-09-10,Delta,vhpd7z,5474.0,1242.0,4232.0
+0764,Alice Johnson,Brazil,2023-11-07,Zeta,cwrtxc,7546.0,545.0,7001.0
+0765,Charlie Davis,USA,2022-12-17,Zeta,4th1bc,5646.0,580.0,5066.0
+0766,Frank Thomas,USA,2023-11-24,Kappa,miiyux,1883.0,4239.0,-2356.0
+0767,Eve Wilson,France,2022-09-24,Iota,4puwmn,824.0,4659.0,-3835.0
+0768,Bob Brown,India,2022-10-17,Beta,7crehr,2336.0,3239.0,-903.0
+0769,Charlie Davis,United Kingdom,2022-03-02,Gamma,2kbq9m,5770.0,343.0,5427.0
+0770,Eve Wilson,India,2023-04-14,Theta,k1mjz9,979.0,2210.0,-1231.0
+0771,Alice Johnson,USA,2023-02-19,Eta,9mx2d5,4227.0,2917.0,1310.0
+0772,John Doe,United Arab Emirates,2023-12-15,Beta,01qp64,308.0,4051.0,-3743.0
+0773,Charlie Davis,United Arab Emirates,2022-09-07,Alpha,b6z29k,2291.0,,
+0774,Bob Brown,India,2022-08-30,Beta,wv4x63,1692.0,2106.0,-414.0
+0775,Jane Smith,United Arab Emirates,2023-11-05,Iota,kqp88m,1171.0,4157.0,-2986.0
+0776,John Doe,France,2023-04-16,Zeta,an2j41,3651.0,2666.0,985.0
+0777,Bob Brown,Brazil,2023-09-07,Beta,k785uc,4892.0,4584.0,308.0
+0778,John Doe,United Kingdom,2022-12-10,Gamma,i1srlf,1267.0,913.0,354.0
+0779,Charlie Davis,Brazil,2022-12-02,Theta,h4bxap,683.0,4273.0,-3590.0
+0780,Alice Johnson,France,2023-02-26,Beta,77r350,9291.0,3821.0,5470.0
+0781,Eve Wilson,France,2022-08-06,Epsilon,ysfd03,9283.0,2564.0,6719.0
+0782,Charlie Davis,USA,2022-03-22,Delta,sknxu4,3637.0,2875.0,762.0
+0783,Eve Wilson,United Kingdom,2023-03-06,Eta,mbmtzt,7469.0,1419.0,6050.0
+0784,Jane Smith,France,2022-09-09,Eta,829jqq,5369.0,,
+0785,Charlie Davis,India,2022-10-15,Eta,yogpl2,9193.0,4333.0,4860.0
+0786,Charlie Davis,India,2023-06-05,Iota,pw19h2,4309.0,1274.0,3035.0
+0787,Charlie Davis,United Kingdom,2022-10-13,Eta,0h8sbk,150.0,,
+0788,Frank Thomas,France,2023-07-22,Theta,b513cp,9359.0,2280.0,7079.0
+0789,Jane Smith,USA,2022-10-19,Alpha,2f9z7t,9370.0,939.0,8431.0
+0790,Bob Brown,India,2023-11-26,Gamma,qcx5o4,9125.0,2496.0,6629.0
+0791,Frank Thomas,France,2022-03-29,Theta,wa9xkp,363.0,2170.0,-1807.0
+0792,Bob Brown,France,2022-03-16,Gamma,f9y8y1,7738.0,4107.0,3631.0
+0793,Jane Smith,France,2022-09-26,Theta,lf58zs,7830.0,4035.0,3795.0
+0794,Frank Thomas,France,2022-10-09,Zeta,a4hw11,3765.0,1526.0,2239.0
+0795,Jane Smith,France,2023-04-11,Delta,8kr2p7,7939.0,,
+0796,Bob Brown,Brazil,2023-12-10,Gamma,8yj8q9,8270.0,4704.0,3566.0
+0797,Eve Wilson,United Kingdom,2023-02-10,Alpha,grvf4g,555.0,1474.0,-919.0
+0798,Jane Smith,United Arab Emirates,2022-09-05,Eta,wvlkjq,393.0,2601.0,-2208.0
+0799,Alice Johnson,United Arab Emirates,2023-12-18,Alpha,p8jrkg,6778.0,4841.0,1937.0
+0800,Jane Smith,Brazil,2022-11-26,Beta,v3rhih,9662.0,2033.0,7629.0
+0801,John Doe,India,2022-03-22,Iota,ao1yq9,210.0,3723.0,-3513.0
+0802,Jane Smith,India,2023-05-22,Eta,2m040r,5921.0,2738.0,3183.0
+0803,Charlie Davis,India,2022-08-08,Gamma,ilan6h,8911.0,4709.0,4202.0
+0804,Frank Thomas,France,2022-08-25,Kappa,vmsijc,1766.0,3742.0,-1976.0
+0805,Bob Brown,United Arab Emirates,2023-02-27,Delta,cx4pua,933.0,4689.0,-3756.0
+0806,Frank Thomas,India,2023-05-10,Theta,7stj7n,2981.0,2217.0,764.0
+0807,Frank Thomas,United Kingdom,2022-12-04,Alpha,m0rhod,4587.0,4928.0,-341.0
+0808,Eve Wilson,India,2022-05-25,Eta,47mqgc,1533.0,1570.0,-37.0
+0809,Eve Wilson,France,2023-02-02,Delta,bi36hk,4056.0,2983.0,1073.0
+0810,Jane Smith,India,2022-04-19,Eta,7g1pj6,1414.0,,
+0811,Bob Brown,France,2022-08-19,Iota,trapko,7029.0,166.0,6863.0
+0812,Charlie Davis,United Arab Emirates,2022-09-01,Kappa,j8jzb4,1956.0,590.0,1366.0
+0813,John Doe,USA,2022-06-03,Iota,gvfuxa,569.0,4620.0,-4051.0
+0814,Eve Wilson,USA,2022-05-21,Alpha,ot66p1,608.0,1814.0,-1206.0
+0815,Frank Thomas,Brazil,2022-03-17,Beta,vcdtib,6949.0,2028.0,4921.0
+0816,Charlie Davis,USA,2022-08-25,Iota,8zne0x,3574.0,884.0,2690.0
+0817,Bob Brown,United Arab Emirates,2022-04-16,Zeta,rdly4b,8859.0,1980.0,6879.0
+0818,Eve Wilson,United Arab Emirates,2022-05-27,Beta,qppzux,2592.0,561.0,2031.0
+0819,Eve Wilson,United Kingdom,2023-02-21,Delta,k57zt8,6044.0,2194.0,3850.0
+0820,Frank Thomas,United Kingdom,2022-09-17,Kappa,6og7ti,9905.0,2295.0,7610.0
+0821,Jane Smith,France,2022-09-12,Gamma,og0hhg,7765.0,260.0,7505.0
+0822,Jane Smith,France,2022-11-21,Theta,d92nv2,6124.0,658.0,5466.0
+0823,Eve Wilson,Brazil,2023-04-02,Alpha,zuegy6,6007.0,1842.0,4165.0
+0824,John Doe,France,2022-10-15,Kappa,7gcdjz,541.0,1851.0,-1310.0
+0825,Eve Wilson,France,2023-05-06,Zeta,xt7jik,3841.0,1499.0,2342.0
+0826,Frank Thomas,United Kingdom,2023-05-14,Gamma,ujbree,3634.0,657.0,2977.0
+0827,Alice Johnson,India,2023-11-26,Beta,agdwa8,3379.0,633.0,2746.0
+0828,Frank Thomas,Brazil,2023-06-08,Theta,9i83kq,7011.0,1501.0,5510.0
+0829,Jane Smith,India,2022-08-17,Kappa,ljhbah,6498.0,4701.0,1797.0
+0830,Bob Brown,United Kingdom,2022-07-24,Delta,pgsqll,9545.0,3475.0,6070.0
+0831,Alice Johnson,France,2023-05-27,Iota,c3ob77,5060.0,,
+0832,John Doe,France,2023-10-04,Gamma,yjx9ut,8683.0,3809.0,4874.0
+0833,Alice Johnson,United Arab Emirates,2023-10-12,Beta,smzcnz,2170.0,4297.0,-2127.0
+0834,Frank Thomas,USA,2023-03-08,Theta,ki9jp2,3237.0,74.0,3163.0
+0835,Frank Thomas,Brazil,2023-05-10,Theta,qhyoz6,2817.0,3852.0,-1035.0
+0836,Jane Smith,France,2023-11-12,Zeta,1ir0xj,9974.0,2729.0,7245.0
+0837,Alice Johnson,United Arab Emirates,2023-07-12,Theta,w0pu2a,7776.0,3733.0,4043.0
+0838,Alice Johnson,United Arab Emirates,2022-06-12,Beta,ccybwi,6750.0,2993.0,3757.0
+0839,Alice Johnson,United Arab Emirates,2023-05-29,Alpha,jok2ll,4266.0,4221.0,45.0
+0840,Eve Wilson,India,2022-05-15,Iota,44vo3g,9880.0,713.0,9167.0
+0841,Bob Brown,United Arab Emirates,2023-10-15,Eta,raeoa8,6225.0,4731.0,1494.0
+0842,John Doe,France,2022-11-02,Beta,f0yhy7,2124.0,4623.0,-2499.0
+0843,Charlie Davis,United Arab Emirates,2023-04-27,Delta,uoji7v,7578.0,2368.0,5210.0
+0844,Charlie Davis,United Arab Emirates,2022-01-01,Epsilon,jxe54y,9439.0,1274.0,8165.0
+0845,Eve Wilson,Brazil,2023-12-21,Beta,j0us89,5624.0,2954.0,2670.0
+0846,Bob Brown,USA,2022-10-02,Eta,etkhqq,261.0,,
+0847,Jane Smith,United Kingdom,2023-06-29,Theta,nm2dn8,7347.0,1212.0,6135.0
+0848,Bob Brown,United Arab Emirates,2023-09-24,Theta,ctwddq,2532.0,3280.0,-748.0
+0849,Frank Thomas,USA,2023-05-30,Zeta,75tlsa,765.0,1700.0,-935.0
+0850,Frank Thomas,Brazil,2022-01-03,Delta,z1p96g,8087.0,4169.0,3918.0
+0851,Jane Smith,France,2023-02-10,Zeta,nq4xu2,2669.0,1140.0,1529.0
+0852,Charlie Davis,Brazil,2022-11-07,Gamma,ow0i5k,1117.0,936.0,181.0
+0853,Eve Wilson,Brazil,2022-02-06,Zeta,fqxv7x,902.0,3537.0,-2635.0
+0854,Frank Thomas,USA,2022-07-26,Alpha,z37c8j,8120.0,408.0,7712.0
+0855,Eve Wilson,USA,2023-08-30,Theta,cy1kzq,2486.0,3700.0,-1214.0
+0856,Eve Wilson,United Arab Emirates,2023-05-14,Alpha,5w812l,4714.0,,
+0857,John Doe,United Arab Emirates,2023-08-01,Epsilon,zxxruv,3839.0,957.0,2882.0
+0858,John Doe,France,2023-06-03,Beta,9xmx08,1458.0,4074.0,-2616.0
+0859,Eve Wilson,Brazil,2022-08-06,Zeta,r7ife9,7380.0,1788.0,5592.0
+0860,Charlie Davis,Brazil,2022-02-11,Theta,ldpibj,7600.0,3087.0,4513.0
+0861,Eve Wilson,Brazil,2022-09-25,Iota,d7ujpa,8436.0,3318.0,5118.0
+0862,Jane Smith,India,2023-02-06,Theta,1sg47f,2577.0,2455.0,122.0
+0863,Alice Johnson,USA,2022-03-12,Theta,11qb6d,4096.0,4606.0,-510.0
+0864,Jane Smith,USA,2022-07-07,Alpha,p069wm,6945.0,,
+0865,John Doe,Brazil,2023-03-08,Theta,ks36jg,7935.0,3480.0,4455.0
+0866,Eve Wilson,France,2023-01-10,Eta,l84c8s,1485.0,109.0,1376.0
+0867,Jane Smith,United Arab Emirates,2023-07-26,Alpha,zilp17,8007.0,1065.0,6942.0
+0868,Charlie Davis,United Arab Emirates,2023-04-08,Kappa,xv1d68,2883.0,1901.0,982.0
+0869,Bob Brown,Brazil,2023-10-02,Beta,nq810p,4773.0,2245.0,2528.0
+0870,Charlie Davis,France,2022-01-10,Zeta,4gdawy,5006.0,1095.0,3911.0
+0871,John Doe,Brazil,2023-11-17,Beta,2d75y6,1138.0,4285.0,-3147.0
+0872,Charlie Davis,Brazil,2023-07-07,Iota,e9e34o,8758.0,1188.0,7570.0
+0873,Charlie Davis,USA,2022-06-19,Kappa,p1rz3b,871.0,,
+0874,John Doe,USA,2022-12-12,Beta,biu0jk,3769.0,3108.0,661.0
+0875,Frank Thomas,India,2023-08-30,Zeta,cexvx9,5039.0,3431.0,1608.0
+0876,Bob Brown,United Arab Emirates,2022-03-22,Kappa,0mlfat,2994.0,2456.0,538.0
+0877,Bob Brown,France,2023-12-29,Alpha,0kyybx,122.0,4241.0,-4119.0
+0878,Frank Thomas,United Kingdom,2023-02-03,Zeta,isaf64,2435.0,620.0,1815.0
+0879,Alice Johnson,France,2022-06-15,Zeta,pjzrcy,9472.0,3924.0,5548.0
+0880,Jane Smith,USA,2022-01-15,Zeta,gsr3t7,1429.0,374.0,1055.0
+0881,Eve Wilson,United Kingdom,2023-11-21,Gamma,6j080l,787.0,,
+0882,Alice Johnson,USA,2023-07-05,Delta,878y0p,4013.0,903.0,3110.0
+0883,John Doe,Brazil,2022-01-20,Beta,6jum6f,9417.0,1569.0,7848.0
+0884,Frank Thomas,United Kingdom,2022-01-20,Epsilon,93kusr,8876.0,4823.0,4053.0
+0885,John Doe,USA,2023-11-02,Delta,mvospj,7481.0,3562.0,3919.0
+0886,John Doe,Brazil,2023-01-19,Kappa,ah21me,9748.0,4864.0,4884.0
+0887,Frank Thomas,India,2023-03-03,Gamma,a9tyvb,7210.0,4831.0,2379.0
+0888,Frank Thomas,Brazil,2023-02-07,Theta,5qyrxg,7564.0,,
+0889,Eve Wilson,United Arab Emirates,2023-09-18,Gamma,pih4fx,4651.0,2752.0,1899.0
+0890,Bob Brown,France,2022-04-15,Iota,zznkyp,5694.0,3173.0,2521.0
+0891,Charlie Davis,France,2022-12-30,Delta,nket2e,733.0,1832.0,-1099.0
+0892,Jane Smith,India,2022-06-12,Epsilon,yxewe0,825.0,2632.0,-1807.0
+0893,Alice Johnson,France,2022-03-11,Kappa,4wi0az,7641.0,437.0,7204.0
+0894,Jane Smith,United Arab Emirates,2023-01-30,Delta,17fqqs,5724.0,3019.0,2705.0
+0895,Charlie Davis,France,2023-12-26,Epsilon,h07e2x,4469.0,2258.0,2211.0
+0896,Eve Wilson,Brazil,2022-08-04,Gamma,ekj4uv,1129.0,2786.0,-1657.0
+0897,Bob Brown,France,2023-06-16,Theta,qaiune,6373.0,1355.0,5018.0
+0898,Bob Brown,United Arab Emirates,2022-12-14,Delta,wnry0m,8326.0,2952.0,5374.0
+0899,Jane Smith,United Arab Emirates,2022-08-29,Zeta,5favzx,1204.0,329.0,875.0
+0900,Charlie Davis,Brazil,2023-08-02,Gamma,ma84ky,9661.0,1177.0,8484.0
+0901,Bob Brown,United Kingdom,2022-02-07,Alpha,0u6jzz,2357.0,663.0,1694.0
+0902,Alice Johnson,United Arab Emirates,2023-12-14,Iota,xngl8o,646.0,610.0,36.0
+0903,Bob Brown,United Kingdom,2023-07-27,Eta,c9woa2,9800.0,3226.0,6574.0
+0904,Frank Thomas,Brazil,2022-01-25,Delta,nsnj9n,7060.0,,
+0905,Frank Thomas,France,2022-02-13,Iota,7a37cu,1351.0,4771.0,-3420.0
+0906,Alice Johnson,United Arab Emirates,2023-09-14,Kappa,5zbqi6,9856.0,130.0,9726.0
+0907,Charlie Davis,USA,2022-03-17,Iota,ubme8p,5182.0,1994.0,3188.0
+0908,Bob Brown,Brazil,2022-12-18,Zeta,638b0q,4659.0,3224.0,1435.0
+0909,Frank Thomas,United Kingdom,2023-08-01,Gamma,rmptgt,2032.0,3468.0,-1436.0
+0910,Bob Brown,France,2023-06-07,Kappa,ee7zd3,6497.0,4897.0,1600.0
+0911,Charlie Davis,France,2023-09-13,Theta,b2b5o1,993.0,4127.0,-3134.0
+0912,Charlie Davis,Brazil,2022-08-15,Delta,k2wxpu,6245.0,979.0,5266.0
+0913,Charlie Davis,United Kingdom,2023-05-03,Alpha,14a2xf,8438.0,4570.0,3868.0
+0914,Eve Wilson,Brazil,2022-07-03,Iota,9m0cdu,546.0,1496.0,-950.0
+0915,Frank Thomas,United Kingdom,2023-05-12,Theta,c5nqyn,3939.0,3387.0,552.0
+0916,Alice Johnson,United Arab Emirates,2023-06-25,Iota,5ptlmb,9548.0,,
+0917,Charlie Davis,Brazil,2023-04-26,Iota,s1t4lk,8166.0,3491.0,4675.0
+0918,Jane Smith,United Kingdom,2022-02-20,Delta,sbkcfr,1182.0,2734.0,-1552.0
+0919,Frank Thomas,Brazil,2022-06-28,Zeta,6vdt17,2877.0,3323.0,-446.0
+0920,Eve Wilson,Brazil,2023-05-26,Gamma,464job,8162.0,1281.0,6881.0
+0921,Jane Smith,USA,2022-05-14,Epsilon,i3ktlb,8908.0,,
+0922,Frank Thomas,France,2022-12-11,Gamma,abc8gp,7943.0,1253.0,6690.0
+0923,Charlie Davis,United Kingdom,2022-06-16,Theta,p1q9c5,7244.0,689.0,6555.0
+0924,Charlie Davis,United Arab Emirates,2022-11-07,Theta,spl52v,1906.0,1410.0,496.0
+0925,Frank Thomas,Brazil,2023-12-16,Iota,n10xju,4197.0,2828.0,1369.0
+0926,Bob Brown,India,2022-04-20,Theta,4bn6i5,113.0,3464.0,-3351.0
+0927,Frank Thomas,United Kingdom,2023-10-12,Delta,7x1vy1,5064.0,1357.0,3707.0
+0928,Eve Wilson,France,2022-09-29,Delta,51md6h,3714.0,4657.0,-943.0
+0929,Jane Smith,United Arab Emirates,2022-05-02,Zeta,y127ef,2639.0,3019.0,-380.0
+0930,John Doe,USA,2022-06-21,Delta,jkxqo0,7281.0,3443.0,3838.0
+0931,Frank Thomas,India,2023-03-06,Zeta,bxkurm,2111.0,3321.0,-1210.0
+0932,Alice Johnson,United Arab Emirates,2023-12-21,Eta,w49aju,3228.0,3806.0,-578.0
+0933,Jane Smith,India,2023-11-02,Gamma,g5fxoo,9141.0,,
+0934,Charlie Davis,United Arab Emirates,2023-03-13,Beta,ixotqq,5978.0,1098.0,4880.0
+0935,John Doe,United Arab Emirates,2023-07-17,Zeta,55lqg8,1546.0,2619.0,-1073.0
+0936,Alice Johnson,India,2023-12-17,Theta,9ashfn,1671.0,2895.0,-1224.0
+0937,Alice Johnson,India,2023-08-19,Zeta,pkpte3,3896.0,2673.0,1223.0
+0938,Charlie Davis,France,2023-11-11,Beta,ec44x0,9630.0,1877.0,7753.0
+0939,Alice Johnson,India,2023-03-30,Theta,5y9wan,9362.0,308.0,9054.0
+0940,Jane Smith,India,2022-11-09,Delta,smjols,661.0,4590.0,-3929.0
+0941,Charlie Davis,India,2022-04-29,Theta,yti5w7,8038.0,1053.0,6985.0
+0942,Eve Wilson,France,2022-12-01,Zeta,blb5ra,3828.0,614.0,3214.0
+0943,Alice Johnson,Brazil,2023-07-30,Beta,omc6uf,1255.0,4600.0,-3345.0
+0944,Frank Thomas,United Arab Emirates,2022-06-11,Zeta,t03rzf,6373.0,2821.0,3552.0
+0945,Jane Smith,United Arab Emirates,2022-06-06,Delta,uv51lg,8656.0,3701.0,4955.0
+0946,Charlie Davis,United Arab Emirates,2022-09-26,Iota,fb22y0,7640.0,2147.0,5493.0
+0947,Eve Wilson,India,2023-08-14,Zeta,ja1mqi,7735.0,52.0,7683.0
+0948,Bob Brown,Brazil,2022-01-23,Gamma,uf2zeo,8463.0,906.0,7557.0
+0949,Alice Johnson,United Arab Emirates,2023-01-08,Gamma,jwlw7z,3797.0,809.0,2988.0
+0950,John Doe,France,2022-11-15,Iota,nbe0lv,6787.0,3717.0,3070.0
+0951,Charlie Davis,India,2022-01-30,Gamma,87or9k,3552.0,772.0,2780.0
+0952,John Doe,United Kingdom,2022-09-09,Epsilon,fu5q6x,3402.0,1559.0,1843.0
+0953,Eve Wilson,France,2023-10-24,Zeta,oxas1n,1280.0,3634.0,-2354.0
+0954,Eve Wilson,USA,2023-11-29,Iota,f6t7cj,4158.0,2168.0,1990.0
+0955,Charlie Davis,United Kingdom,2022-04-17,Epsilon,94p7ip,7729.0,,
+0956,John Doe,Brazil,2023-01-22,Alpha,xfhmjs,2764.0,4875.0,-2111.0
+0957,Eve Wilson,France,2022-06-05,Alpha,z0jc2w,7273.0,4218.0,3055.0
+0958,Eve Wilson,India,2022-01-11,Gamma,1z5vdt,5669.0,1288.0,4381.0
+0959,Eve Wilson,India,2022-01-24,Eta,z6jlui,2246.0,,
+0960,Jane Smith,United Arab Emirates,2022-07-12,Iota,4je3ne,6444.0,489.0,5955.0
+0961,Frank Thomas,France,2022-04-28,Gamma,ykklqn,704.0,57.0,647.0
+0962,Eve Wilson,France,2023-11-20,Zeta,jin8h1,2681.0,4661.0,-1980.0
+0963,Frank Thomas,United Arab Emirates,2023-07-27,Eta,mrwvfq,8505.0,2893.0,5612.0
+0964,Eve Wilson,USA,2022-01-31,Kappa,h7gybo,8012.0,389.0,7623.0
+0965,John Doe,Brazil,2023-04-17,Beta,phq608,4399.0,2537.0,1862.0
+0966,Jane Smith,United Kingdom,2022-09-20,Kappa,fe9igs,5547.0,705.0,4842.0
+0967,John Doe,France,2023-02-19,Delta,47irq2,8361.0,3754.0,4607.0
+0968,Alice Johnson,USA,2023-10-13,Iota,z6dbmu,9003.0,439.0,8564.0
+0969,Frank Thomas,Brazil,2022-01-27,Theta,jqvmd8,2924.0,2312.0,612.0
+0970,Jane Smith,United Kingdom,2022-04-09,Eta,ry02vw,1976.0,4401.0,-2425.0
+0971,Frank Thomas,India,2022-11-27,Delta,zzwgw9,6629.0,,
+0972,Alice Johnson,France,2023-03-24,Kappa,5z8eir,2739.0,460.0,2279.0
+0973,John Doe,India,2023-09-11,Theta,ll3fbk,890.0,,
+0974,Eve Wilson,United Kingdom,2022-06-27,Zeta,rjri2k,2390.0,4180.0,-1790.0
+0975,Charlie Davis,India,2023-02-18,Beta,i68vkc,3193.0,913.0,2280.0
+0976,Frank Thomas,United Kingdom,2022-02-04,Gamma,rcza8t,2980.0,4213.0,-1233.0
+0977,Jane Smith,India,2023-12-08,Theta,l2lqx0,3495.0,1270.0,2225.0
+0978,Bob Brown,United Arab Emirates,2023-01-03,Beta,lzon8h,5450.0,4167.0,1283.0
+0979,Eve Wilson,Brazil,2023-09-03,Alpha,5d64xa,4490.0,3967.0,523.0
+0980,Charlie Davis,Brazil,2023-08-06,Epsilon,ftwfs5,8591.0,3599.0,4992.0
+0981,Alice Johnson,United Arab Emirates,2022-09-02,Epsilon,obm84g,7309.0,3585.0,3724.0
+0982,Bob Brown,India,2023-12-29,Delta,hhe23u,3622.0,4756.0,-1134.0
+0983,Charlie Davis,United Kingdom,2023-01-05,Kappa,0fun13,9673.0,649.0,9024.0
+0984,Jane Smith,France,2022-07-30,Epsilon,rdtxkx,2432.0,1585.0,847.0
+0985,Jane Smith,France,2023-10-11,Delta,reuyel,6637.0,3758.0,2879.0
+0986,John Doe,India,2023-10-15,Theta,byokbi,6747.0,538.0,6209.0
+0987,Charlie Davis,Brazil,2022-01-11,Beta,sv5be5,6015.0,2056.0,3959.0
+0988,John Doe,United Arab Emirates,2023-05-29,Theta,2vn2dt,198.0,1692.0,-1494.0
+0989,Alice Johnson,Brazil,2023-02-14,Eta,wf7ufi,9884.0,,
+0990,Charlie Davis,USA,2022-05-16,Eta,uc1pry,6098.0,4788.0,1310.0
+0991,Alice Johnson,United Arab Emirates,2023-10-31,Alpha,pimn6i,3137.0,,
+0992,Charlie Davis,USA,2023-04-07,Gamma,im4gvx,9089.0,4713.0,4376.0
+0993,John Doe,United Arab Emirates,2023-01-03,Epsilon,1dma5v,3134.0,620.0,2514.0
+0994,Charlie Davis,Brazil,2023-10-07,Epsilon,x02sy3,8764.0,,
+0995,John Doe,France,2023-11-06,Iota,z687wa,8097.0,2171.0,5926.0
+0996,Jane Smith,United Kingdom,2022-12-27,Delta,oy3xco,674.0,3553.0,-2879.0
+0997,Jane Smith,France,2023-09-07,Eta,ckri55,8696.0,4632.0,4064.0
+0998,Alice Johnson,United Kingdom,2023-03-23,Eta,06c2fx,7072.0,2004.0,5068.0
+0999,Charlie Davis,United Kingdom,2022-09-28,Gamma,ebb3ty,7570.0,3773.0,3797.0
+1000,Charlie Davis,France,2023-06-29,Theta,dek6mt,492.0,1155.0,-663.0
