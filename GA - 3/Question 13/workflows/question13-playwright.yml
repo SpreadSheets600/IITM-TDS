@@ -1,0 +1,72 @@
+name: Question 13 - Playwright Table Sum
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/question13-playwright.yml"
+      - "Question 13/**"
+
+jobs:
+  table-sum:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Locate Question 13 directory
+        shell: bash
+        run: |
+          set -euo pipefail
+          CANDIDATES=("Question 13" "Question13" "question13" "question-13" "q13")
+          for dir in "${CANDIDATES[@]}"; do
+            if [[ -f "$dir/sum_tables.js" ]]; then
+              echo "Q13_DIR=$dir" >> "$GITHUB_ENV"
+              echo "Using directory: $dir"
+              exit 0
+            fi
+          done
+
+          found="$(find . -maxdepth 4 -type f -name 'sum_tables.js' | head -n 1 || true)"
+          if [[ -n "$found" ]]; then
+            dir="$(dirname "$found" | sed 's#^\./##')"
+            echo "Q13_DIR=$dir" >> "$GITHUB_ENV"
+            echo "Using discovered directory: $dir"
+            exit 0
+          fi
+
+          echo "Could not find sum_tables.js in repository."
+          find . -maxdepth 4 -type d | sort
+          exit 1
+
+      - name: Install dependencies
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ -f "$Q13_DIR/package-lock.json" ]]; then
+            npm ci --prefix "$Q13_DIR"
+          else
+            npm install --prefix "$Q13_DIR"
+          fi
+
+      - name: Install Playwright Chromium
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd "$Q13_DIR"
+          npx playwright install --with-deps chromium
+
+      - name: Run scraper for 24f2008474@ds.study.iitm.ac.in
+        shell: bash
+        run: |
+          set -euo pipefail
+          node "$Q13_DIR/sum_tables.js"
+        env:
+          # https://your-domain/path?seed={seed}
+          SEED_URL_TEMPLATE: ${{ secrets.SEED_URL_TEMPLATE }}

@@ -1,0 +1,12 @@
+{
+  "name": "question-13-playwright-sum",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Playwright scraper for summing all numeric values across table cells for seeds 70-79.",
+  "scripts": {
+    "sum": "node sum_tables.js"
+  },
+  "devDependencies": {
+    "playwright": "^1.52.0"
+  }
+}
