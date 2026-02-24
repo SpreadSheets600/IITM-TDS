@@ -1,0 +1,40 @@
+name: DevSync Daily Repository Update
+
+on:
+  schedule:
+    - cron: "17 5 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  daily-commit:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup git identity
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: DevSync marker 24f2008474@ds.study.iitm.ac.in
+        run: echo "Required step name with IITM email present"
+
+      - name: Create daily commit artifact
+        run: |
+          mkdir -p .github/daily-updates
+          {
+            echo "run_id=${GITHUB_RUN_ID}"
+            echo "run_number=${GITHUB_RUN_NUMBER}"
+            echo "commit_time_utc=$(date -u +'%Y-%m-%dT%H:%M:%SZ')"
+          } > .github/daily-updates/latest-run.txt
+
+      - name: Commit and push changes
+        run: |
+          git add .github/daily-updates/latest-run.txt
+          git commit -m "chore: automated daily update (${GITHUB_RUN_NUMBER})"
+          git push
