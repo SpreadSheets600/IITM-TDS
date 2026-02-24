@@ -1,0 +1,2 @@
+openai>=1.54.0
+jsonschema>=4.23.0
