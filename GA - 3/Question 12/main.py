@@ -1,118 +1,116 @@
-import json
-import re
-from collections import OrderedDict
-
-from fastapi import FastAPI, HTTPException, Query
+from fastapi import FastAPI, File, UploadFile, Header, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+import openai
+from pydantic import BaseModel
 
-app = FastAPI(
-    title="TechNova Function Dispatcher",
-    version="1.0.0",
-)
+app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
-    allow_methods=["GET", "OPTIONS"],
-    allow_headers=["*"],
+    allow_origins=["*"],  # Allow all origins (for development only)
     allow_credentials=True,
+    allow_methods=["*"],  # Allow all HTTP methods
+    allow_headers=["*"],  # Allow all headers
+    expose_headers=["*"],
 )
 
-ARG_ORDER = {
-    "get_ticket_status": ["ticket_id"],
-    "schedule_meeting": ["date", "time", "meeting_room"],
-    "get_expense_balance": ["employee_id"],
-    "calculate_performance_bonus": ["employee_id", "current_year"],
-    "report_office_issue": ["issue_code", "department"],
-}
+client = openai.OpenAI(
+    api_key="eyJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6IjI0ZjIwMDY2NjFAZHMuc3R1ZHkuaWl0bS5hYy5pbiJ9.KQy4eine18YX3G45hL7Mi1WZY2Y6vyzTomC99DUILjk",  # ← put your real token here
+    base_url="https://aipipe.org/openai/v1",
+)
 
 
-def ordered_payload(function_name: str, args: dict) -> dict:
-    ordered_args = OrderedDict()
-    for key in ARG_ORDER[function_name]:
-        ordered_args[key] = args[key]
-    return {
-        "name": function_name,
-        "arguments": json.dumps(ordered_args, separators=(",", ":")),
-    }
+class QueryRequest(BaseModel):
+    query: str
 
 
-def parse_query(q: str) -> dict | None:
-    text = q.strip()
-
-    m = re.search(r"status of ticket\s+(\d+)", text, flags=re.I)
-    if m:
-        return ordered_payload("get_ticket_status", {"ticket_id": int(m.group(1))})
-
-    m = re.search(
-        r"schedule a meeting on\s+(\d{4}-\d{2}-\d{2})\s+at\s+(\d{2}:\d{2})\s+in\s+(.+?)[\.\s]*$",
-        text,
-        flags=re.I,
-    )
-    if m:
-        return ordered_payload(
-            "schedule_meeting",
-            {
-                "date": m.group(1),
-                "time": m.group(2),
-                "meeting_room": m.group(3).strip(),
+functions = [
+    {
+        "name": "get_ticket_status",
+        "description": "Get the status of an IT support ticket",
+        "parameters": {
+            "type": "object",
+            "properties": {"ticket_id": {"type": "integer"}},
+            "required": ["ticket_id"],
+        },
+    },
+    {
+        "name": "schedule_meeting",
+        "description": "Schedule a meeting",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "date": {"type": "string"},
+                "time": {"type": "string"},
+                "meeting_room": {"type": "string"},
             },
-        )
-
-    m = re.search(r"expense balance for employee\s+(\d+)", text, flags=re.I)
-    if m:
-        return ordered_payload(
-            "get_expense_balance", {"employee_id": int(m.group(1))}
-        )
-
-    m = re.search(
-        r"performance bonus for employee\s+(\d+)\s+for\s+(\d{4})",
-        text,
-        flags=re.I,
-    )
-    if m:
-        return ordered_payload(
-            "calculate_performance_bonus",
-            {"employee_id": int(m.group(1)), "current_year": int(m.group(2))},
-        )
-
-    m = re.search(
-        r"report office issue\s+(\d+)\s+for\s+(?:the\s+)?(.+?)\s+department[\.\s]*$",
-        text,
-        flags=re.I,
-    )
-    if m:
-        return ordered_payload(
-            "report_office_issue",
-            {"issue_code": int(m.group(1)), "department": m.group(2).strip()},
-        )
-
-    m = re.search(
-        r"report office issue\s+(\d+)\s+for\s+(.+?)[\.\s]*$", text, flags=re.I
-    )
-    if m:
-        return ordered_payload(
-            "report_office_issue",
-            {"issue_code": int(m.group(1)), "department": m.group(2).strip()},
-        )
-
-    return None
+            "required": ["date", "time", "meeting_room"],
+        },
+    },
+    {
+        "name": "get_expense_balance",
+        "description": "Get employee expense balance",
+        "parameters": {
+            "type": "object",
+            "properties": {"employee_id": {"type": "integer"}},
+            "required": ["employee_id"],
+        },
+    },
+    {
+        "name": "calculate_performance_bonus",
+        "description": "Calculate performance bonus",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "employee_id": {"type": "integer"},
+                "current_year": {"type": "integer"},
+            },
+            "required": ["employee_id", "current_year"],
+        },
+    },
+    {
+        "name": "report_office_issue",
+        "description": "Report an office issue",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "issue_code": {"type": "integer"},
+                "department": {"type": "string"},
+            },
+            "required": ["issue_code", "department"],
+        },
+    },
+]
 
 
 @app.get("/execute")
-async def execute(q: str = Query(...)):
-    parsed = parse_query(q)
-    if parsed is None:
-        raise HTTPException(status_code=400, detail="Unsupported query format")
-    return parsed
+async def execute_query(q: str):
 
+    response = client.chat.completions.create(
+        model="gpt-4o-mini",
+        messages=[
+            {
+                "role": "system",
+                "content": "You are an internal routing assistant. Choose the correct function and extract parameters.",
+            },
+            {"role": "user", "content": q},
+        ],
+        functions=functions,
+        function_call="auto",
+    )
 
-@app.get("/health")
-def health() -> dict:
-    return {"status": "ok"}
+    message = response.choices[0].message
+
+    if message.function_call:
+        return {
+            "name": message.function_call.name,
+            "arguments": message.function_call.arguments,
+        }
+
+    return {"error": "No function matched"}
 
 
 if __name__ == "__main__":
     import uvicorn
 
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    uvicorn.run(app, host="0.0.0.0", port=8003)

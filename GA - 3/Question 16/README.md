@@ -1,33 +1,29 @@
-# Question 16 - IMDb Titles with Rating 5 to 7
+# Question 16 - IMDb Titles (Rating 5 to 7)
 
-This solution fetches up to the first 25 movie titles from IMDb's advanced title search backend and outputs JSON with:
+This script extracts up to the first 25 titles from IMDb search with rating range `5..7` and prints JSON in this exact shape:
 
-- `id`
-- `title`
-- `year`
-- `rating`
+- `id` (e.g. `tt1234567`)
+- `title` (numbered, e.g. `1. Movie Name`)
+- `year` (keeps IMDb style, including ongoing series format like `2026– `)
+- `rating` (string with one decimal place, e.g. `6.3`)
 
-## Files
+## Strategy
 
-- `main.py` - Fetches IMDb data and prints JSON.
+1. Try IMDb GraphQL (`advancedTitleSearch`) for stable fields.
+2. If GraphQL fails, use regex-based scraping on `https://www.imdb.com/search/title/?user_rating=5,7&count=25`.
+
+This avoids brittle DOM selector failures such as:
+`querySelector(...) is null`.
 
 ## Run
 
 ```bash
 cd "Question 16"
-uv run main.py
-```
-
-If `uv` is not available:
-
-```bash
 python3 main.py
 ```
 
-## Output format
+or
 
-```json
-[
-  { "id": "tt1234567", "title": "Movie", "year": "2024", "rating": "6.1" }
-]
+```bash
+uv run main.py
 ```
