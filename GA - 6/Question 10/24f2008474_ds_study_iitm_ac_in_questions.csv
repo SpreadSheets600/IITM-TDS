@@ -1,0 +1,41 @@
+question,is_correct
+"Explain how federated learning preserves data privacy.",0
+"Describe the MapReduce programming model.",0
+"Explain the concept of eventual consistency in distributed systems.",0
+"What is the purpose of a foreign key constraint?",0
+"What is the difference between accuracy and F1 score?",1
+"What is memoisation and when should you use it?",1
+"Describe the difference between precision and recall.",1
+"Explain what a race condition is and how it arises.",1
+"How does a lock-free data structure avoid the need for mutexes?",0
+"What is the bias-variance tradeoff in statistical modelling?",1
+"What is the difference between eager and lazy evaluation?",1
+"What is the purpose of a validation set in machine learning?",1
+"Verify the following statement: the treaty of versailles was signed in nineteen nineteen ending the first world war.",1
+"How does transformer architecture differ from recurrent neural networks?",1
+"Verify the following statement: the first programmable electronic computer was eniac completed in nineteen forty five.",1
+"According to recent sources, a hash function maps data of arbitrary size to a fixed size digest deterministically. Is this statement correct?",1
+"According to recent sources, mount everest is the highest mountain above sea level at eight thousand eight hundred forty nine metres. Is this statement correct?",1
+"How does Monte Carlo sampling approximate intractable distributions?",1
+"What is the difference between horizontal and vertical scaling?",1
+"Explain the concept of overfitting and how to detect it.",1
+"Explain the difference between optimistic and pessimistic concurrency control.",0
+"Verify the following statement: bernoullis principle relates fluid speed to pressure in incompressible laminar flow.",1
+"What is the purpose of an index in a relational database?",1
+"How does the CAP theorem constrain distributed database design?",1
+"What is the time complexity of quicksort in the average case?",1
+"What is the halting problem and why is it important in computer science?",0
+"How does gradient clipping help training deep neural networks?",1
+"What is the purpose of normalisation in relational databases?",1
+"According to recent sources, the boiling point of ethanol is seventy eight point four degrees celsius. Is this statement correct?",0
+"How does public key cryptography enable secure communication?",0
+"Explain the concept of idempotency in HTTP methods.",1
+"What is the Liskov substitution principle?",1
+"What is the difference between synchronous and asynchronous I/O?",1
+"How does the Floyd-Warshall algorithm compute all-pairs shortest paths?",1
+"What is a kernel trick and why is it used in SVMs?",1
+"Explain what cross-validation is used for.",1
+"Explain how skip-gram word embeddings are trained.",1
+"What is the difference between a process and a thread?",1
+"The following was found online: ""the average distance from the earth to the moon is three hundred eighty four thousand kilometres"". Assess its accuracy.",1
+"How does the attention mechanism help models handle long-range dependencies?",1
