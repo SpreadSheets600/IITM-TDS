@@ -1,0 +1,7 @@
+{
+  "prompt": "Large-format editorial photography, viewed from a low eye level inside an immense dark railway waiting hall that stretches almost beyond sight. The entire hall is filled not with passengers but with tightly spaced worn suitcases, rolled blankets, children's shoes, dented cooking pots, and small family bundles arranged in long receding rows, as if millions of interrupted lives have been set down and never reclaimed. Near the foreground, one small faded red child's sweater hangs over a battered suitcase, creating a human focal point without showing any face. The scale must feel overwhelming: the objects become denser, smaller, and softer with distance until they dissolve into atmospheric haze. No people visible anywhere. Mood: uprooted, suspended, exhausted, humane. Color palette: cold slate blue, concrete grey, dusty brown, and one muted red accent. Composition: strong central perspective, vast negative ceiling space, cinematic natural light through high windows, magazine-cover quality, photorealistic, deliberate and haunting. Absolutely no text, no labels, no letters, no numbers, no flags, no maps, no charts, no axes, no infographic style.",
+  "model": "DALL-E 3 via OpenAI (ChatGPT Plus)",
+  "dataset_name": "UNHCR Global Trends 2024",
+  "dataset_url": "https://www.unhcr.org/what-we-do/reports-and-publications/global-trends",
+  "insight": "UNHCR reported that 123.2 million people worldwide were forcibly displaced at the end of 2024."
+}
