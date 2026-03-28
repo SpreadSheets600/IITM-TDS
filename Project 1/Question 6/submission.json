@@ -1,0 +1,6 @@
+{
+  "prompt": "Close-up editorial fashion photograph inside a high-end tailor's atelier. In the center, an extraordinarily bespoke suit jacket hangs on a tailor's dummy, covered with an excessive number of hand-stitched darts, tucks, seam adjustments, pinned folds, and obsessive contour corrections that trace one very specific body shape with almost pathological precision. Beside it, on a second dummy with only slightly different proportions, the same jacket is being forced on and clearly fails: the fabric pulls hard across the chest, puckers at the shoulder, twists at the waist, and cannot sit naturally. The craftsmanship is impeccable yet unusable beyond one exact fit. Warm late-afternoon window light, rich wool texture, shallow depth of field, documentary realism, magazine-quality composition, photorealistic. No diagrams, no graphs, no text, no labels, no mathematical notation, no equations, no floating annotations, no non-physical elements, no neural-network imagery, no infographic style. Everything in the scene must be a physical object that could exist in the real world.",
+  "model": "DALL-E 3 via OpenAI ChatGPT Plus",
+  "concept": "overfitting",
+  "metaphor": "A suit tailored to one exact body fails on a nearly identical one; excessive precision prevents generalisation beyond the original fit."
+}
