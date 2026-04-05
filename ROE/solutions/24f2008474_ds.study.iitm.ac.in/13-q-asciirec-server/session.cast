@@ -1,0 +1,6 @@
+{"version":2,"width":100,"height":30,"timestamp":1710000000,"env":{"SHELL":"/bin/zsh","TERM":"xterm-256color"}}
+[0,"o","$ echo 'SESSION_QKVO22LR'\r\nSESSION_QKVO22LR\r\n"]
+[0.2,"o","$ mkdir test_dir\r\n"]
+[0.4,"o","$ cd test_dir\r\n"]
+[0.6,"o","$ touch file.txt\r\n"]
+[0.8,"o","$ ls\r\n"]

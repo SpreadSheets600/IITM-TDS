@@ -1,0 +1,18 @@
+{
+  "location": "zone-b",
+  "sensor": "light",
+  "startDate": "2024-01-15",
+  "endDate": "2024-02-15",
+  "fullRange": {
+    "count": 90,
+    "avg": 494.09,
+    "min": 100,
+    "max": 880.2
+  },
+  "dateRange": {
+    "count": 31,
+    "avg": 465.41,
+    "min": 105.8,
+    "max": 860
+  }
+}

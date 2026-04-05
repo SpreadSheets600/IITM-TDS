@@ -1,0 +1,18 @@
+{
+  "email": "demo.student@example.com",
+  "generatedAt": "2026-04-05T07:03:54.924Z",
+  "questions": [
+    {
+      "index": "03",
+      "id": "q-regex-golf-server",
+      "status": "solved",
+      "path": "tmp/demo-solutions/03-q-regex-golf-server"
+    },
+    {
+      "index": "12",
+      "id": "q-trick-question-server",
+      "status": "solved",
+      "path": "tmp/demo-solutions/12-q-trick-question-server"
+    }
+  ]
+}

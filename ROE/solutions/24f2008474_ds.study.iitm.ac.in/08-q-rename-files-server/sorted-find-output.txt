@@ -1,0 +1,30 @@
+./archives/archive-módulo-3-références-file04.txt
+./café/docs-file22.txt
+./café/project-section-a-données-file25.txt
+./configs/archive-file17.txt
+./configs/archive-section-a-intro-file16.txt
+./configs/content-módulo-3-intro-file02.txt
+./configs/docs-chapter1-file07.txt
+./configs/project-spaces here-file27.txt
+./data/project-chapter1-advanced-file18.txt
+./data/project-chapter1-file03.txt
+./documentation/content-chapter1-données-file23.txt
+./münchen/archive-part 2-advanced-test_file-file09.txt
+./münchen/content-section-a-test_file-fіle20.txt
+./naïve-bayes/content-file26.txt
+./naïve-bayes/project-chapter1-file24.txt
+./notes/docs-chapter1-file14.txt
+./reports/archive-chapter1-advanced-file10.txt
+./reports/archive-naïve-file01.txt
+./reports/archive-section-a-file05.txt
+./resources/project-file12.txt
+./résumé/archive-part 2-file28.txt
+./scripts/docs-naïve-file11.txt
+./scripts/project-módulo-3-appendix-naïve-file15.txt
+./templates/archive-part 2-appendix-file29.txt
+./templates/content-file13.txt
+./templates/docs-café-2024-file21.txt
+./templates/docs-módulo-3-données-file06.txt
+./templates/docs-spaces here-file30.txt
+./日本語/archive-section-a-appendix-file08.txt
+./日本語/project-chapter1-café-2024-fіle19.txt

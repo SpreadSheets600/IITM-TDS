@@ -1,0 +1,11 @@
+{
+  "email": "demo.student@example.com",
+  "outDir": "tmp/demo-solutions",
+  "supportedQuestionCount": 2,
+  "solvedQuestions": [
+    "q-regex-golf-server",
+    "q-trick-question-server"
+  ],
+  "blockedQuestions": [],
+  "partialQuestions": []
+}

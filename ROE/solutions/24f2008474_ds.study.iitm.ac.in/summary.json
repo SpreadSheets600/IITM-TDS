@@ -1,0 +1,96 @@
+{
+  "email": "24f2008474@ds.study.iitm.ac.in",
+  "generatedAt": "2026-04-05T07:04:00.931Z",
+  "questions": [
+    {
+      "index": "01",
+      "id": "q-share-token-server",
+      "status": "blocked",
+      "path": "solutions/24f2008474_ds.study.iitm.ac.in/01-q-share-token-server"
+    },
+    {
+      "index": "02",
+      "id": "q-korean-audio-dataset-server",
+      "status": "blocked",
+      "path": "solutions/24f2008474_ds.study.iitm.ac.in/02-q-korean-audio-dataset-server"
+    },
+    {
+      "index": "03",
+      "id": "q-regex-golf-server",
+      "status": "solved",
+      "path": "solutions/24f2008474_ds.study.iitm.ac.in/03-q-regex-golf-server"
+    },
+    {
+      "index": "04",
+      "id": "q-maze-solver-server",
+      "status": "solved",
+      "path": "solutions/24f2008474_ds.study.iitm.ac.in/04-q-maze-solver-server"
+    },
+    {
+      "index": "05",
+      "id": "q-cipher-trail-server",
+      "status": "solved",
+      "path": "solutions/24f2008474_ds.study.iitm.ac.in/05-q-cipher-trail-server"
+    },
+    {
+      "index": "06",
+      "id": "q-decode-layered-server",
+      "status": "partial",
+      "path": "solutions/24f2008474_ds.study.iitm.ac.in/06-q-decode-layered-server"
+    },
+    {
+      "index": "07",
+      "id": "q-region-containing-point-server",
+      "status": "blocked",
+      "path": "solutions/24f2008474_ds.study.iitm.ac.in/07-q-region-containing-point-server"
+    },
+    {
+      "index": "08",
+      "id": "q-rename-files-server",
+      "status": "solved",
+      "path": "solutions/24f2008474_ds.study.iitm.ac.in/08-q-rename-files-server"
+    },
+    {
+      "index": "09",
+      "id": "q-python-refactor-server",
+      "status": "solved",
+      "path": "solutions/24f2008474_ds.study.iitm.ac.in/09-q-python-refactor-server"
+    },
+    {
+      "index": "10",
+      "id": "q-broken-json-server",
+      "status": "solved",
+      "path": "solutions/24f2008474_ds.study.iitm.ac.in/10-q-broken-json-server"
+    },
+    {
+      "index": "11",
+      "id": "q-cross-lingual-entity-disambiguation-server",
+      "status": "solved",
+      "path": "solutions/24f2008474_ds.study.iitm.ac.in/11-q-cross-lingual-entity-disambiguation-server"
+    },
+    {
+      "index": "12",
+      "id": "q-trick-question-server",
+      "status": "solved",
+      "path": "solutions/24f2008474_ds.study.iitm.ac.in/12-q-trick-question-server"
+    },
+    {
+      "index": "13",
+      "id": "q-asciirec-server",
+      "status": "solved",
+      "path": "solutions/24f2008474_ds.study.iitm.ac.in/13-q-asciirec-server"
+    },
+    {
+      "index": "14",
+      "id": "q-fastapi-timeseries-cache",
+      "status": "solved-with-server",
+      "path": "solutions/24f2008474_ds.study.iitm.ac.in/14-q-fastapi-timeseries-cache"
+    },
+    {
+      "index": "15",
+      "id": "q-video-attendee-extraction",
+      "status": "solved",
+      "path": "solutions/24f2008474_ds.study.iitm.ac.in/15-q-video-attendee-extraction"
+    }
+  ]
+}
