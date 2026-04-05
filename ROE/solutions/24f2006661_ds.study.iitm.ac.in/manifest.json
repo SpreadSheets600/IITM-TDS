@@ -1,0 +1,26 @@
+{
+  "email": "24f2006661@ds.study.iitm.ac.in",
+  "outDir": "solutions/24f2006661_ds.study.iitm.ac.in",
+  "supportedQuestionCount": 15,
+  "solvedQuestions": [
+    "q-regex-golf-server",
+    "q-maze-solver-server",
+    "q-cipher-trail-server",
+    "q-rename-files-server",
+    "q-python-refactor-server",
+    "q-broken-json-server",
+    "q-cross-lingual-entity-disambiguation-server",
+    "q-trick-question-server",
+    "q-asciirec-server",
+    "q-fastapi-timeseries-cache",
+    "q-video-attendee-extraction"
+  ],
+  "blockedQuestions": [
+    "q-share-token-server",
+    "q-korean-audio-dataset-server",
+    "q-region-containing-point-server"
+  ],
+  "partialQuestions": [
+    "q-decode-layered-server"
+  ]
+}

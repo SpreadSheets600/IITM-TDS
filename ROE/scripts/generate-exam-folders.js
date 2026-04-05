@@ -4,7 +4,7 @@ const vm = require("vm");
 const crypto = require("crypto");
 
 const ROOT = process.cwd();
-const EXAM_JS = path.join(ROOT, "exam.js");
+const SCRIPT_DIR = __dirname;
 const DEFAULT_OUTPUT_PARENT = path.join(ROOT, "solutions");
 
 const VERSION_ROE = "#roe-2026-01";
@@ -48,6 +48,7 @@ function parseArgs(argv) {
   const options = {
     email: "",
     outDir: "",
+    examPath: "",
     questionIds: [],
     help: false,
   };
@@ -68,6 +69,11 @@ function parseArgs(argv) {
       i += 1;
       continue;
     }
+    if (arg === "--exam") {
+      options.examPath = argv[i + 1] || "";
+      i += 1;
+      continue;
+    }
     if (arg === "--question" || arg === "--questions") {
       options.questionIds.push(...splitQuestionArgs(argv[i + 1] || ""));
       i += 1;
@@ -83,6 +89,10 @@ function parseArgs(argv) {
     }
     if (arg.startsWith("--out=")) {
       options.outDir = arg.split("=", 2)[1];
+      continue;
+    }
+    if (arg.startsWith("--exam=")) {
+      options.examPath = arg.split("=", 2)[1];
       continue;
     }
     if (arg.startsWith("-")) {
@@ -104,6 +114,7 @@ function parseArgs(argv) {
     outDir: options.outDir
       ? path.resolve(ROOT, options.outDir)
       : path.join(DEFAULT_OUTPUT_PARENT, sanitizeEmailForPath(options.email || "unknown")),
+    examPath: options.examPath ? path.resolve(ROOT, options.examPath) : "",
     questionIds: Array.from(new Set(options.questionIds)),
     help: options.help,
   };
@@ -111,12 +122,13 @@ function parseArgs(argv) {
 
 function printHelp() {
   console.log(`Usage:
-  node scripts/generate-exam-folders.js <email> [--out DIR] [--question ID[,ID...]]
-  node scripts/generate-exam-folders.js --email <email> [--out DIR] [--question ID]
+  node scripts/generate-exam-folders.js <email> [--out DIR] [--exam PATH] [--question ID[,ID...]]
+  node scripts/generate-exam-folders.js --email <email> [--out DIR] [--exam PATH] [--question ID]
 
 Examples:
   node scripts/generate-exam-folders.js 24f2008474@ds.study.iitm.ac.in
   node scripts/generate-exam-folders.js --email student@example.com --out tmp/student
+  node scripts/generate-exam-folders.js --email student@example.com --exam exam.js
   node scripts/generate-exam-folders.js --email student@example.com --question q-regex-golf-server,q-maze-solver-server
 `);
 }
@@ -209,15 +221,30 @@ function parseAssignedLiteral(source, startMarker, endMarker) {
 }
 
 function loadLargeEntityCatalog(source) {
-  const startMarker = "so = [";
-  const endMarker = "],\n    ro = {";
-  const start = source.indexOf(startMarker);
-  assert(start !== -1, `Missing marker: ${startMarker}`);
-  const afterStart = start + startMarker.length;
-  const end = source.indexOf(endMarker, afterStart);
-  assert(end !== -1, `Missing marker: ${endMarker}`);
-  const literal = source.slice(afterStart, end).trim();
-  return vm.runInNewContext(`([${literal}])`);
+  const match = source.match(/so\s*=\s*\[(.*?)\]\s*,\s*ro\s*=\s*\{/s);
+  assert(
+    match,
+    "Could not extract the cross-lingual entity catalog from exam.js. Make sure you passed the real exam bundle with --exam.",
+  );
+  return vm.runInNewContext(`([${match[1]}])`);
+}
+
+function resolveExamJsPath(explicitPath) {
+  const candidates = [];
+  if (explicitPath) {
+    candidates.push(explicitPath);
+  }
+  candidates.push(path.join(ROOT, "exam.js"));
+  candidates.push(path.join(SCRIPT_DIR, "exam.js"));
+  for (const candidate of candidates) {
+    if (candidate && fs.existsSync(candidate)) {
+      return candidate;
+    }
+  }
+  throw new Error(
+    `exam.js not found. Checked: ${candidates.map((candidate) => `"${candidate}"`).join(", ")}. ` +
+      "Pass the bundle path explicitly with --exam.",
+  );
 }
 
 function sampleIndices(count, limit, excluded, rng) {
@@ -1789,14 +1816,14 @@ function main() {
     printHelp();
     return;
   }
-  assert(fs.existsSync(EXAM_JS), "exam.js not found");
-  const examSource = fs.readFileSync(EXAM_JS, "utf8");
+  const examJsPath = resolveExamJsPath(options.examPath);
+  const examSource = fs.readFileSync(examJsPath, "utf8");
   const entityCatalog = loadLargeEntityCatalog(examSource);
   const allQuestions = buildFolderQuestions(options.email, entityCatalog);
   const selectedQuestions = filterQuestions(allQuestions, options.questionIds);
   writeQuestionFolders(options.outDir, options.email, selectedQuestions);
   console.log(
-    `Generated ${selectedQuestions.length} question folders in ${path.relative(ROOT, options.outDir)} for ${options.email}`,
+    `Generated ${selectedQuestions.length} question folders in ${path.relative(ROOT, options.outDir)} for ${options.email} using ${path.relative(ROOT, examJsPath) || path.basename(examJsPath)}`,
   );
 }
 

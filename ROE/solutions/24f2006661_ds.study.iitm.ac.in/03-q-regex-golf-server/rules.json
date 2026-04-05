@@ -1,0 +1,59 @@
+{
+  "lineLength": 24,
+  "positionalRules": [
+    {
+      "type": "charset",
+      "position": 1,
+      "charSet": "dfjs"
+    },
+    {
+      "type": "charset",
+      "position": 5,
+      "charSet": "abej"
+    },
+    {
+      "type": "charset",
+      "position": 11,
+      "charSet": "58epv"
+    },
+    {
+      "type": "charset",
+      "position": 17,
+      "charSet": "49mr"
+    },
+    {
+      "type": "charset",
+      "position": 22,
+      "charSet": "1dtvy"
+    }
+  ],
+  "equalityRules": [
+    {
+      "left": 2,
+      "right": 13
+    },
+    {
+      "left": 14,
+      "right": 16
+    }
+  ],
+  "repeatedTokenRule": {
+    "startA": 7,
+    "startB": 19,
+    "length": 3,
+    "tokens": [
+      "1ka",
+      "18k",
+      "kn2",
+      "2i9",
+      "t1c"
+    ]
+  },
+  "classRule": {
+    "positions": [
+      0,
+      4,
+      18
+    ]
+  }
+}

@@ -1,0 +1,30 @@
+./archives/project-file17.txt
+./archives/project-part 2-advanced-file23.txt
+./café/archive-módulo-3-test_file-file09.txt
+./configs/archive-naïve-file14.txt
+./configs/content-2024-file08.txt
+./configs/content-file27.txt
+./configs/content-módulo-3-file22.txt
+./documentation/docs-2024-appendix-file29.txt
+./documentation/project-chapter1-appendix-file06.txt
+./münchen/archive-2024-données-café-2024-file30.txt
+./münchen/docs-café-2024-file20.txt
+./notes/archive-file01.txt
+./notes/archive-part 2-fіle13.txt
+./notes/content-section-a-spaces here-file19.txt
+./notes/project-módulo-3-fіle28.txt
+./notes/project-test_file-fіle11.txt
+./reports/docs-2024-file03.txt
+./resources/content-chapter1-file21.txt
+./resources/content-section-a-références-file07.txt
+./resources/project-file04.txt
+./résumé/docs-file25.txt
+./résumé/project-módulo-3-file05.txt
+./scripts/content-file12.txt
+./scripts/content-módulo-3-données-file-name-file24.txt
+./scripts/docs-chapter1-références-file26.txt
+./templates/archive-2024-file18.txt
+./templates/archive-chapter1-file02.txt
+./templates/docs-chapter1-appendix-naïve-file16.txt
+./templates/docs-chapter1-file15.txt
+./templates/project-file10.txt

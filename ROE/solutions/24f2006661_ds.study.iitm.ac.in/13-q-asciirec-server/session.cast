@@ -1,0 +1,5 @@
+{"version":2,"width":100,"height":30,"timestamp":1710000000,"env":{"SHELL":"/bin/zsh","TERM":"xterm-256color"}}
+[0,"o","$ echo 'SESSION_52B4F520'\r\nSESSION_52B4F520\r\n"]
+[0.2,"o","$ python --version\r\n"]
+[0.4,"o","$ echo 'print(2 + 2)' | python\r\n\r\n"]
+[0.6,"o","$ date +%Y-%m-%d\r\n"]

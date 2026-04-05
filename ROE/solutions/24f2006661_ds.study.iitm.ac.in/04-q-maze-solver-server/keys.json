@@ -1,0 +1,44 @@
+[
+  {
+    "row": 18,
+    "col": 9,
+    "color": "Red",
+    "index": 0
+  },
+  {
+    "row": 0,
+    "col": 11,
+    "color": "Blue",
+    "index": 1
+  },
+  {
+    "row": 6,
+    "col": 21,
+    "color": "Green",
+    "index": 2
+  },
+  {
+    "row": 9,
+    "col": 16,
+    "color": "Yellow",
+    "index": 3
+  },
+  {
+    "row": 24,
+    "col": 17,
+    "color": "Cyan",
+    "index": 4
+  },
+  {
+    "row": 29,
+    "col": 14,
+    "color": "Magenta",
+    "index": 5
+  },
+  {
+    "row": 22,
+    "col": 23,
+    "color": "White",
+    "index": 6
+  }
+]
