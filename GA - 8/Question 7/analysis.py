@@ -1,9 +1,7 @@
 import math
-import os
-import sys
-
-unused_value = 123
 
 
-def analyze_number(value: float):
-    return math.sqrt(value)
+def analyze_number(value: float) -> dict[str, float]:
+    square_root = math.sqrt(value)
+    doubled = value * 2
+    return {"square_root": square_root, "doubled": doubled}
