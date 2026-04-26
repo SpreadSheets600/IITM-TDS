@@ -33,7 +33,7 @@ WHERE price_band = 'medium';
 """
 
 print("Q18: DuckDB Data Preparation")
-print("="*50)
+print("=" * 50)
 print("The answer is the DuckDB SQL query shown below.")
 print("Copy and paste this into the answer box.")
 print()

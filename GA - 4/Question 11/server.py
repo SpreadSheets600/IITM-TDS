@@ -28,58 +28,155 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+
 class SentimentRequest(BaseModel):
     sentences: list[str]
+
 
 class SentimentResult(BaseModel):
     sentence: str
     sentiment: str
 
+
 class SentimentResponse(BaseModel):
     results: list[SentimentResult]
 
+
 # Simple keyword-based sentiment classifier
 HAPPY_WORDS = {
-    "love","wonderful","amazing","fantastic","excited","thrilled","joy","great",
-    "happy","delighted","excellent","best","proud","ecstatic","overjoyed","blessed",
-    "grinning","jumping","smile","laughing","perfect","dream","bliss","elated",
-    "spectacular","fortunate","celebrate","radiating","cheerful","winning","beautiful",
-    "hoping","gratitude","engagement","promotion","vacation","accomplished","spectacular",
-    "exceeded","couldn't stop smiling","best day","life is","pure joy","cloud nine",
-    "bursting","energized","overjoyed","thrilled","thankful","grateful","adore"
+    "love",
+    "wonderful",
+    "amazing",
+    "fantastic",
+    "excited",
+    "thrilled",
+    "joy",
+    "great",
+    "happy",
+    "delighted",
+    "excellent",
+    "best",
+    "proud",
+    "ecstatic",
+    "overjoyed",
+    "blessed",
+    "grinning",
+    "jumping",
+    "smile",
+    "laughing",
+    "perfect",
+    "dream",
+    "bliss",
+    "elated",
+    "spectacular",
+    "fortunate",
+    "celebrate",
+    "radiating",
+    "cheerful",
+    "winning",
+    "beautiful",
+    "hoping",
+    "gratitude",
+    "engagement",
+    "promotion",
+    "vacation",
+    "accomplished",
+    "spectacular",
+    "exceeded",
+    "couldn't stop smiling",
+    "best day",
+    "life is",
+    "pure joy",
+    "cloud nine",
+    "bursting",
+    "energized",
+    "overjoyed",
+    "thrilled",
+    "thankful",
+    "grateful",
+    "adore",
 }
 
 SAD_WORDS = {
-    "terrible","worst","horrible","lost","sad","heartbroken","devastated","miserable",
-    "crying","broken","failed","lonely","abandoned","suffering","pain","grief","sorrow",
-    "hopeless","disappointed","regret","betrayal","bad","depressed","drowning","defeated",
-    "crushed","consumed","shattered","overwhelmed","haunted","burdened","anxiety",
-    "trauma","exhausted","empty","struggling","worried sick","sick","diagnosis",
-    "pet passed","layoffs","rejected","nobody showed","burned down","fell apart"
+    "terrible",
+    "worst",
+    "horrible",
+    "lost",
+    "sad",
+    "heartbroken",
+    "devastated",
+    "miserable",
+    "crying",
+    "broken",
+    "failed",
+    "lonely",
+    "abandoned",
+    "suffering",
+    "pain",
+    "grief",
+    "sorrow",
+    "hopeless",
+    "disappointed",
+    "regret",
+    "betrayal",
+    "bad",
+    "depressed",
+    "drowning",
+    "defeated",
+    "crushed",
+    "consumed",
+    "shattered",
+    "overwhelmed",
+    "haunted",
+    "burdened",
+    "anxiety",
+    "trauma",
+    "exhausted",
+    "empty",
+    "struggling",
+    "worried sick",
+    "sick",
+    "diagnosis",
+    "pet passed",
+    "layoffs",
+    "rejected",
+    "nobody showed",
+    "burned down",
+    "fell apart",
 }
+
 
 def classify(text: str) -> str:
     text_lower = text.lower()
-    
+
     happy_score = sum(1 for w in HAPPY_WORDS if w in text_lower)
     sad_score = sum(1 for w in SAD_WORDS if w in text_lower)
-    
+
     # Negation handling
     if re.search(r"feel (great|fantastic|wonderful|amazing|alive)", text_lower):
         happy_score += 2
-    if re.search(r"feel (terrible|horrible|sad|hopeless|defeated|empty|lonely)", text_lower):
+    if re.search(
+        r"feel (terrible|horrible|sad|hopeless|defeated|empty|lonely)", text_lower
+    ):
         sad_score += 2
-    if re.search(r"(can't stop smiling|jumping for joy|on cloud nine|bliss|dream come true)", text_lower):
+    if re.search(
+        r"(can't stop smiling|jumping for joy|on cloud nine|bliss|dream come true)",
+        text_lower,
+    ):
         happy_score += 3
-    if re.search(r"(heart is broken|drowning in|crushed by|haunted by|overwhelmed with)", text_lower):
+    if re.search(
+        r"(heart is broken|drowning in|crushed by|haunted by|overwhelmed with)",
+        text_lower,
+    ):
         sad_score += 3
-    
+
     if happy_score > sad_score:
         return "happy"
     elif sad_score > happy_score:
         return "sad"
     else:
         return "neutral"
+
 
 @app.post("/sentiment", response_model=SentimentResponse)
 async def analyze_sentiment(request: SentimentRequest):
@@ -89,10 +186,13 @@ async def analyze_sentiment(request: SentimentRequest):
         results.append(SentimentResult(sentence=sentence, sentiment=sentiment))
     return SentimentResponse(results=results)
 
+
 @app.get("/")
 async def root():
     return {"message": "Sentiment Analysis API", "endpoint": "POST /sentiment"}
 
+
 if __name__ == "__main__":
     import uvicorn
+
     uvicorn.run(app, host="localhost", port=8000)

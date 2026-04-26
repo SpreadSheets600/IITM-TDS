@@ -76,9 +76,7 @@ def crawl(base_url: str) -> tuple[set[str], set[str]]:
 if __name__ == "__main__":
     visited_urls, html_urls = crawl(BASE_URL)
     if BASE_URL not in html_urls:
-        raise SystemExit(
-            "Unable to fetch base URL. Check internet/DNS and run again."
-        )
+        raise SystemExit("Unable to fetch base URL. Check internet/DNS and run again.")
     count = sum(1 for url in html_urls if filename_starts_in_range(url, LOW, HIGH))
 
     print(f"Visited URLs: {len(visited_urls)}")

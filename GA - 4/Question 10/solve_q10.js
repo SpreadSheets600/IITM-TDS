@@ -1,9 +1,9 @@
 /**
  * Q10 Solver: Google Sheets AI Formula — Zip Code Extraction
- * 
+ *
  * The exam generates 100 addresses with varying formats. Some have zip codes,
  * some don't. This replicates the generation to find the expected answer.
- * 
+ *
  * Usage: node solve_q10.js <email>
  */
 function makeAlea(seed) {

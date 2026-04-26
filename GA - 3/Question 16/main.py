@@ -65,7 +65,9 @@ def http_get(url: str, timeout: int = 30) -> str:
         return response.read().decode("utf-8", errors="ignore")
 
 
-def http_post_json(url: str, payload: dict[str, Any], timeout: int = 30) -> dict[str, Any]:
+def http_post_json(
+    url: str, payload: dict[str, Any], timeout: int = 30
+) -> dict[str, Any]:
     req = urllib.request.Request(
         url,
         data=json.dumps(payload).encode("utf-8"),
@@ -102,7 +104,9 @@ def normalize_rating(rating_value: Any) -> str:
         return f"{float(match.group(0)):.1f}"
 
 
-def build_output_row(idx: int, imdb_id: str, title: str, year: str, rating: Any) -> dict[str, str]:
+def build_output_row(
+    idx: int, imdb_id: str, title: str, year: str, rating: Any
+) -> dict[str, str]:
     clean_title = re.sub(r"^\d+\.\s*", "", title.strip())
     return {
         "id": imdb_id.strip(),
@@ -137,7 +141,11 @@ def fetch_titles_graphql(limit: int) -> list[dict[str, str]]:
         title_type = ((title_obj.get("titleType") or {}).get("text") or "").lower()
 
         if "series" in title_type and start_year:
-            year_text = f"{start_year}\u2013 " if end_year is None else f"{start_year}\u2013{end_year}"
+            year_text = (
+                f"{start_year}\u2013 "
+                if end_year is None
+                else f"{start_year}\u2013{end_year}"
+            )
         else:
             year_text = str(start_year)
 
@@ -183,14 +191,14 @@ def fetch_titles_regex(limit: int) -> list[dict[str, str]]:
         window = html[start : start + 3000]
 
         year_match = re.search(
-            r'dli-title-metadata-item[^>]*>\s*([^<]{2,20})\s*</span>',
+            r"dli-title-metadata-item[^>]*>\s*([^<]{2,20})\s*</span>",
             window,
             flags=re.I | re.S,
         )
         year_text = year_match.group(1).strip() if year_match else ""
 
         rating_match = re.search(
-            r'ipc-rating-star--rating[^>]*>\s*([^<]+)\s*</span>',
+            r"ipc-rating-star--rating[^>]*>\s*([^<]+)\s*</span>",
             window,
             flags=re.I | re.S,
         )
@@ -232,7 +240,9 @@ def fetch_titles(limit: int = 25) -> list[dict[str, str]]:
     try:
         return fetch_titles_regex(limit)
     except Exception as exc:
-        raise RuntimeError(f"Failed to fetch IMDb titles. Last error: {last_error}; Regex error: {exc}") from exc
+        raise RuntimeError(
+            f"Failed to fetch IMDb titles. Last error: {last_error}; Regex error: {exc}"
+        ) from exc
 
 
 if __name__ == "__main__":

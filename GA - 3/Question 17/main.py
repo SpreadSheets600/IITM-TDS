@@ -66,7 +66,9 @@ def fallback_extract(text: str) -> dict[str, Any]:
 
     pros_match = re.search(r"pros\s*:\s*([^\.]+)", text, flags=re.I)
     if pros_match:
-        fields["pros"] = [x.strip() for x in pros_match.group(1).split(",") if x.strip()]
+        fields["pros"] = [
+            x.strip() for x in pros_match.group(1).split(",") if x.strip()
+        ]
 
     cons_match = re.search(r"cons\s*:\s*([^\.]+)", text, flags=re.I)
     if cons_match:
@@ -74,7 +76,9 @@ def fallback_extract(text: str) -> dict[str, Any]:
         if items:
             fields["cons"] = items
 
-    rec_match = re.search(r"recommendation\s*:\s*([^\.]+(?:\.[^\.]+)*)", text, flags=re.I)
+    rec_match = re.search(
+        r"recommendation\s*:\s*([^\.]+(?:\.[^\.]+)*)", text, flags=re.I
+    )
     if rec_match:
         fields["recommendation"] = rec_match.group(1).strip()
 
@@ -109,7 +113,9 @@ def validate_extraction(obj: dict[str, Any]) -> list[str]:
     if isinstance(obj.get("product"), str) and not obj["product"].strip():
         errors.append("product: must be non-empty")
 
-    if isinstance(obj.get("pros"), list) and any(not str(x).strip() for x in obj["pros"]):
+    if isinstance(obj.get("pros"), list) and any(
+        not str(x).strip() for x in obj["pros"]
+    ):
         errors.append("pros: all entries must be non-empty")
 
     return errors

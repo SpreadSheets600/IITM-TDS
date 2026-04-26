@@ -40,4 +40,3 @@ Sample output:
 ```text
 5, 14
 ```
-

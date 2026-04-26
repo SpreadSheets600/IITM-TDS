@@ -1,10 +1,10 @@
 /**
- * Q5 Solver: OpenRefine - Supplier Spend Consolidation  
+ * Q5 Solver: OpenRefine - Supplier Spend Consolidation
  * Question ID: q-openrefine-supplier-spend
- * 
+ *
  * Generates 520 invoice records and computes total approved spend
  * for a specific supplier + category combination.
- * 
+ *
  * Usage: node solve.js <email>
  */
 
@@ -71,7 +71,7 @@ function solve(email) {
         n(); // notes
 
         // T = n() < .6 ? `$${...}` : `USD ${...}` with n() < .4 inside
-        const t_r = n(); // currency format  
+        const t_r = n(); // currency format
         if (t_r >= 0.6) {
             n(); // inner comma replacement check
         }

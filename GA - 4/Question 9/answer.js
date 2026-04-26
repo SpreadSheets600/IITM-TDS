@@ -1,9 +1,9 @@
 /**
  * Q9: GitHub Copilot Data Transformation
- * 
+ *
  * The exam randomly picks ONE of these 10 transformation tasks.
  * The answer is a JavaScript function that performs the task.
- * 
+ *
  * Check which task you're assigned, then use the corresponding function below.
  * The validation accepts any function that produces the correct output for the test data.
  */
@@ -21,7 +21,7 @@ function groupAndSum(data) {
 }
 
 // ── Task 2: flatten-nested ─────────────────────────────────────────────────────
-// Description: flattens a nested array structure into a single-level array  
+// Description: flattens a nested array structure into a single-level array
 // Test data: [1,[2,3],[4,[5,6]],7]
 // Expected: [1,2,3,4,5,6,7]
 

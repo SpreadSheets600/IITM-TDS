@@ -37,8 +37,7 @@ def classify_batch(headlines: list[str]) -> list[str]:
         "- If a headline is about a product launch, model release, software feature, hardware capability, AI system, cybersecurity incident, scientific computing result, chip architecture, protocol, standard, browser/database/runtime feature, or technical research breakthrough, label it Technology.\n"
         "- Government regulation, hearings, sanctions, election rules, and official strategies are Politics even when they mention AI or cybersecurity.\n"
         "- Streaming prices, box office, music labels, tours, TV ratings, celebrities, and awards are Entertainment unless the headline is clearly about corporate finance rather than content/media.\n\n"
-        "Headlines:\n"
-        + "\n".join(prompt_lines)
+        "Headlines:\n" + "\n".join(prompt_lines)
     )
 
     resp = client.chat.completions.create(

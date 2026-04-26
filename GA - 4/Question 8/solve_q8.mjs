@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * Q8 Solver using actual Node.js with faker
- * 
+ *
  * Install: npm install @faker-js/faker seedrandom  (in this folder)
  * Run: node solve_q8.js <email>
  */

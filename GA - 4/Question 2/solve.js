@@ -1,13 +1,13 @@
 /**
  * Q2 Solver: Excel Z-Score Outlier Surveillance
  * Question ID: q-excel-zscore-outlier
- * 
+ *
  * Algorithm:
  * - Generates 90-110 clinic scores using Box-Muller transform
  * - Injects 6-8 outliers (±12-18 added to a random score)
  * - Counts clinics where |z-score| >= 2.5 (using sample stdev)
  * - Tolerance: answer ± 1 is accepted
- * 
+ *
  * Usage: node solve.js <email>
  */
 

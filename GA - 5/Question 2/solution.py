@@ -32,7 +32,10 @@ def main() -> None:
     text_embedding = model.encode([TEXT_QUERY], convert_to_numpy=True)[0]
     image_embeddings = model.encode(images, convert_to_numpy=True)
 
-    scores = [cosine_similarity(text_embedding, image_embedding) for image_embedding in image_embeddings]
+    scores = [
+        cosine_similarity(text_embedding, image_embedding)
+        for image_embedding in image_embeddings
+    ]
     best_index = int(np.argmax(scores))
     print(image_paths[best_index].name)
 

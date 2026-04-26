@@ -1,9 +1,9 @@
 /**
  * Q14 Solver: Shell — Deduplicate and Count Unique Addresses
- * 
+ *
  * The exam generates 1000-1500 address lines with formatting variations.
  * It counts UNIQUE canonical addresses using a Set.
- * 
+ *
  * Usage: node solve_q14.js <email>
  */
 function makeAlea(seed) {

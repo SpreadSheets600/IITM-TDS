@@ -67,7 +67,9 @@ def _worksheet_path(zf: zipfile.ZipFile, sheet_name: str) -> str:
 
     for sh in wb.findall("m:sheets/m:sheet", NS):
         if sh.attrib.get("name") == sheet_name:
-            rid = sh.attrib["{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id"]
+            rid = sh.attrib[
+                "{http://schemas.openxmlformats.org/officeDocument/2006/relationships}id"
+            ]
             target = rel_map[rid]
             if not target.startswith("worksheets/"):
                 return f"xl/{target}"
@@ -191,7 +193,12 @@ def summarize(cleaned: list[dict[str, object]]) -> dict[str, object]:
     valid_rows = sum(
         1
         for r in cleaned
-        if r["transactionId"] and r["customer"] and r["country"] and r["date"] and r["product"] is not None and r["sales"] is not None
+        if r["transactionId"]
+        and r["customer"]
+        and r["country"]
+        and r["date"]
+        and r["product"] is not None
+        and r["sales"] is not None
     )
 
     sales_sum = sum(float(r["sales"]) for r in cleaned if r["sales"] is not None)
@@ -236,7 +243,11 @@ def write_csv(path: Path, cleaned: list[dict[str, object]]) -> None:
 
 
 def main() -> None:
-    in_path = Path(sys.argv[1]) if len(sys.argv) > 1 else Path("q-clean-up-excel-sales-data.xlsx")
+    in_path = (
+        Path(sys.argv[1])
+        if len(sys.argv) > 1
+        else Path("q-clean-up-excel-sales-data.xlsx")
+    )
     if not in_path.exists():
         raise SystemExit(f"Input file not found: {in_path}")
 

@@ -64,8 +64,8 @@ Analyzes a comment and returns the sentiment and rating.
 ### Example using curl
 
 ```bash
-curl -X POST "http://127.0.0.1:8000/comment" 
-     -H "Content-Type: application/json" 
+curl -X POST "http://127.0.0.1:8000/comment"
+     -H "Content-Type: application/json"
      -d '{"comment": "I am not happy with the service."}'
 ```
 

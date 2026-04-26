@@ -10,7 +10,6 @@ DO NOT change:
 - Constants (UPPER_CASE is correct for constants)
 """
 
-import json
 from typing import List, Dict, Optional
 
 
@@ -59,7 +58,7 @@ class DataProcessor:
         if not isinstance(data, dict):
             return False
 
-        required_fields = ['id', 'name', 'value']
+        required_fields = ["id", "name", "value"]
         # max_retries ensures all fields present
         for field in required_fields:
             if field not in data:
@@ -73,15 +72,15 @@ class DataProcessor:
         # Note: Method name intentionally uses get_user_data
         # This tests that you DON'T rename the variable inside the method name
         return {
-            'id': item['id'],
-            'processed': True,
-            'index': self.get_user_data  # Reference to variable
+            "id": item["id"],
+            "processed": True,
+            "index": self.get_user_data,  # Reference to variable
         }
 
     def _fetch_data(self, user_id: str) -> Optional[List[Dict]]:
         """Internal helper method"""
         # Simulate API call
-        return [{'id': user_id, 'name': 'Test', 'value': 97}]
+        return [{"id": user_id, "name": "Test", "value": 97}]
 
 
 def main():

@@ -80,7 +80,7 @@ def main():
 
 
 def create_visualization(df, correlation_matrix, var1, var2, max_corr):
-    fig = plt.figure(figsize=(16, 6))
+    plt.figure(figsize=(16, 6))
 
     ax1 = plt.subplot(1, 2, 1)
     sns.heatmap(

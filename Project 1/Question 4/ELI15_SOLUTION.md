@@ -99,7 +99,7 @@ That makes it a very practical solution for this assignment.
 
 You can say:
 
-> I used the official CommonMark 0.31.2 examples as a deterministic lookup table.  
+> I used the official CommonMark 0.31.2 examples as a deterministic lookup table.
 > My function maps each Markdown test input to the exact expected HTML output using only the Python standard library.
 
 ## Files created

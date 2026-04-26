@@ -1,10 +1,8 @@
 import os
-import json
 import httpx
 from fastapi import FastAPI, Request
 from fastapi.responses import RedirectResponse, HTMLResponse, JSONResponse
 from starlette.middleware.sessions import SessionMiddleware
-from starlette.config import Config
 
 # Helper to get env vars or default for testing
 # User must set these or replace them in the code

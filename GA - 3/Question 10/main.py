@@ -53,7 +53,7 @@ def main(pdf_path: str, target_date: str = "15Jan"):
         uploaded = client.files.upload(file=pdf_path)
         active_file = wait_until_active(client, uploaded.name)
 
-        prompt = f"""
+        prompt = """
 Extract every expense entry from this PDF whose date is 15th January in ANY format variant.
 Examples of valid variants: 15Jan, Jan15, January 15, 15JAN, 15January, Jan 15.
 

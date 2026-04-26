@@ -492,7 +492,7 @@ Output: {"people":["Ada"],"orgs":["OpenAI"],"locations":["London"]}`,mediocreExa
     <div class="mb-3">
       <h2 id="${e}">${s}</h2>
       <p class="small">Identify the <strong>shortest prompt</strong> (min Word Count) achieving <strong>Macro-Mean ≥${r.meanTarget*100}%</strong> and <strong>Model Floor ≥${r.floorTarget*100}%</strong> across 4 LLMs.</p>
-      
+
       <div class="row g-2 mt-2">
         <div class="col-md-9 border-end">
           <h6 class="small fw-bold border-bottom">Instruction Matrix (Sensitivities)</h6>
@@ -529,7 +529,7 @@ ${v}${S}`)}return!0},c=Q`
       <h2 id="${e}">${s}: ${d.title}</h2>
 
       <p>
-        At <strong>Brevity Systems</strong>, we've optimized our costs and speed. 
+        At <strong>Brevity Systems</strong>, we've optimized our costs and speed.
         Your manager needs a prompt that is <strong>concise</strong>, <strong>fast</strong>, and <strong>robust</strong>.
       </p>
 
@@ -538,12 +538,12 @@ ${v}${S}`)}return!0},c=Q`
         ${d.description}
         Your prompt must be <strong>4 words or fewer</strong>.
       </p>
-      
+
       <p>Possible categories: ${d.categories.map((f,w)=>Q`<code>${f}</code>${w<d.categories.length-1?", ":""}`)}.</p>
 
       <h3>Evaluation</h3>
       <p>
-        Your prompt will be tested against <strong>10 randomized cases</strong> (running in parallel for speed). 
+        Your prompt will be tested against <strong>10 randomized cases</strong> (running in parallel for speed).
         You must get at least <strong>8 out of 10 correct</strong> to pass.
       </p>
 
@@ -581,7 +581,7 @@ ${v}${S}`)}return!0},c=Q`
         required
       />
       <div class="form-text">
-        Requires an <a href="https://aipipe.org/" target="_blank">AIPipe</a> token. 
+        Requires an <a href="https://aipipe.org/" target="_blank">AIPipe</a> token.
       </div>
     </div>
 

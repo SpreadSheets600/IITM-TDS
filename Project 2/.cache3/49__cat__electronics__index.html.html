@@ -8,14 +8,14 @@
   body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; background: var(--bg); color: var(--text); }
   a { color: var(--primary); text-decoration: none; }
   a:hover { text-decoration: underline; }
-  
+
   header { background: #fff; padding: 1.5rem 0; border-bottom: 1px solid var(--border); margin-bottom: 2rem; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
   .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
   .nav-top { display: flex; justify-content: space-between; align-items: center; }
   .logo { font-size: 1.8rem; font-weight: 900; letter-spacing: -1px; }
   .cat-nav { display: flex; gap: 1.5rem; margin-top: 1rem; }
   .cat-nav a { font-weight: 600; color: #4b5563; text-transform: uppercase; font-size: 0.9rem; }
-  
+
   .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1.5rem; margin-bottom: 2rem; }
   .card { background: #fff; border: 1px solid var(--border); border-radius: 0.5rem; overflow: hidden; display: flex; flex-direction: column; transition: transform 0.2s; }
   .card:hover { transform: translateY(-2px); box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
@@ -23,7 +23,7 @@
   .card-body { padding: 1rem; flex: 1; display: flex; flex-direction: column; }
   .card-title { font-size: 1.1rem; margin: 0 0 0.5rem 0; line-height: 1.3; font-weight: 600; }
   .card-sku { font-size: 0.75rem; color: #94a3b8; font-family: monospace; margin-bottom: 0.5rem; }
-  
+
   .price-wrapper { display: flex; align-items: baseline; gap: 0.5rem; margin-top: auto; margin-bottom: 0.5rem; }
   .current-price { font-size: 1.5rem; font-weight: 800; color: var(--text); display: flex; align-items: baseline; }
   .currency-symbol { font-size: 0.9rem; margin-right: 0.1rem; }
@@ -33,7 +33,7 @@
   .in-stock { background: #dcfce7; color: #166534; }
   .low-stock { background: #fef9c3; color: #854d0e; }
   .out-stock { background: #fee2e2; color: #991b1b; }
-  
+
   /* Detail Page */
   .p-detail { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; background: #fff; padding: 2rem; border-radius: 0.5rem; border: 1px solid var(--border); }
   @media (max-width: 800px) { .p-detail { grid-template-columns: 1fr; } }
@@ -43,17 +43,17 @@
   .variants-select select { width: 100%; padding: 0.5rem; border: 1px solid var(--border); font-size: 1rem; }
   .btn-cart { background: var(--primary); color: #fff; width: 100%; text-align: center; border: none; padding: 1rem; font-size: 1.1rem; font-weight: bold; border-radius: 0.25rem; cursor: pointer; }
   .btn-cart:hover { background: #1d4ed8; }
-  
+
   .reviews-section { margin-top: 3rem; }
   .review-item { background: #fff; padding: 1.5rem; border: 1px solid var(--border); border-radius: 0.5rem; margin-bottom: 1rem; }
   .review-header { display: flex; justify-content: space-between; margin-bottom: 0.5rem; }
   .review-author { font-weight: bold; }
   .review-date { color: #94a3b8; font-size: 0.85rem; }
-  
+
   .pager { display: flex; gap: 0.5rem; margin-top: 2rem; justify-content: center; }
   .pager a { display: block; border: 1px solid var(--border); padding: 0.5rem 1rem; background: #fff; color: var(--text); border-radius: 0.25rem; }
   .pager a.active { background: var(--text); color: #fff; border-color: var(--text); }
-  
+
   /* Harder Scraping Obfuscations */
   .css-1dbjc4n { flex-direction: column; }
   .css-1pax { display: flex; }
@@ -96,7 +96,7 @@
             <div style="margin-bottom: 0.5rem; display:flex; align-items:center; gap:0.5rem; font-size: 0.8rem;">
                 <div class="rating-strip" aria-label="Rated 4 out of 5 stars"><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-empty"><path fill="#d1d5db" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg></div> <span style="color:#64748b;">(12)</span>
             </div>
-            
+
             <div class="price-wrapper">
                 <div class="current-price" data-raw-price="198.54">
                     <span class="currency-symbol">$</span><span class="price-whole">198</span><span class="hp-hide" style="display:none; font-size:0;">99</span><span class="price-sep">.</span><span class="price-fraction">54</span>
@@ -105,7 +105,7 @@
             </div>
         </div>
     </div>
-    
+
 
     <div class="card css-1dbjc4n" data-component-id="U00tRUxFLTAwMDQ=">
         <div class="img-placeholder" aria-label="Image for Choose Table Push Hear Model 377">[ IMG: SM-ELE-0004 ]</div>
@@ -116,16 +116,16 @@
             <div style="margin-bottom: 0.5rem; display:flex; align-items:center; gap:0.5rem; font-size: 0.8rem;">
                 <div class="rating-strip" aria-label="Rated 4 out of 5 stars"><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-empty"><path fill="#d1d5db" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg></div> <span style="color:#64748b;">(1)</span>
             </div>
-            
+
             <div class="price-wrapper">
                 <div class="current-price" data-raw-price="124.24">
                     <span class="currency-symbol">$</span><span class="price-whole">124</span><span class="price-sep">.</span><span class="price-fraction">24</span>
                 </div>
-                
+
             </div>
         </div>
     </div>
-    
+
 
     <div class="card css-1dbjc4n" data-component-id="U00tRUxFLTAwMDY=">
         <div class="img-placeholder" aria-label="Image for Political Ever Office Support Model 696">[ IMG: SM-ELE-0006 ]</div>
@@ -136,16 +136,16 @@
             <div style="margin-bottom: 0.5rem; display:flex; align-items:center; gap:0.5rem; font-size: 0.8rem;">
                 <div class="rating-strip" aria-label="Rated 4 out of 5 stars"><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-empty"><path fill="#d1d5db" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg></div> <span style="color:#64748b;">(2)</span>
             </div>
-            
+
             <div class="price-wrapper">
                 <div class="current-price" data-raw-price="130.37">
                     <span class="currency-symbol">$</span><span class="price-whole">130</span><span class="hp-hide" style="display:none; font-size:0;">99</span><span class="price-sep">.</span><span class="price-fraction">37</span>
                 </div>
-                
+
             </div>
         </div>
     </div>
-    
+
 
     <div class="card css-1dbjc4n" data-component-id="U00tRUxFLTAwMDg=">
         <div class="img-placeholder" aria-label="Image for Quickly Despite Model 114">[ IMG: SM-ELE-0008 ]</div>
@@ -156,7 +156,7 @@
             <div style="margin-bottom: 0.5rem; display:flex; align-items:center; gap:0.5rem; font-size: 0.8rem;">
                 <div class="rating-strip" aria-label="Rated 4 out of 5 stars"><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-empty"><path fill="#d1d5db" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg></div> <span style="color:#64748b;">(14)</span>
             </div>
-            
+
             <div class="price-wrapper">
                 <div class="current-price" data-raw-price="12.52">
                     <span class="currency-symbol">$</span><span class="price-whole">12</span><span class="hp-hide" style="display:none; font-size:0;">99</span><span class="price-sep">.</span><span class="price-fraction">52</span>
@@ -165,7 +165,7 @@
             </div>
         </div>
     </div>
-    
+
 
     <div class="card css-1dbjc4n" data-component-id="U00tRUxFLTAwMDk=">
         <div class="img-placeholder" aria-label="Image for Owner Skin Economic Cause Model 568">[ IMG: SM-ELE-0009 ]</div>
@@ -176,7 +176,7 @@
             <div style="margin-bottom: 0.5rem; display:flex; align-items:center; gap:0.5rem; font-size: 0.8rem;">
                 <div class="rating-strip" aria-label="Rated 3 out of 5 stars"><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-empty"><path fill="#d1d5db" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-empty"><path fill="#d1d5db" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg></div> <span style="color:#64748b;">(3)</span>
             </div>
-            
+
             <div class="price-wrapper">
                 <div class="current-price" data-raw-price="106.94">
                     <span class="currency-symbol">$</span><span class="price-whole">106</span><span class="price-sep">.</span><span class="price-fraction">94</span>
@@ -185,7 +185,7 @@
             </div>
         </div>
     </div>
-    
+
 
     <div class="card css-1dbjc4n" data-component-id="U00tRUxFLTAwMTM=">
         <div class="img-placeholder" aria-label="Image for Consider Beat Model 516">[ IMG: SM-ELE-0013 ]</div>
@@ -196,16 +196,16 @@
             <div style="margin-bottom: 0.5rem; display:flex; align-items:center; gap:0.5rem; font-size: 0.8rem;">
                 <div class="rating-strip" aria-label="Rated 4 out of 5 stars"><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-empty"><path fill="#d1d5db" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg></div> <span style="color:#64748b;">(1)</span>
             </div>
-            
+
             <div class="price-wrapper">
                 <div class="current-price" data-raw-price="173.04">
                     <span class="currency-symbol">$</span><span class="price-whole">173</span><span class="hp-hide" style="display:none; font-size:0;">99</span><span class="price-sep">.</span><span class="price-fraction">04</span>
                 </div>
-                
+
             </div>
         </div>
     </div>
-    
+
 
     <div class="card css-1dbjc4n" data-component-id="U00tRUxFLTAwMTg=">
         <div class="img-placeholder" aria-label="Image for Push Stay Model 67">[ IMG: SM-ELE-0018 ]</div>
@@ -216,16 +216,16 @@
             <div style="margin-bottom: 0.5rem; display:flex; align-items:center; gap:0.5rem; font-size: 0.8rem;">
                 <div class="rating-strip" aria-label="Rated 4 out of 5 stars"><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-empty"><path fill="#d1d5db" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg></div> <span style="color:#64748b;">(15)</span>
             </div>
-            
+
             <div class="price-wrapper">
                 <div class="current-price" data-raw-price="91.99">
                     <span class="currency-symbol">$</span><span class="price-whole">91</span><span class="price-sep">.</span><span class="price-fraction">99</span>
                 </div>
-                
+
             </div>
         </div>
     </div>
-    
+
 
     <div class="card css-1dbjc4n" data-component-id="U00tRUxFLTAwMjA=">
         <div class="img-placeholder" aria-label="Image for Step Possible Claim Wear Model 740">[ IMG: SM-ELE-0020 ]</div>
@@ -236,16 +236,16 @@
             <div style="margin-bottom: 0.5rem; display:flex; align-items:center; gap:0.5rem; font-size: 0.8rem;">
                 <div class="rating-strip" aria-label="Rated 4 out of 5 stars"><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-empty"><path fill="#d1d5db" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg></div> <span style="color:#64748b;">(8)</span>
             </div>
-            
+
             <div class="price-wrapper">
                 <div class="current-price" data-raw-price="458.14">
                     <span class="currency-symbol">$</span><span class="price-whole">458</span><span class="price-sep">.</span><span class="price-fraction">14</span>
                 </div>
-                
+
             </div>
         </div>
     </div>
-    
+
 
     <div class="card css-1dbjc4n" data-component-id="U00tRUxFLTAwMjE=">
         <div class="img-placeholder" aria-label="Image for Image Much Enjoy Model 984">[ IMG: SM-ELE-0021 ]</div>
@@ -256,7 +256,7 @@
             <div style="margin-bottom: 0.5rem; display:flex; align-items:center; gap:0.5rem; font-size: 0.8rem;">
                 <div class="rating-strip" aria-label="Rated 5 out of 5 stars"><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg></div> <span style="color:#64748b;">(1)</span>
             </div>
-            
+
             <div class="price-wrapper">
                 <div class="current-price" data-raw-price="227.79">
                     <span class="currency-symbol">$</span><span class="price-whole">227</span><span class="hp-hide" style="display:none; font-size:0;">99</span><span class="price-sep">.</span><span class="price-fraction">79</span>
@@ -265,7 +265,7 @@
             </div>
         </div>
     </div>
-    
+
 
     <div class="card css-1dbjc4n" data-component-id="U00tRUxFLTAwMjQ=">
         <div class="img-placeholder" aria-label="Image for Return Move Model 428">[ IMG: SM-ELE-0024 ]</div>
@@ -276,16 +276,16 @@
             <div style="margin-bottom: 0.5rem; display:flex; align-items:center; gap:0.5rem; font-size: 0.8rem;">
                 <div class="rating-strip" aria-label="Rated 4 out of 5 stars"><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-empty"><path fill="#d1d5db" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg></div> <span style="color:#64748b;">(6)</span>
             </div>
-            
+
             <div class="price-wrapper">
                 <div class="current-price" data-raw-price="432.19">
                     <span class="currency-symbol">$</span><span class="price-whole">432</span><span class="price-sep">.</span><span class="price-fraction">19</span>
                 </div>
-                
+
             </div>
         </div>
     </div>
-    
+
 
     <div class="card css-1dbjc4n" data-component-id="U00tRUxFLTAwMzc=">
         <div class="img-placeholder" aria-label="Image for Government Help Capital Choose Model 346">[ IMG: SM-ELE-0037 ]</div>
@@ -296,7 +296,7 @@
             <div style="margin-bottom: 0.5rem; display:flex; align-items:center; gap:0.5rem; font-size: 0.8rem;">
                 <div class="rating-strip" aria-label="Rated 5 out of 5 stars"><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg></div> <span style="color:#64748b;">(3)</span>
             </div>
-            
+
             <div class="price-wrapper">
                 <div class="current-price" data-raw-price="408.24">
                     <span class="currency-symbol">$</span><span class="price-whole">408</span><span class="price-sep">.</span><span class="price-fraction">24</span>
@@ -305,7 +305,7 @@
             </div>
         </div>
     </div>
-    
+
 
     <div class="card css-1dbjc4n" data-component-id="U00tRUxFLTAwMzk=">
         <div class="img-placeholder" aria-label="Image for Value Doctor Probably Security Model 120">[ IMG: SM-ELE-0039 ]</div>
@@ -316,16 +316,16 @@
             <div style="margin-bottom: 0.5rem; display:flex; align-items:center; gap:0.5rem; font-size: 0.8rem;">
                 <div class="rating-strip" aria-label="Rated 5 out of 5 stars"><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg></div> <span style="color:#64748b;">(4)</span>
             </div>
-            
+
             <div class="price-wrapper">
                 <div class="current-price" data-raw-price="364.51">
                     <span class="currency-symbol">$</span><span class="price-whole">364</span><span class="price-sep">.</span><span class="price-fraction">51</span>
                 </div>
-                
+
             </div>
         </div>
     </div>
-    
+
 
     <div class="card css-1dbjc4n" data-component-id="U00tRUxFLTAwNDA=">
         <div class="img-placeholder" aria-label="Image for Outside Heart Chance Model 466">[ IMG: SM-ELE-0040 ]</div>
@@ -336,7 +336,7 @@
             <div style="margin-bottom: 0.5rem; display:flex; align-items:center; gap:0.5rem; font-size: 0.8rem;">
                 <div class="rating-strip" aria-label="Rated 4 out of 5 stars"><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-empty"><path fill="#d1d5db" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg></div> <span style="color:#64748b;">(1)</span>
             </div>
-            
+
             <div class="price-wrapper">
                 <div class="current-price" data-raw-price="112.29">
                     <span class="currency-symbol">$</span><span class="price-whole">112</span><span class="hp-hide" style="display:none; font-size:0;">99</span><span class="price-sep">.</span><span class="price-fraction">29</span>
@@ -345,7 +345,7 @@
             </div>
         </div>
     </div>
-    
+
 
     <div class="card css-1dbjc4n" data-component-id="U00tRUxFLTAwNDc=">
         <div class="img-placeholder" aria-label="Image for On Rate Article Piece Model 741">[ IMG: SM-ELE-0047 ]</div>
@@ -356,16 +356,16 @@
             <div style="margin-bottom: 0.5rem; display:flex; align-items:center; gap:0.5rem; font-size: 0.8rem;">
                 <div class="rating-strip" aria-label="Rated 4 out of 5 stars"><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-empty"><path fill="#d1d5db" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg></div> <span style="color:#64748b;">(12)</span>
             </div>
-            
+
             <div class="price-wrapper">
                 <div class="current-price" data-raw-price="52.1">
                     <span class="currency-symbol">$</span><span class="price-whole">52</span><span class="price-sep">.</span><span class="price-fraction">10</span>
                 </div>
-                
+
             </div>
         </div>
     </div>
-    
+
 
     <div class="card css-1dbjc4n" data-component-id="U00tRUxFLTAwNTE=">
         <div class="img-placeholder" aria-label="Image for About Talk Only Interest Model 593">[ IMG: SM-ELE-0051 ]</div>
@@ -376,16 +376,16 @@
             <div style="margin-bottom: 0.5rem; display:flex; align-items:center; gap:0.5rem; font-size: 0.8rem;">
                 <div class="rating-strip" aria-label="Rated 4 out of 5 stars"><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-empty"><path fill="#d1d5db" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg></div> <span style="color:#64748b;">(2)</span>
             </div>
-            
+
             <div class="price-wrapper">
                 <div class="current-price" data-raw-price="16.13">
                     <span class="currency-symbol">$</span><span class="price-whole">16</span><span class="price-sep">.</span><span class="price-fraction">13</span>
                 </div>
-                
+
             </div>
         </div>
     </div>
-    
+
 
     <div class="card css-1dbjc4n" data-component-id="U00tRUxFLTAwNTQ=">
         <div class="img-placeholder" aria-label="Image for Test Two Member Pick Model 596">[ IMG: SM-ELE-0054 ]</div>
@@ -396,7 +396,7 @@
             <div style="margin-bottom: 0.5rem; display:flex; align-items:center; gap:0.5rem; font-size: 0.8rem;">
                 <div class="rating-strip" aria-label="Rated 4 out of 5 stars"><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-empty"><path fill="#d1d5db" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg></div> <span style="color:#64748b;">(14)</span>
             </div>
-            
+
             <div class="price-wrapper">
                 <div class="current-price" data-raw-price="231.78">
                     <span class="currency-symbol">$</span><span class="price-whole">231</span><span class="price-sep">.</span><span class="price-fraction">78</span>
@@ -405,7 +405,7 @@
             </div>
         </div>
     </div>
-    
+
 
     <div class="card css-1dbjc4n" data-component-id="U00tRUxFLTAwNjI=">
         <div class="img-placeholder" aria-label="Image for Despite Test Event Model 16">[ IMG: SM-ELE-0062 ]</div>
@@ -416,7 +416,7 @@
             <div style="margin-bottom: 0.5rem; display:flex; align-items:center; gap:0.5rem; font-size: 0.8rem;">
                 <div class="rating-strip" aria-label="Rated 5 out of 5 stars"><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg></div> <span style="color:#64748b;">(2)</span>
             </div>
-            
+
             <div class="price-wrapper">
                 <div class="current-price" data-raw-price="205.53">
                     <span class="currency-symbol">$</span><span class="price-whole">205</span><span class="price-sep">.</span><span class="price-fraction">53</span>
@@ -425,7 +425,7 @@
             </div>
         </div>
     </div>
-    
+
 
     <div class="card css-1dbjc4n" data-component-id="U00tRUxFLTAwNjQ=">
         <div class="img-placeholder" aria-label="Image for Image Instead Model 654">[ IMG: SM-ELE-0064 ]</div>
@@ -436,16 +436,16 @@
             <div style="margin-bottom: 0.5rem; display:flex; align-items:center; gap:0.5rem; font-size: 0.8rem;">
                 <div class="rating-strip" aria-label="Rated 3 out of 5 stars"><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-empty"><path fill="#d1d5db" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-empty"><path fill="#d1d5db" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg></div> <span style="color:#64748b;">(9)</span>
             </div>
-            
+
             <div class="price-wrapper">
                 <div class="current-price" data-raw-price="185.78">
                     <span class="currency-symbol">$</span><span class="price-whole">185</span><span class="hp-hide" style="display:none; font-size:0;">99</span><span class="price-sep">.</span><span class="price-fraction">78</span>
                 </div>
-                
+
             </div>
         </div>
     </div>
-    
+
 
     <div class="card css-1dbjc4n" data-component-id="U00tRUxFLTAwNjg=">
         <div class="img-placeholder" aria-label="Image for I Finish Year Back Model 828">[ IMG: SM-ELE-0068 ]</div>
@@ -456,16 +456,16 @@
             <div style="margin-bottom: 0.5rem; display:flex; align-items:center; gap:0.5rem; font-size: 0.8rem;">
                 <div class="rating-strip" aria-label="Rated 4 out of 5 stars"><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-empty"><path fill="#d1d5db" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg></div> <span style="color:#64748b;">(15)</span>
             </div>
-            
+
             <div class="price-wrapper">
                 <div class="current-price" data-raw-price="89.66">
                     <span class="currency-symbol">$</span><span class="price-whole">89</span><span class="price-sep">.</span><span class="price-fraction">66</span>
                 </div>
-                
+
             </div>
         </div>
     </div>
-    
+
 
     <div class="card css-1dbjc4n" data-component-id="U00tRUxFLTAwNzM=">
         <div class="img-placeholder" aria-label="Image for Other Tree End Admit Model 859">[ IMG: SM-ELE-0073 ]</div>
@@ -476,7 +476,7 @@
             <div style="margin-bottom: 0.5rem; display:flex; align-items:center; gap:0.5rem; font-size: 0.8rem;">
                 <div class="rating-strip" aria-label="Rated 4 out of 5 stars"><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-empty"><path fill="#d1d5db" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg></div> <span style="color:#64748b;">(6)</span>
             </div>
-            
+
             <div class="price-wrapper">
                 <div class="current-price" data-raw-price="362.47">
                     <span class="currency-symbol">$</span><span class="price-whole">362</span><span class="price-sep">.</span><span class="price-fraction">47</span>
@@ -485,7 +485,7 @@
             </div>
         </div>
     </div>
-    
+
 
     <div class="card css-1dbjc4n" data-component-id="U00tRUxFLTAwODY=">
         <div class="img-placeholder" aria-label="Image for Alone Stop Model 680">[ IMG: SM-ELE-0086 ]</div>
@@ -496,16 +496,16 @@
             <div style="margin-bottom: 0.5rem; display:flex; align-items:center; gap:0.5rem; font-size: 0.8rem;">
                 <div class="rating-strip" aria-label="Rated 4 out of 5 stars"><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-empty"><path fill="#d1d5db" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg></div> <span style="color:#64748b;">(10)</span>
             </div>
-            
+
             <div class="price-wrapper">
                 <div class="current-price" data-raw-price="494.16">
                     <span class="currency-symbol">$</span><span class="price-whole">494</span><span class="hp-hide" style="display:none; font-size:0;">99</span><span class="price-sep">.</span><span class="price-fraction">16</span>
                 </div>
-                
+
             </div>
         </div>
     </div>
-    
+
 
     <div class="card css-1dbjc4n" data-component-id="U00tRUxFLTAwOTI=">
         <div class="img-placeholder" aria-label="Image for He For I Model 594">[ IMG: SM-ELE-0092 ]</div>
@@ -516,7 +516,7 @@
             <div style="margin-bottom: 0.5rem; display:flex; align-items:center; gap:0.5rem; font-size: 0.8rem;">
                 <div class="rating-strip" aria-label="Rated 4 out of 5 stars"><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-empty"><path fill="#d1d5db" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg></div> <span style="color:#64748b;">(11)</span>
             </div>
-            
+
             <div class="price-wrapper">
                 <div class="current-price" data-raw-price="142.25">
                     <span class="currency-symbol">$</span><span class="price-whole">142</span><span class="price-sep">.</span><span class="price-fraction">25</span>
@@ -525,7 +525,7 @@
             </div>
         </div>
     </div>
-    
+
 
     <div class="card css-1dbjc4n" data-component-id="U00tRUxFLTAwOTQ=">
         <div class="img-placeholder" aria-label="Image for Interest Week Model 85">[ IMG: SM-ELE-0094 ]</div>
@@ -536,7 +536,7 @@
             <div style="margin-bottom: 0.5rem; display:flex; align-items:center; gap:0.5rem; font-size: 0.8rem;">
                 <div class="rating-strip" aria-label="Rated 4 out of 5 stars"><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-empty"><path fill="#d1d5db" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg></div> <span style="color:#64748b;">(12)</span>
             </div>
-            
+
             <div class="price-wrapper">
                 <div class="current-price" data-raw-price="424.82">
                     <span class="currency-symbol">$</span><span class="price-whole">424</span><span class="price-sep">.</span><span class="price-fraction">82</span>
@@ -545,7 +545,7 @@
             </div>
         </div>
     </div>
-    
+
 
     <div class="card css-1dbjc4n" data-component-id="U00tRUxFLTAxMDk=">
         <div class="img-placeholder" aria-label="Image for Environmental Surface Lay Model 593">[ IMG: SM-ELE-0109 ]</div>
@@ -556,16 +556,16 @@
             <div style="margin-bottom: 0.5rem; display:flex; align-items:center; gap:0.5rem; font-size: 0.8rem;">
                 <div class="rating-strip" aria-label="Rated 4 out of 5 stars"><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-empty"><path fill="#d1d5db" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg></div> <span style="color:#64748b;">(3)</span>
             </div>
-            
+
             <div class="price-wrapper">
                 <div class="current-price" data-raw-price="242.01">
                     <span class="currency-symbol">$</span><span class="price-whole">242</span><span class="price-sep">.</span><span class="price-fraction">01</span>
                 </div>
-                
+
             </div>
         </div>
     </div>
-    
+
 </div>
 <div class="pager" data-total="56"><a href="cat/electronics/index.html" class="active">1</a><a href="cat/electronics/offset-24.html" class="">2</a><a href="cat/electronics/offset-48.html" class="">3</a></div>
 </main>

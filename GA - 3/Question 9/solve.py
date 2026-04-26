@@ -14,7 +14,14 @@ def extract_bounding_boxes(pdf_path: Path):
     boxes = []
     for x0, y0, x1, y1, word, *_ in words:
         if word == "text":
-            boxes.append([round(float(x0), 3), round(float(y0), 3), round(float(x1), 3), round(float(y1), 3)])
+            boxes.append(
+                [
+                    round(float(x0), 3),
+                    round(float(y0), 3),
+                    round(float(x1), 3),
+                    round(float(y1), 3),
+                ]
+            )
 
     return boxes
 

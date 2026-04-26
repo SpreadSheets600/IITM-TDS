@@ -1,9 +1,9 @@
 /**
  * Q16 Solver: Cross-Lingual Entity Disambiguation
- * 
+ *
  * This script computes the exact answer CSV (doc_id → entity_id mapping)
  * by replicating the document generation algorithm using the same PRNG.
- * 
+ *
  * Usage: node solve_q16.js <email>
  * Output: Prints the CSV you should paste into the exam
  */
