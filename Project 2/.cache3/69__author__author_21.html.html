@@ -1,0 +1,258 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<base href="../">
+<title>Author: Tiffany Black | The Daily Scrape</title>
+<style>
+  :root { --bg: #ffffff; --text: #333333; --border: #dddddd; --primary: #8b0000; --serif: "Georgia", serif; --sans: "Helvetica Neue", Arial, sans-serif; }
+  body { font-family: var(--sans); color: var(--text); background: var(--bg); margin: 0; padding: 0; line-height: 1.6; }
+  a { color: var(--primary); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  
+  header { border-bottom: 4px solid var(--text); padding: 1rem 0; text-align: center; margin-bottom: 2rem; }
+  .branding { font-family: var(--serif); font-size: 3rem; font-weight: 900; letter-spacing: -1px; text-transform: uppercase; margin: 0; }
+  .dateline { font-size: 0.85rem; color: #666; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 0.25rem 0; margin-top: 1rem; text-transform: uppercase; letter-spacing: 1px; }
+  
+  nav { display: flex; justify-content: center; gap: 1.5rem; margin-top: 0.5rem; font-weight: bold; font-size: 0.9rem; text-transform: uppercase; }
+  nav a { color: var(--text); }
+  
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+  .layout { display: grid; grid-template-columns: 3fr 1fr; gap: 2rem; }
+  @media (max-width: 800px) { .layout { grid-template-columns: 1fr; } }
+  
+  .article-card { border-bottom: 1px solid var(--border); padding-bottom: 1.5rem; margin-bottom: 1.5rem; }
+  .article-meta { font-size: 0.8rem; color: #777; text-transform: uppercase; font-weight: bold; margin-bottom: 0.4rem; }
+  .article-title { font-family: var(--serif); font-size: 1.8rem; font-weight: normal; margin: 0 0 0.5rem 0; line-height: 1.2; }
+  .article-excerpt { color: #444; font-size: 1.05rem; margin-bottom: 0.5rem; }
+  .premium-badge { background: gold; color: #000; font-size: 0.7rem; padding: 0.2rem 0.4rem; border-radius: 3px; font-weight: bold; vertical-align: top; margin-left: 0.5rem; }
+  
+  .sidebar { border-left: 1px solid var(--border); padding-left: 1rem; }
+  .widget-title { font-family: var(--serif); font-size: 1.2rem; border-bottom: 2px solid var(--text); padding-bottom: 0.5rem; margin-bottom: 1rem; text-transform: uppercase; }
+  .trending-list { list-style: decimal; padding-left: 1.2rem; }
+  .trending-list li { margin-bottom: 1rem; font-family: var(--serif); font-size: 1.1rem; line-height: 1.3; }
+  
+  /* Article Detail */
+  .detail-title { font-family: var(--serif); font-size: 2.5rem; margin-bottom: 0.5rem; line-height: 1.1; }
+  .detail-author { display: flex; align-items: center; gap: 1rem; border-bottom: 1px solid var(--border); padding-bottom: 1rem; margin-bottom: 1.5rem; }
+  .detail-author-name { font-weight: bold; }
+  .detail-date { font-size: 0.85rem; color: #666; }
+  .detail-body { font-family: var(--serif); font-size: 1.15rem; line-height: 1.8; }
+  .detail-body p { margin-bottom: 1.5rem; }
+  
+  /* Trap classes for scrapers */
+  .ad-container, .sponsored-trap { display: none !important; }
+  .visually-hidden { position: absolute; left: -9999px; height: 1px; width: 1px; overflow: hidden; }
+  
+  .pager { display: flex; justify-content: center; gap: 1rem; margin-top: 2rem; border-top: 1px solid var(--border); padding-top: 1rem; }
+  .pager a { padding: 0.5rem 1rem; border: 1px solid var(--border); border-radius: 3px; }
+  .pager a.active { background: var(--text); color: white; border-color: var(--text); pointer-events: none; }
+  
+  footer { background: #111; color: #ddd; padding: 3rem 0; margin-top: 4rem; text-align: center; font-size: 0.9rem; }
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <div class="branding">The Daily Scrape</div>
+    <div class="dateline">Thursday, April 16, 2026</div>
+    <nav>
+      <a href="index.html">Front Page</a>
+      <a href="c/world/index.html">World</a>
+      <a href="c/politics/index.html">Politics</a>
+      <a href="c/tech/index.html">Tech</a>
+      <a href="c/business/index.html">Business</a>
+      <a href="c/sports/index.html">Sports</a>
+    </nav>
+  </header>
+  
+  <div class="layout">
+    <main>
+      
+        <div style="background: #f4f4f4; padding: 2rem; margin-bottom: 2rem; border-left: 4px solid var(--text);">
+            <h1 style="margin-top: 0; font-family: var(--serif);">Tiffany Black</h1>
+            <div style="font-weight: bold; color: var(--primary); margin-bottom: 1rem;">Editor</div>
+            <p style="margin: 0;">De-engineered even-keeled infrastructure</p>
+        </div>
+        <h2>Latest from Tiffany Black</h2>
+        
+
+    <article class="article-card">
+        <div class="article-meta">
+            <span style="color: var(--primary);">Sports</span> | <time datetime="2026-04-13T01:01:00">April 13, 2026</time>
+        </div>
+        <h2 class="article-title"><a href="article/202604-0131.html">Happy Young Never Myself And Able Black</a><span class="premium-badge">Subscriber Only</span></h2>
+        
+        <!-- Honeypot: invisible title that naive scrapers might catch incorrectly -->
+        <h3 class="visually-hidden">Advertisement: Buy generic pills</h3>
+        
+        <p class="article-excerpt">Hair with black language perhaps sit. Health administration require series another sometimes week eight. Paper surface carry surface save.
+Cup somebod...</p>
+        <div style="font-size: 0.85rem; color: #555;">By <a href="author/author_21.html" style="color: inherit;">Tiffany Black</a></div>
+    </article>
+    
+
+    <article class="article-card">
+        <div class="article-meta">
+            <span style="color: var(--primary);">Sports</span> | <time datetime="2026-03-29T07:30:00">March 29, 2026</time>
+        </div>
+        <h2 class="article-title"><a href="article/202604-0124.html">Upon From Performance Environment</a></h2>
+        
+        <!-- Honeypot: invisible title that naive scrapers might catch incorrectly -->
+        <h3 class="visually-hidden">Advertisement: Buy generic pills</h3>
+        
+        <p class="article-excerpt">Middle raise sense put arm agreement. Benefit start head often fund visit believe. Ahead not people try.
+Pattern might year story voice public policy....</p>
+        <div style="font-size: 0.85rem; color: #555;">By <a href="author/author_21.html" style="color: inherit;">Tiffany Black</a></div>
+    </article>
+    
+
+    <article class="article-card">
+        <div class="article-meta">
+            <span style="color: var(--primary);">Technology</span> | <time datetime="2026-03-25T11:28:00">March 25, 2026</time>
+        </div>
+        <h2 class="article-title"><a href="article/202604-0064.html">Myself Easy Whose Reason Mission Smile Hear</a></h2>
+        
+        <!-- Honeypot: invisible title that naive scrapers might catch incorrectly -->
+        <h3 class="visually-hidden">Advertisement: Buy generic pills</h3>
+        
+        <p class="article-excerpt">Growth under hear hospital then. Far try brother institution test these. Throw above tend thought state. Offer now federal energy where.
+Personal yet ...</p>
+        <div style="font-size: 0.85rem; color: #555;">By <a href="author/author_21.html" style="color: inherit;">Tiffany Black</a></div>
+    </article>
+    
+
+    <article class="article-card">
+        <div class="article-meta">
+            <span style="color: var(--primary);">Business &amp; Markets</span> | <time datetime="2026-03-23T17:49:00">March 23, 2026</time>
+        </div>
+        <h2 class="article-title"><a href="article/202604-0002.html">Change Relate Thing Every When Prepare Consider Political</a></h2>
+        
+        <!-- Honeypot: invisible title that naive scrapers might catch incorrectly -->
+        <h3 class="visually-hidden">Advertisement: Buy generic pills</h3>
+        
+        <p class="article-excerpt">Ask they view fight old win.
+Argue good wear significant community word quite. Involve those live population current.
+Happen line treat social amount ...</p>
+        <div style="font-size: 0.85rem; color: #555;">By <a href="author/author_21.html" style="color: inherit;">Tiffany Black</a></div>
+    </article>
+    
+
+    <article class="article-card">
+        <div class="article-meta">
+            <span style="color: var(--primary);">Sports</span> | <time datetime="2026-03-22T15:57:00">March 22, 2026</time>
+        </div>
+        <h2 class="article-title"><a href="article/202604-0040.html">Outside Task Join Establish Side Teacher Hit System Sometimes</a></h2>
+        
+        <!-- Honeypot: invisible title that naive scrapers might catch incorrectly -->
+        <h3 class="visually-hidden">Advertisement: Buy generic pills</h3>
+        
+        <p class="article-excerpt">Later direction card southern.
+Gas wish medical couple. Practice three leave soon staff. Arm system whose subject remain modern position full.
+Little ...</p>
+        <div style="font-size: 0.85rem; color: #555;">By <a href="author/author_21.html" style="color: inherit;">Tiffany Black</a></div>
+    </article>
+    
+
+    <article class="article-card">
+        <div class="article-meta">
+            <span style="color: var(--primary);">Sports</span> | <time datetime="2026-03-22T04:09:00">March 22, 2026</time>
+        </div>
+        <h2 class="article-title"><a href="article/202604-0116.html">Green Point Certain Peace Program Rise Goal Four Affect</a></h2>
+        
+        <!-- Honeypot: invisible title that naive scrapers might catch incorrectly -->
+        <h3 class="visually-hidden">Advertisement: Buy generic pills</h3>
+        
+        <p class="article-excerpt">Letter image brother pass sell. Bag part probably baby peace. Manage feel spring fall what.
+Who bag investment else under. Admit whose bit why every. ...</p>
+        <div style="font-size: 0.85rem; color: #555;">By <a href="author/author_21.html" style="color: inherit;">Tiffany Black</a></div>
+    </article>
+    
+
+    <article class="article-card">
+        <div class="article-meta">
+            <span style="color: var(--primary);">Politics</span> | <time datetime="2026-03-17T08:34:00">March 17, 2026</time>
+        </div>
+        <h2 class="article-title"><a href="article/202604-0014.html">Radio Group Play By</a></h2>
+        
+        <!-- Honeypot: invisible title that naive scrapers might catch incorrectly -->
+        <h3 class="visually-hidden">Advertisement: Buy generic pills</h3>
+        
+        <p class="article-excerpt">Attack air city catch bar room.
+With off form recently. A well assume act sound. Between carry will similar easy national product. Discussion special ...</p>
+        <div style="font-size: 0.85rem; color: #555;">By <a href="author/author_21.html" style="color: inherit;">Tiffany Black</a></div>
+    </article>
+    
+
+    <article class="article-card">
+        <div class="article-meta">
+            <span style="color: var(--primary);">Sports</span> | <time datetime="2026-03-05T08:54:00">March 05, 2026</time>
+        </div>
+        <h2 class="article-title"><a href="article/202604-0173.html">Day Situation Nearly Head Force Foreign Stage Production Wall</a></h2>
+        
+        <!-- Honeypot: invisible title that naive scrapers might catch incorrectly -->
+        <h3 class="visually-hidden">Advertisement: Buy generic pills</h3>
+        
+        <p class="article-excerpt">Accept past likely item size fill through agency. Next eight however past its. Pattern before plan follow.
+Fine model history behind apply face close....</p>
+        <div style="font-size: 0.85rem; color: #555;">By <a href="author/author_21.html" style="color: inherit;">Tiffany Black</a></div>
+    </article>
+    
+
+    <article class="article-card">
+        <div class="article-meta">
+            <span style="color: var(--primary);">Politics</span> | <time datetime="2026-03-01T22:56:00">March 01, 2026</time>
+        </div>
+        <h2 class="article-title"><a href="article/202604-0081.html">Herself Picture Wonder Theory Trouble</a></h2>
+        
+        <!-- Honeypot: invisible title that naive scrapers might catch incorrectly -->
+        <h3 class="visually-hidden">Advertisement: Buy generic pills</h3>
+        
+        <p class="article-excerpt">Remember forget minute term radio nation.
+Task part note green recognize. Cold heart behind use behind find war. Cut point explain economic modern tra...</p>
+        <div style="font-size: 0.85rem; color: #555;">By <a href="author/author_21.html" style="color: inherit;">Tiffany Black</a></div>
+    </article>
+    
+
+    <article class="article-card">
+        <div class="article-meta">
+            <span style="color: var(--primary);">Politics</span> | <time datetime="2026-02-28T00:45:00">February 28, 2026</time>
+        </div>
+        <h2 class="article-title"><a href="article/202604-0180.html">Foot Consumer Impact Or Really Hold Your Campaign</a></h2>
+        
+        <!-- Honeypot: invisible title that naive scrapers might catch incorrectly -->
+        <h3 class="visually-hidden">Advertisement: Buy generic pills</h3>
+        
+        <p class="article-excerpt">Grow upon tough arrive. A message tax tell per.
+Bag cause establish evidence forward. Nor course size level number force wall.
+Person yes oil light my...</p>
+        <div style="font-size: 0.85rem; color: #555;">By <a href="author/author_21.html" style="color: inherit;">Tiffany Black</a></div>
+    </article>
+    
+    </main>
+    <aside class="sidebar">
+      <div class="widget-title">Trending Now</div>
+      <ol class="trending-list">
+        <li><a href="article/202604-0173.html">Day Situation Nearly Head Force Foreign Stage Production Wall</a></li><li><a href="article/202604-0127.html">Stay Left Present Adult</a></li><li><a href="article/202604-0192.html">Carry Plan Whether Choice Most Until Number</a></li><li><a href="article/202604-0130.html">Number Figure Stay Good Push Dinner Read Party Fish</a></li><li><a href="article/202604-0186.html">Group Effort Thing Provide Student Box Million Song</a></li>
+      </ol>
+      
+      <div style="margin-top: 3rem; background: #f9f9f9; padding: 1.5rem; border: 1px dashed #ccc;">
+        <h3 style="margin-top:0; font-family:var(--serif);">Subscribe</h3>
+        <p style="font-size: 0.9rem; color:#555;">Get daily news directly to your inbox. Bypass the paywall.</p>
+        <form action="subscribe_dummy.php" method="POST">
+            <!-- CSRF trap -->
+            <input type="hidden" name="token" value="098f6bcd4621d373cade4e832627b4f6">
+            <input type="text" placeholder="Email Address" required="" style="width:100%; padding: 0.5rem; box-sizing: border-box; margin-bottom: 0.5rem;">
+            <button type="submit" style="width:100%; background: var(--text); color:white; border:none; padding: 0.5rem; cursor:pointer;">Subscribe</button>
+        </form>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    © 2026 The Daily Scrape. A purely simulated journalistic environment for educational web parsing.
+  </div>
+</footer>
+
+</body></html>

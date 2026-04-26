@@ -1,0 +1,578 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<base href="../../">
+<title>Home &amp; Kitchen | ScrapeMart</title>
+<style>
+  :root { --bg: #f9f9f9; --text: #1a1a1a; --border: #e2e8f0; --primary: #2563eb; --accent: #f59e0b; --danger: #ef4444; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; background: var(--bg); color: var(--text); }
+  a { color: var(--primary); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  
+  header { background: #fff; padding: 1.5rem 0; border-bottom: 1px solid var(--border); margin-bottom: 2rem; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+  .nav-top { display: flex; justify-content: space-between; align-items: center; }
+  .logo { font-size: 1.8rem; font-weight: 900; letter-spacing: -1px; }
+  .cat-nav { display: flex; gap: 1.5rem; margin-top: 1rem; }
+  .cat-nav a { font-weight: 600; color: #4b5563; text-transform: uppercase; font-size: 0.9rem; }
+  
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1.5rem; margin-bottom: 2rem; }
+  .card { background: #fff; border: 1px solid var(--border); border-radius: 0.5rem; overflow: hidden; display: flex; flex-direction: column; transition: transform 0.2s; }
+  .card:hover { transform: translateY(-2px); box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+  .img-placeholder { background: #e2e8f0; height: 200px; display: flex; align-items: center; justify-content: center; color: #94a3b8; font-size: 0.8rem; font-family: monospace; border-bottom: 1px solid var(--border); }
+  .card-body { padding: 1rem; flex: 1; display: flex; flex-direction: column; }
+  .card-title { font-size: 1.1rem; margin: 0 0 0.5rem 0; line-height: 1.3; font-weight: 600; }
+  .card-sku { font-size: 0.75rem; color: #94a3b8; font-family: monospace; margin-bottom: 0.5rem; }
+  
+  .price-wrapper { display: flex; align-items: baseline; gap: 0.5rem; margin-top: auto; margin-bottom: 0.5rem; }
+  .current-price { font-size: 1.5rem; font-weight: 800; color: var(--text); display: flex; align-items: baseline; }
+  .currency-symbol { font-size: 0.9rem; margin-right: 0.1rem; }
+  .price-fraction { font-size: 0.9rem; font-weight: 600; vertical-align: top; line-height: 1.8; }
+  .old-price { text-decoration: line-through; color: #94a3b8; font-size: 0.9rem; }
+  .stock-badge { font-size: 0.75rem; font-weight: bold; padding: 0.2rem 0.5rem; border-radius: 3px; display: inline-block; margin-bottom: 0.5rem; }
+  .in-stock { background: #dcfce7; color: #166534; }
+  .low-stock { background: #fef9c3; color: #854d0e; }
+  .out-stock { background: #fee2e2; color: #991b1b; }
+  
+  /* Detail Page */
+  .p-detail { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; background: #fff; padding: 2rem; border-radius: 0.5rem; border: 1px solid var(--border); }
+  @media (max-width: 800px) { .p-detail { grid-template-columns: 1fr; } }
+  .p-img-huge { background: #f1f5f9; height: 400px; border-radius: 0.5rem; display: flex; align-items: center; justify-content: center; font-family: monospace; color: #cbd5e1; }
+  .p-info h1 { margin-top: 0; font-size: 2rem; line-height: 1.2; }
+  .variants-select { margin: 1.5rem 0; }
+  .variants-select select { width: 100%; padding: 0.5rem; border: 1px solid var(--border); font-size: 1rem; }
+  .btn-cart { background: var(--primary); color: #fff; width: 100%; text-align: center; border: none; padding: 1rem; font-size: 1.1rem; font-weight: bold; border-radius: 0.25rem; cursor: pointer; }
+  .btn-cart:hover { background: #1d4ed8; }
+  
+  .reviews-section { margin-top: 3rem; }
+  .review-item { background: #fff; padding: 1.5rem; border: 1px solid var(--border); border-radius: 0.5rem; margin-bottom: 1rem; }
+  .review-header { display: flex; justify-content: space-between; margin-bottom: 0.5rem; }
+  .review-author { font-weight: bold; }
+  .review-date { color: #94a3b8; font-size: 0.85rem; }
+  
+  .pager { display: flex; gap: 0.5rem; margin-top: 2rem; justify-content: center; }
+  .pager a { display: block; border: 1px solid var(--border); padding: 0.5rem 1rem; background: #fff; color: var(--text); border-radius: 0.25rem; }
+  .pager a.active { background: var(--text); color: #fff; border-color: var(--text); }
+  
+  /* Harder Scraping Obfuscations */
+  .css-1dbjc4n { flex-direction: column; }
+  .css-1pax { display: flex; }
+  .rt-val::after { content: " (Verified Purchase)"; font-size: 0.75rem; color: #10b981; }
+</style>
+
+<!-- Malformed or specific JSON-LD for advanced scrapers -->
+
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <div class="nav-top">
+      <a href="index.html" class="logo">ScrapeMart</a>
+      <div style="display:flex; gap:1rem;">
+        <input type="text" placeholder="Search..." style="padding:0.5rem; border:1px solid #ccc;">
+        <button style="padding:0.5rem 1rem;">🛒</button>
+      </div>
+    </div>
+    <div class="cat-nav">
+      <a href="cat/electronics/index.html">Electronics</a>
+      <a href="cat/home/index.html">Home</a>
+      <a href="cat/outdoors/index.html">Outdoors</a>
+      <a href="cat/apparel/index.html">Apparel</a>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+  <h1 style="margin-top:0;">Home &amp; Kitchen</h1>
+<div class="grid">
+
+    <div class="card css-1dbjc4n" data-component-id="U00tSE9NLTAwMDI=">
+        <div class="img-placeholder" aria-label="Image for Final Economy Manage Onto Model 886">[ IMG: SM-HOM-0002 ]</div>
+        <div class="card-body css-1pax">
+            <div class="stock-badge in-stock">In Stock</div>
+            <div class="card-sku">SKU: SM-HOM-0002</div>
+            <h2 class="card-title"><a href="p/SM-HOM-0002.html" class="p-link">Final Economy Manage Onto Model 886</a></h2>
+            <div style="margin-bottom: 0.5rem; display:flex; align-items:center; gap:0.5rem; font-size: 0.8rem;">
+                <div class="rating-strip" aria-label="Rated 0 out of 5 stars"><svg viewBox="0 0 24 24" width="16" height="16" class="star-empty"><path fill="#d1d5db" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-empty"><path fill="#d1d5db" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-empty"><path fill="#d1d5db" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-empty"><path fill="#d1d5db" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-empty"><path fill="#d1d5db" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg></div> <span style="color:#64748b;">(0)</span>
+            </div>
+            
+            <div class="price-wrapper">
+                <div class="current-price" data-raw-price="30.87">
+                    <span class="currency-symbol">$</span><span class="price-whole">30</span><span class="price-sep">.</span><span class="price-fraction">87</span>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="card css-1dbjc4n" data-component-id="U00tSE9NLTAwMTU=">
+        <div class="img-placeholder" aria-label="Image for Care Visit After Model 562">[ IMG: SM-HOM-0015 ]</div>
+        <div class="card-body css-1pax">
+            <div class="stock-badge low-stock">Only 2 left</div>
+            <div class="card-sku">SKU: SM-HOM-0015</div>
+            <h2 class="card-title"><a href="p/SM-HOM-0015.html" class="p-link">Care Visit After Model 562</a></h2>
+            <div style="margin-bottom: 0.5rem; display:flex; align-items:center; gap:0.5rem; font-size: 0.8rem;">
+                <div class="rating-strip" aria-label="Rated 3 out of 5 stars"><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-empty"><path fill="#d1d5db" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-empty"><path fill="#d1d5db" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg></div> <span style="color:#64748b;">(2)</span>
+            </div>
+            
+            <div class="price-wrapper">
+                <div class="current-price" data-raw-price="296.45">
+                    <span class="currency-symbol">$</span><span class="price-whole">296</span><span class="hp-hide" style="display:none; font-size:0;">99</span><span class="price-sep">.</span><span class="price-fraction">45</span>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="card css-1dbjc4n" data-component-id="U00tSE9NLTAwMTY=">
+        <div class="img-placeholder" aria-label="Image for Apply Discover Student Public Model 835">[ IMG: SM-HOM-0016 ]</div>
+        <div class="card-body css-1pax">
+            <div class="stock-badge low-stock">Only 5 left</div>
+            <div class="card-sku">SKU: SM-HOM-0016</div>
+            <h2 class="card-title"><a href="p/SM-HOM-0016.html" class="p-link">Apply Discover Student Public Model 835</a></h2>
+            <div style="margin-bottom: 0.5rem; display:flex; align-items:center; gap:0.5rem; font-size: 0.8rem;">
+                <div class="rating-strip" aria-label="Rated 5 out of 5 stars"><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg></div> <span style="color:#64748b;">(1)</span>
+            </div>
+            
+            <div class="price-wrapper">
+                <div class="current-price" data-raw-price="112.43">
+                    <span class="currency-symbol">$</span><span class="price-whole">112</span><span class="price-sep">.</span><span class="price-fraction">43</span>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="card css-1dbjc4n" data-component-id="U00tSE9NLTAwMTc=">
+        <div class="img-placeholder" aria-label="Image for Season Another Model 479">[ IMG: SM-HOM-0017 ]</div>
+        <div class="card-body css-1pax">
+            <div class="stock-badge out-stock">Out of Stock</div>
+            <div class="card-sku">SKU: SM-HOM-0017</div>
+            <h2 class="card-title"><a href="p/SM-HOM-0017.html" class="p-link">Season Another Model 479</a></h2>
+            <div style="margin-bottom: 0.5rem; display:flex; align-items:center; gap:0.5rem; font-size: 0.8rem;">
+                <div class="rating-strip" aria-label="Rated 0 out of 5 stars"><svg viewBox="0 0 24 24" width="16" height="16" class="star-empty"><path fill="#d1d5db" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-empty"><path fill="#d1d5db" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-empty"><path fill="#d1d5db" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-empty"><path fill="#d1d5db" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-empty"><path fill="#d1d5db" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg></div> <span style="color:#64748b;">(0)</span>
+            </div>
+            
+            <div class="price-wrapper">
+                <div class="current-price" data-raw-price="253.65">
+                    <span class="currency-symbol">$</span><span class="price-whole">253</span><span class="hp-hide" style="display:none; font-size:0;">99</span><span class="price-sep">.</span><span class="price-fraction">65</span>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="card css-1dbjc4n" data-component-id="U00tSE9NLTAwMjI=">
+        <div class="img-placeholder" aria-label="Image for Office Explain Attention It Model 963">[ IMG: SM-HOM-0022 ]</div>
+        <div class="card-body css-1pax">
+            <div class="stock-badge out-stock">Out of Stock</div>
+            <div class="card-sku">SKU: SM-HOM-0022</div>
+            <h2 class="card-title"><a href="p/SM-HOM-0022.html" class="p-link">Office Explain Attention It Model 963</a></h2>
+            <div style="margin-bottom: 0.5rem; display:flex; align-items:center; gap:0.5rem; font-size: 0.8rem;">
+                <div class="rating-strip" aria-label="Rated 4 out of 5 stars"><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-empty"><path fill="#d1d5db" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg></div> <span style="color:#64748b;">(14)</span>
+            </div>
+            
+            <div class="price-wrapper">
+                <div class="current-price" data-raw-price="361.64">
+                    <span class="currency-symbol">$</span><span class="price-whole">361</span><span class="price-sep">.</span><span class="price-fraction">64</span>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="card css-1dbjc4n" data-component-id="U00tSE9NLTAwMjM=">
+        <div class="img-placeholder" aria-label="Image for Hope Onto Model 388">[ IMG: SM-HOM-0023 ]</div>
+        <div class="card-body css-1pax">
+            <div class="stock-badge low-stock">Only 5 left</div>
+            <div class="card-sku">SKU: SM-HOM-0023</div>
+            <h2 class="card-title"><a href="p/SM-HOM-0023.html" class="p-link">Hope Onto Model 388</a></h2>
+            <div style="margin-bottom: 0.5rem; display:flex; align-items:center; gap:0.5rem; font-size: 0.8rem;">
+                <div class="rating-strip" aria-label="Rated 4 out of 5 stars"><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-empty"><path fill="#d1d5db" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg></div> <span style="color:#64748b;">(5)</span>
+            </div>
+            
+            <div class="price-wrapper">
+                <div class="current-price" data-raw-price="189.87">
+                    <span class="currency-symbol">$</span><span class="price-whole">189</span><span class="hp-hide" style="display:none; font-size:0;">99</span><span class="price-sep">.</span><span class="price-fraction">87</span>
+                </div>
+                <div class="old-price">$427.61</div>
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="card css-1dbjc4n" data-component-id="U00tSE9NLTAwMjY=">
+        <div class="img-placeholder" aria-label="Image for Simply Themselves Model 823">[ IMG: SM-HOM-0026 ]</div>
+        <div class="card-body css-1pax">
+            <div class="stock-badge in-stock">In Stock</div>
+            <div class="card-sku">SKU: SM-HOM-0026</div>
+            <h2 class="card-title"><a href="p/SM-HOM-0026.html" class="p-link">Simply Themselves Model 823</a></h2>
+            <div style="margin-bottom: 0.5rem; display:flex; align-items:center; gap:0.5rem; font-size: 0.8rem;">
+                <div class="rating-strip" aria-label="Rated 0 out of 5 stars"><svg viewBox="0 0 24 24" width="16" height="16" class="star-empty"><path fill="#d1d5db" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-empty"><path fill="#d1d5db" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-empty"><path fill="#d1d5db" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-empty"><path fill="#d1d5db" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-empty"><path fill="#d1d5db" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg></div> <span style="color:#64748b;">(0)</span>
+            </div>
+            
+            <div class="price-wrapper">
+                <div class="current-price" data-raw-price="74.39">
+                    <span class="currency-symbol">$</span><span class="price-whole">74</span><span class="price-sep">.</span><span class="price-fraction">39</span>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="card css-1dbjc4n" data-component-id="U00tSE9NLTAwMjc=">
+        <div class="img-placeholder" aria-label="Image for Pm Ten However Model 970">[ IMG: SM-HOM-0027 ]</div>
+        <div class="card-body css-1pax">
+            <div class="stock-badge low-stock">Only 1 left</div>
+            <div class="card-sku">SKU: SM-HOM-0027</div>
+            <h2 class="card-title"><a href="p/SM-HOM-0027.html" class="p-link">Pm Ten However Model 970</a></h2>
+            <div style="margin-bottom: 0.5rem; display:flex; align-items:center; gap:0.5rem; font-size: 0.8rem;">
+                <div class="rating-strip" aria-label="Rated 3 out of 5 stars"><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-empty"><path fill="#d1d5db" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-empty"><path fill="#d1d5db" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg></div> <span style="color:#64748b;">(8)</span>
+            </div>
+            
+            <div class="price-wrapper">
+                <div class="current-price" data-raw-price="319.03">
+                    <span class="currency-symbol">$</span><span class="price-whole">319</span><span class="hp-hide" style="display:none; font-size:0;">99</span><span class="price-sep">.</span><span class="price-fraction">03</span>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="card css-1dbjc4n" data-component-id="U00tSE9NLTAwMzA=">
+        <div class="img-placeholder" aria-label="Image for During Letter Ago Future Model 140">[ IMG: SM-HOM-0030 ]</div>
+        <div class="card-body css-1pax">
+            <div class="stock-badge low-stock">Only 5 left</div>
+            <div class="card-sku">SKU: SM-HOM-0030</div>
+            <h2 class="card-title"><a href="p/SM-HOM-0030.html" class="p-link">During Letter Ago Future Model 140</a></h2>
+            <div style="margin-bottom: 0.5rem; display:flex; align-items:center; gap:0.5rem; font-size: 0.8rem;">
+                <div class="rating-strip" aria-label="Rated 4 out of 5 stars"><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-empty"><path fill="#d1d5db" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg></div> <span style="color:#64748b;">(1)</span>
+            </div>
+            
+            <div class="price-wrapper">
+                <div class="current-price" data-raw-price="488.9">
+                    <span class="currency-symbol">$</span><span class="price-whole">488</span><span class="hp-hide" style="display:none; font-size:0;">99</span><span class="price-sep">.</span><span class="price-fraction">90</span>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="card css-1dbjc4n" data-component-id="U00tSE9NLTAwMzM=">
+        <div class="img-placeholder" aria-label="Image for Allow Approach Officer Share Model 518">[ IMG: SM-HOM-0033 ]</div>
+        <div class="card-body css-1pax">
+            <div class="stock-badge out-stock">Out of Stock</div>
+            <div class="card-sku">SKU: SM-HOM-0033</div>
+            <h2 class="card-title"><a href="p/SM-HOM-0033.html" class="p-link">Allow Approach Officer Share Model 518</a></h2>
+            <div style="margin-bottom: 0.5rem; display:flex; align-items:center; gap:0.5rem; font-size: 0.8rem;">
+                <div class="rating-strip" aria-label="Rated 4 out of 5 stars"><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-empty"><path fill="#d1d5db" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg></div> <span style="color:#64748b;">(15)</span>
+            </div>
+            
+            <div class="price-wrapper">
+                <div class="current-price" data-raw-price="62.49">
+                    <span class="currency-symbol">$</span><span class="price-whole">62</span><span class="hp-hide" style="display:none; font-size:0;">99</span><span class="price-sep">.</span><span class="price-fraction">49</span>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="card css-1dbjc4n" data-component-id="U00tSE9NLTAwMzY=">
+        <div class="img-placeholder" aria-label="Image for Bank Its Heart Model 355">[ IMG: SM-HOM-0036 ]</div>
+        <div class="card-body css-1pax">
+            <div class="stock-badge in-stock">In Stock</div>
+            <div class="card-sku">SKU: SM-HOM-0036</div>
+            <h2 class="card-title"><a href="p/SM-HOM-0036.html" class="p-link">Bank Its Heart Model 355</a></h2>
+            <div style="margin-bottom: 0.5rem; display:flex; align-items:center; gap:0.5rem; font-size: 0.8rem;">
+                <div class="rating-strip" aria-label="Rated 4 out of 5 stars"><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-empty"><path fill="#d1d5db" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg></div> <span style="color:#64748b;">(8)</span>
+            </div>
+            
+            <div class="price-wrapper">
+                <div class="current-price" data-raw-price="384.8">
+                    <span class="currency-symbol">$</span><span class="price-whole">384</span><span class="price-sep">.</span><span class="price-fraction">80</span>
+                </div>
+                <div class="old-price">$745.25</div>
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="card css-1dbjc4n" data-component-id="U00tSE9NLTAwNDI=">
+        <div class="img-placeholder" aria-label="Image for Station Phone Model 229">[ IMG: SM-HOM-0042 ]</div>
+        <div class="card-body css-1pax">
+            <div class="stock-badge out-stock">Out of Stock</div>
+            <div class="card-sku">SKU: SM-HOM-0042</div>
+            <h2 class="card-title"><a href="p/SM-HOM-0042.html" class="p-link">Station Phone Model 229</a></h2>
+            <div style="margin-bottom: 0.5rem; display:flex; align-items:center; gap:0.5rem; font-size: 0.8rem;">
+                <div class="rating-strip" aria-label="Rated 4 out of 5 stars"><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-empty"><path fill="#d1d5db" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg></div> <span style="color:#64748b;">(13)</span>
+            </div>
+            
+            <div class="price-wrapper">
+                <div class="current-price" data-raw-price="414.59">
+                    <span class="currency-symbol">$</span><span class="price-whole">414</span><span class="hp-hide" style="display:none; font-size:0;">99</span><span class="price-sep">.</span><span class="price-fraction">59</span>
+                </div>
+                <div class="old-price">$687.68</div>
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="card css-1dbjc4n" data-component-id="U00tSE9NLTAwNDg=">
+        <div class="img-placeholder" aria-label="Image for Space In Buy Model 899">[ IMG: SM-HOM-0048 ]</div>
+        <div class="card-body css-1pax">
+            <div class="stock-badge low-stock">Only 5 left</div>
+            <div class="card-sku">SKU: SM-HOM-0048</div>
+            <h2 class="card-title"><a href="p/SM-HOM-0048.html" class="p-link">Space In Buy Model 899</a></h2>
+            <div style="margin-bottom: 0.5rem; display:flex; align-items:center; gap:0.5rem; font-size: 0.8rem;">
+                <div class="rating-strip" aria-label="Rated 4 out of 5 stars"><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-empty"><path fill="#d1d5db" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg></div> <span style="color:#64748b;">(11)</span>
+            </div>
+            
+            <div class="price-wrapper">
+                <div class="current-price" data-raw-price="348.45">
+                    <span class="currency-symbol">$</span><span class="price-whole">348</span><span class="hp-hide" style="display:none; font-size:0;">99</span><span class="price-sep">.</span><span class="price-fraction">45</span>
+                </div>
+                <div class="old-price">$782.89</div>
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="card css-1dbjc4n" data-component-id="U00tSE9NLTAwNDk=">
+        <div class="img-placeholder" aria-label="Image for Bed Product Bad Model 70">[ IMG: SM-HOM-0049 ]</div>
+        <div class="card-body css-1pax">
+            <div class="stock-badge low-stock">Only 4 left</div>
+            <div class="card-sku">SKU: SM-HOM-0049</div>
+            <h2 class="card-title"><a href="p/SM-HOM-0049.html" class="p-link">Bed Product Bad Model 70</a></h2>
+            <div style="margin-bottom: 0.5rem; display:flex; align-items:center; gap:0.5rem; font-size: 0.8rem;">
+                <div class="rating-strip" aria-label="Rated 4 out of 5 stars"><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-empty"><path fill="#d1d5db" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg></div> <span style="color:#64748b;">(15)</span>
+            </div>
+            
+            <div class="price-wrapper">
+                <div class="current-price" data-raw-price="144.17">
+                    <span class="currency-symbol">$</span><span class="price-whole">144</span><span class="hp-hide" style="display:none; font-size:0;">99</span><span class="price-sep">.</span><span class="price-fraction">17</span>
+                </div>
+                <div class="old-price">$357.41</div>
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="card css-1dbjc4n" data-component-id="U00tSE9NLTAwNTM=">
+        <div class="img-placeholder" aria-label="Image for Community Mean Model 799">[ IMG: SM-HOM-0053 ]</div>
+        <div class="card-body css-1pax">
+            <div class="stock-badge in-stock">In Stock</div>
+            <div class="card-sku">SKU: SM-HOM-0053</div>
+            <h2 class="card-title"><a href="p/SM-HOM-0053.html" class="p-link">Community Mean Model 799</a></h2>
+            <div style="margin-bottom: 0.5rem; display:flex; align-items:center; gap:0.5rem; font-size: 0.8rem;">
+                <div class="rating-strip" aria-label="Rated 5 out of 5 stars"><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg></div> <span style="color:#64748b;">(2)</span>
+            </div>
+            
+            <div class="price-wrapper">
+                <div class="current-price" data-raw-price="277.59">
+                    <span class="currency-symbol">$</span><span class="price-whole">277</span><span class="hp-hide" style="display:none; font-size:0;">99</span><span class="price-sep">.</span><span class="price-fraction">59</span>
+                </div>
+                <div class="old-price">$411.24</div>
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="card css-1dbjc4n" data-component-id="U00tSE9NLTAwNTY=">
+        <div class="img-placeholder" aria-label="Image for Manager Physical Music Live Model 815">[ IMG: SM-HOM-0056 ]</div>
+        <div class="card-body css-1pax">
+            <div class="stock-badge out-stock">Out of Stock</div>
+            <div class="card-sku">SKU: SM-HOM-0056</div>
+            <h2 class="card-title"><a href="p/SM-HOM-0056.html" class="p-link">Manager Physical Music Live Model 815</a></h2>
+            <div style="margin-bottom: 0.5rem; display:flex; align-items:center; gap:0.5rem; font-size: 0.8rem;">
+                <div class="rating-strip" aria-label="Rated 4 out of 5 stars"><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-empty"><path fill="#d1d5db" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg></div> <span style="color:#64748b;">(5)</span>
+            </div>
+            
+            <div class="price-wrapper">
+                <div class="current-price" data-raw-price="442.24">
+                    <span class="currency-symbol">$</span><span class="price-whole">442</span><span class="hp-hide" style="display:none; font-size:0;">99</span><span class="price-sep">.</span><span class="price-fraction">24</span>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="card css-1dbjc4n" data-component-id="U00tSE9NLTAwNTc=">
+        <div class="img-placeholder" aria-label="Image for Relate She Model 569">[ IMG: SM-HOM-0057 ]</div>
+        <div class="card-body css-1pax">
+            <div class="stock-badge in-stock">In Stock</div>
+            <div class="card-sku">SKU: SM-HOM-0057</div>
+            <h2 class="card-title"><a href="p/SM-HOM-0057.html" class="p-link">Relate She Model 569</a></h2>
+            <div style="margin-bottom: 0.5rem; display:flex; align-items:center; gap:0.5rem; font-size: 0.8rem;">
+                <div class="rating-strip" aria-label="Rated 4 out of 5 stars"><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-empty"><path fill="#d1d5db" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg></div> <span style="color:#64748b;">(12)</span>
+            </div>
+            
+            <div class="price-wrapper">
+                <div class="current-price" data-raw-price="473.39">
+                    <span class="currency-symbol">$</span><span class="price-whole">473</span><span class="price-sep">.</span><span class="price-fraction">39</span>
+                </div>
+                <div class="old-price">$708.11</div>
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="card css-1dbjc4n" data-component-id="U00tSE9NLTAwNTg=">
+        <div class="img-placeholder" aria-label="Image for Edge Night Same Model 474">[ IMG: SM-HOM-0058 ]</div>
+        <div class="card-body css-1pax">
+            <div class="stock-badge out-stock">Out of Stock</div>
+            <div class="card-sku">SKU: SM-HOM-0058</div>
+            <h2 class="card-title"><a href="p/SM-HOM-0058.html" class="p-link">Edge Night Same Model 474</a></h2>
+            <div style="margin-bottom: 0.5rem; display:flex; align-items:center; gap:0.5rem; font-size: 0.8rem;">
+                <div class="rating-strip" aria-label="Rated 4 out of 5 stars"><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-empty"><path fill="#d1d5db" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg></div> <span style="color:#64748b;">(2)</span>
+            </div>
+            
+            <div class="price-wrapper">
+                <div class="current-price" data-raw-price="112.63">
+                    <span class="currency-symbol">$</span><span class="price-whole">112</span><span class="hp-hide" style="display:none; font-size:0;">99</span><span class="price-sep">.</span><span class="price-fraction">63</span>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="card css-1dbjc4n" data-component-id="U00tSE9NLTAwNjA=">
+        <div class="img-placeholder" aria-label="Image for Able Sell President Model 883">[ IMG: SM-HOM-0060 ]</div>
+        <div class="card-body css-1pax">
+            <div class="stock-badge out-stock">Out of Stock</div>
+            <div class="card-sku">SKU: SM-HOM-0060</div>
+            <h2 class="card-title"><a href="p/SM-HOM-0060.html" class="p-link">Able Sell President Model 883</a></h2>
+            <div style="margin-bottom: 0.5rem; display:flex; align-items:center; gap:0.5rem; font-size: 0.8rem;">
+                <div class="rating-strip" aria-label="Rated 4 out of 5 stars"><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-empty"><path fill="#d1d5db" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg></div> <span style="color:#64748b;">(15)</span>
+            </div>
+            
+            <div class="price-wrapper">
+                <div class="current-price" data-raw-price="96.62">
+                    <span class="currency-symbol">$</span><span class="price-whole">96</span><span class="price-sep">.</span><span class="price-fraction">62</span>
+                </div>
+                <div class="old-price">$214.84</div>
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="card css-1dbjc4n" data-component-id="U00tSE9NLTAwNjU=">
+        <div class="img-placeholder" aria-label="Image for Manager Star So Idea Model 864">[ IMG: SM-HOM-0065 ]</div>
+        <div class="card-body css-1pax">
+            <div class="stock-badge low-stock">Only 2 left</div>
+            <div class="card-sku">SKU: SM-HOM-0065</div>
+            <h2 class="card-title"><a href="p/SM-HOM-0065.html" class="p-link">Manager Star So Idea Model 864</a></h2>
+            <div style="margin-bottom: 0.5rem; display:flex; align-items:center; gap:0.5rem; font-size: 0.8rem;">
+                <div class="rating-strip" aria-label="Rated 3 out of 5 stars"><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-empty"><path fill="#d1d5db" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-empty"><path fill="#d1d5db" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg></div> <span style="color:#64748b;">(3)</span>
+            </div>
+            
+            <div class="price-wrapper">
+                <div class="current-price" data-raw-price="99.84">
+                    <span class="currency-symbol">$</span><span class="price-whole">99</span><span class="hp-hide" style="display:none; font-size:0;">99</span><span class="price-sep">.</span><span class="price-fraction">84</span>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="card css-1dbjc4n" data-component-id="U00tSE9NLTAwNjY=">
+        <div class="img-placeholder" aria-label="Image for Ahead Blood Approach During Model 695">[ IMG: SM-HOM-0066 ]</div>
+        <div class="card-body css-1pax">
+            <div class="stock-badge in-stock">In Stock</div>
+            <div class="card-sku">SKU: SM-HOM-0066</div>
+            <h2 class="card-title"><a href="p/SM-HOM-0066.html" class="p-link">Ahead Blood Approach During Model 695</a></h2>
+            <div style="margin-bottom: 0.5rem; display:flex; align-items:center; gap:0.5rem; font-size: 0.8rem;">
+                <div class="rating-strip" aria-label="Rated 5 out of 5 stars"><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg></div> <span style="color:#64748b;">(7)</span>
+            </div>
+            
+            <div class="price-wrapper">
+                <div class="current-price" data-raw-price="262.51">
+                    <span class="currency-symbol">$</span><span class="price-whole">262</span><span class="hp-hide" style="display:none; font-size:0;">99</span><span class="price-sep">.</span><span class="price-fraction">51</span>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="card css-1dbjc4n" data-component-id="U00tSE9NLTAwNzQ=">
+        <div class="img-placeholder" aria-label="Image for Toward Speak Model 742">[ IMG: SM-HOM-0074 ]</div>
+        <div class="card-body css-1pax">
+            <div class="stock-badge in-stock">In Stock</div>
+            <div class="card-sku">SKU: SM-HOM-0074</div>
+            <h2 class="card-title"><a href="p/SM-HOM-0074.html" class="p-link">Toward Speak Model 742</a></h2>
+            <div style="margin-bottom: 0.5rem; display:flex; align-items:center; gap:0.5rem; font-size: 0.8rem;">
+                <div class="rating-strip" aria-label="Rated 5 out of 5 stars"><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg></div> <span style="color:#64748b;">(1)</span>
+            </div>
+            
+            <div class="price-wrapper">
+                <div class="current-price" data-raw-price="460.63">
+                    <span class="currency-symbol">$</span><span class="price-whole">460</span><span class="hp-hide" style="display:none; font-size:0;">99</span><span class="price-sep">.</span><span class="price-fraction">63</span>
+                </div>
+                <div class="old-price">$948.55</div>
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="card css-1dbjc4n" data-component-id="U00tSE9NLTAwNzU=">
+        <div class="img-placeholder" aria-label="Image for Age Case Year Particularly Model 114">[ IMG: SM-HOM-0075 ]</div>
+        <div class="card-body css-1pax">
+            <div class="stock-badge in-stock">In Stock</div>
+            <div class="card-sku">SKU: SM-HOM-0075</div>
+            <h2 class="card-title"><a href="p/SM-HOM-0075.html" class="p-link">Age Case Year Particularly Model 114</a></h2>
+            <div style="margin-bottom: 0.5rem; display:flex; align-items:center; gap:0.5rem; font-size: 0.8rem;">
+                <div class="rating-strip" aria-label="Rated 4 out of 5 stars"><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-empty"><path fill="#d1d5db" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg></div> <span style="color:#64748b;">(4)</span>
+            </div>
+            
+            <div class="price-wrapper">
+                <div class="current-price" data-raw-price="391.56">
+                    <span class="currency-symbol">$</span><span class="price-whole">391</span><span class="price-sep">.</span><span class="price-fraction">56</span>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="card css-1dbjc4n" data-component-id="U00tSE9NLTAwNzg=">
+        <div class="img-placeholder" aria-label="Image for Go Theory Work Model 408">[ IMG: SM-HOM-0078 ]</div>
+        <div class="card-body css-1pax">
+            <div class="stock-badge low-stock">Only 5 left</div>
+            <div class="card-sku">SKU: SM-HOM-0078</div>
+            <h2 class="card-title"><a href="p/SM-HOM-0078.html" class="p-link">Go Theory Work Model 408</a></h2>
+            <div style="margin-bottom: 0.5rem; display:flex; align-items:center; gap:0.5rem; font-size: 0.8rem;">
+                <div class="rating-strip" aria-label="Rated 4 out of 5 stars"><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-filled"><path fill="#f59e0b" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg><svg viewBox="0 0 24 24" width="16" height="16" class="star-empty"><path fill="#d1d5db" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"></path></svg></div> <span style="color:#64748b;">(13)</span>
+            </div>
+            
+            <div class="price-wrapper">
+                <div class="current-price" data-raw-price="252.27">
+                    <span class="currency-symbol">$</span><span class="price-whole">252</span><span class="hp-hide" style="display:none; font-size:0;">99</span><span class="price-sep">.</span><span class="price-fraction">27</span>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    
+</div>
+<div class="pager" data-total="73"><a href="cat/home/index.html" class="active">1</a><a href="cat/home/offset-24.html" class="">2</a><a href="cat/home/offset-48.html" class="">3</a><a href="cat/home/offset-72.html" class="">4</a></div>
+</main>
+
+<footer style="margin-top:4rem; padding:3rem 0; background:#1a1a1a; color:#a1a1aa; text-align:center;">
+  <p>© 2026 ScrapeMart. Testing bounds of E-Commerce scraping algorithms.</p>
+</footer>
+
+
+</body></html>

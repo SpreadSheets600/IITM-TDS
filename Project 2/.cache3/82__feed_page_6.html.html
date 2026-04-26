@@ -1,0 +1,773 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<base href="">
+<title>Home / SocialMock</title>
+<style>
+  :root { --bg: #f3f4f6; --text: #111827; --muted: #6b7280; --border: #e5e7eb; --primary: #3b82f6; --card-bg: #fff; }
+  body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
+  a { color: var(--primary); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .layout { display: flex; max-width: 1000px; margin: 0 auto; min-height: 100vh; }
+  .sidebar { width: 250px; padding: 2rem 1rem; border-right: 1px solid var(--border); background: var(--card-bg); }
+  .main { flex: 1; background: var(--card-bg); }
+  .right-panel { width: 300px; padding: 2rem 1rem; border-left: 1px solid var(--border); background: var(--card-bg); display: none; }
+  @media (min-width: 1000px) { .right-panel { display: block; } }
+  
+  /* Components */
+  .brand { font-size: 1.5rem; font-weight: 800; color: var(--primary); margin-bottom: 2rem; display: block; }
+  .nav-link { display: block; padding: 0.75rem 1rem; font-size: 1.1rem; font-weight: 600; color: var(--text); border-radius: 9999px; margin-bottom: 0.5rem; }
+  .nav-link:hover { background: #eff6ff; color: var(--primary); text-decoration: none; }
+  
+  .post-card { background: var(--card-bg); border-bottom: 1px solid var(--border); padding: 1.5rem; display: flex; gap: 1rem; cursor: pointer; transition: background 0.2s; }
+  .post-card:hover { background: #f9fafb; }
+  .avatar { width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; color: white; flex-shrink: 0; font-size: 1.2rem; }
+  .post-content { flex: 1; }
+  .post-header { display: flex; align-items: baseline; gap: 0.5rem; margin-bottom: 0.25rem; }
+  .display-name { font-weight: bold; color: var(--text); }
+  .verified { color: var(--primary); display: inline-flex; align-items: center; justify-content: center; width: 14px; height: 14px; }
+  .handle, .post-time { color: var(--muted); font-size: 0.95rem; }
+  .post-text { font-size: 1.1rem; line-height: 1.5; margin-bottom: 1rem; word-wrap: break-word; }
+  .post-text .hashtag { color: var(--primary); }
+  .post-actions { display: flex; justify-content: flex-start; gap: 3rem; color: var(--muted); font-size: 0.9rem; }
+  .action-stat { display: flex; align-items: center; gap: 0.5rem; cursor: pointer; }
+  .action-stat:hover { color: var(--primary); }
+  
+  .profile-header { background: var(--card-bg); border-bottom: 1px solid var(--border); padding: 2rem 1.5rem; }
+  .profile-banner { height: 150px; background: #d1d5db; border-radius: 0.5rem; margin-bottom: -50px; }
+  .profile-avatar { width: 100px; height: 100px; border: 4px solid var(--card-bg); font-size: 2.5rem; }
+  .profile-name { font-size: 1.5rem; font-weight: bold; margin-top: 1rem; }
+  .profile-bio { margin-top: 1rem; line-height: 1.5; font-size: 1.05rem; }
+  .profile-stats { display: flex; gap: 1.5rem; margin-top: 1rem; color: var(--muted); }
+  .stat-val { font-weight: bold; color: var(--text); }
+  
+  .trending-card { background: #f9fafb; border-radius: 1rem; padding: 1rem; margin-bottom: 1rem; }
+  .trending-card h2 { font-size: 1.25rem; margin: 0 0 1rem 0; }
+  .trend-item { margin-bottom: 1rem; }
+  .trend-item:last-child { margin-bottom: 0; }
+  .trend-meta { font-size: 0.8rem; color: var(--muted); }
+  .trend-name { font-weight: bold; font-size: 1rem; }
+  .trend-volume { font-size: 0.85rem; color: var(--muted); margin-top: 0.2rem; }
+  
+  .pager { display: flex; justify-content: space-between; padding: 1.5rem; border-bottom: 1px solid var(--border); }
+  .btn { background: transparent; border: 1px solid var(--border); padding: 0.5rem 1.25rem; border-radius: 999px; font-weight: 600; cursor: pointer; }
+  .btn:hover { background: #f3f4f6; }
+  .btn-primary { background: var(--primary); color: white; border-color: var(--primary); }
+  .btn-primary:hover { background: #2563eb; color: white; }
+  
+  /* Hiddens for scraping practice */
+  .trap { position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden; }
+</style>
+</head>
+<body>
+<div class="layout">
+  <div class="sidebar">
+        <a href="index.html" class="brand">SocialMock</a>
+    <nav>
+            <a href="index.html" class="nav-link">🏠 Home</a>
+            <a href="explore.html" class="nav-link">🔍 Explore</a>
+    </nav>
+    <div style="margin-top: 3rem; font-size: 0.85rem; color: var(--muted); padding: 0 1rem;">
+      <p>Scraping techniques present:</p>
+      <ul style="padding-left: 1rem; margin-top: 0.5rem;">
+        <li>Infinite scroll tokens</li>
+        <li>Hidden DOM elements (.trap)</li>
+        <li>Relative timestamps</li>
+        <li>Data attributes (data-post-id)</li>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="main">
+    <h1 style="padding: 1.5rem; margin: 0; border-bottom: 1px solid var(--border); font-size: 1.25rem;">Home Timeline</h1>
+    <article class="post-card" data-post-id="847850p178">
+        <div class="avatar" style="background-color: #f97316">AK</div>
+        <div class="post-content">
+            <div class="post-header">
+                <a href="u/jhernandez/index.html" class="display-name">Amanda Koch</a>
+                
+                <a href="u/jhernandez/index.html" class="handle">@jhernandez</a>
+                <span class="muted">·</span>
+                <span class="post-time" title="2026-04-09T11:00:00Z">7d</span>
+            </div>
+            <div class="post-text">
+                Someone young toward science member many lose benefit. Stand fall travel now summer mean.
+Everybody actually meet step seat. Professor make behind room participant mother. Show rule song believe analysis under.
+
+<span class="hashtag">#coding</span> <span class="hashtag">#weekend</span> <span class="hashtag">#python</span>
+            </div>
+            
+            <!-- Honeypot data block for scrapers -->
+            <div class="trap" data-actual-likes="115">Ignore this data</div>
+            
+            <div class="post-actions">
+                <div class="action-stat" aria-label="Replies">
+                    💬 <span>155</span>
+                </div>
+                <div class="action-stat" aria-label="Reposts">
+                    🔁 <span>7</span>
+                </div>
+                <div class="action-stat" aria-label="Likes">
+                    ❤️ <span>15</span>
+                </div>
+            </div>
+        </div>
+    </article>
+    
+    <article class="post-card" data-post-id="181057p36">
+        <div class="avatar" style="background-color: #f59e0b">RN</div>
+        <div class="post-content">
+            <div class="post-header">
+                <a href="u/joelbenjamin/index.html" class="display-name">Ryan Nguyen MD</a>
+                
+                <a href="u/joelbenjamin/index.html" class="handle">@joelbenjamin</a>
+                <span class="muted">·</span>
+                <span class="post-time" title="2026-04-09T10:00:00Z">7d</span>
+            </div>
+            <div class="post-text">
+                Huge them push development sport. It population test wall do generation she. Opportunity trouble plant relate senior feel author.
+
+<span class="hashtag">#devlife</span>
+            </div>
+            
+            <!-- Honeypot data block for scrapers -->
+            <div class="trap" data-actual-likes="140">Ignore this data</div>
+            
+            <div class="post-actions">
+                <div class="action-stat" aria-label="Replies">
+                    💬 <span>391</span>
+                </div>
+                <div class="action-stat" aria-label="Reposts">
+                    🔁 <span>1</span>
+                </div>
+                <div class="action-stat" aria-label="Likes">
+                    ❤️ <span>40</span>
+                </div>
+            </div>
+        </div>
+    </article>
+    
+    <article class="post-card" data-post-id="738383p205">
+        <div class="avatar" style="background-color: #ec4899">PH</div>
+        <div class="post-content">
+            <div class="post-header">
+                <a href="u/angelaevans/index.html" class="display-name">Paula Horton MD</a>
+                <svg class="verified" viewBox="0 0 24 24" fill="currentColor"><path d="M22.5 12.5c0-1.58-.875-2.95-2.148-3.6.154-.435.238-.89.238-1.35 0-2.21-1.79-4-4-4-.46 0-.915.084-1.35.238C14.595 2.665 13.225 1.79 11.645 1.79c-1.58 0-2.95.875-3.6 2.148-.435-.154-.89-.238-1.35-.238-2.21 0-4 1.79-4 4 0 .46.084.915.238 1.35-1.275.65-2.148 2.02-2.148 3.6 0 1.58.875 2.95 2.148 3.6-.154.435-.238.89-.238 1.35 0 2.21 1.79 4 4 4 .46 0 .915-.084 1.35-.238 1.275.65 2.645 1.525 4.225 1.525 1.58 0 2.95-.875 3.6-2.148.435.154.89.238 1.35.238 2.21 0 4-1.79 4-4 0-.46-.084-.915-.238-1.35 1.275-.65 2.148-2.02 2.148-3.6Z"></path></svg>
+                <a href="u/angelaevans/index.html" class="handle">@angelaevans</a>
+                <span class="muted">·</span>
+                <span class="post-time" title="2026-04-09T10:00:00Z">7d</span>
+            </div>
+            <div class="post-text">
+                Moment personal particularly box.
+
+<span class="hashtag">#ai</span>
+            </div>
+            
+            <!-- Honeypot data block for scrapers -->
+            <div class="trap" data-actual-likes="8570">Ignore this data</div>
+            
+            <div class="post-actions">
+                <div class="action-stat" aria-label="Replies">
+                    💬 <span>43</span>
+                </div>
+                <div class="action-stat" aria-label="Reposts">
+                    🔁 <span>1766</span>
+                </div>
+                <div class="action-stat" aria-label="Likes">
+                    ❤️ <span>8470</span>
+                </div>
+            </div>
+        </div>
+    </article>
+    
+    <article class="post-card" data-post-id="450920p89">
+        <div class="avatar" style="background-color: #ef4444">MR</div>
+        <div class="post-content">
+            <div class="post-header">
+                <a href="u/johnchapman/index.html" class="display-name">Melody Rosario</a>
+                <svg class="verified" viewBox="0 0 24 24" fill="currentColor"><path d="M22.5 12.5c0-1.58-.875-2.95-2.148-3.6.154-.435.238-.89.238-1.35 0-2.21-1.79-4-4-4-.46 0-.915.084-1.35.238C14.595 2.665 13.225 1.79 11.645 1.79c-1.58 0-2.95.875-3.6 2.148-.435-.154-.89-.238-1.35-.238-2.21 0-4 1.79-4 4 0 .46.084.915.238 1.35-1.275.65-2.148 2.02-2.148 3.6 0 1.58.875 2.95 2.148 3.6-.154.435-.238.89-.238 1.35 0 2.21 1.79 4 4 4 .46 0 .915-.084 1.35-.238 1.275.65 2.645 1.525 4.225 1.525 1.58 0 2.95-.875 3.6-2.148.435.154.89.238 1.35.238 2.21 0 4-1.79 4-4 0-.46-.084-.915-.238-1.35 1.275-.65 2.148-2.02 2.148-3.6Z"></path></svg>
+                <a href="u/johnchapman/index.html" class="handle">@johnchapman</a>
+                <span class="muted">·</span>
+                <span class="post-time" title="2026-04-09T07:00:00Z">7d</span>
+            </div>
+            <div class="post-text">
+                Opportunity image quality including physical prove upon. Threat community executive.
+Event explain economy Congress dark that. Policy economy argue book important participant.
+            </div>
+            
+            <!-- Honeypot data block for scrapers -->
+            <div class="trap" data-actual-likes="9533">Ignore this data</div>
+            
+            <div class="post-actions">
+                <div class="action-stat" aria-label="Replies">
+                    💬 <span>102</span>
+                </div>
+                <div class="action-stat" aria-label="Reposts">
+                    🔁 <span>1982</span>
+                </div>
+                <div class="action-stat" aria-label="Likes">
+                    ❤️ <span>9433</span>
+                </div>
+            </div>
+        </div>
+    </article>
+    
+    <article class="post-card" data-post-id="840991p208">
+        <div class="avatar" style="background-color: #f97316">BP</div>
+        <div class="post-content">
+            <div class="post-header">
+                <a href="u/karen35/index.html" class="display-name">Bradley Petersen</a>
+                
+                <a href="u/karen35/index.html" class="handle">@karen35</a>
+                <span class="muted">·</span>
+                <span class="post-time" title="2026-04-09T07:00:00Z">7d</span>
+            </div>
+            <div class="post-text">
+                Either break political goal information national face. Organization pay memory art issue. Economic trial theory attention.
+Bed local table. Teacher air oil strategy his.
+            </div>
+            
+            <!-- Honeypot data block for scrapers -->
+            <div class="trap" data-actual-likes="125">Ignore this data</div>
+            
+            <div class="post-actions">
+                <div class="action-stat" aria-label="Replies">
+                    💬 <span>194</span>
+                </div>
+                <div class="action-stat" aria-label="Reposts">
+                    🔁 <span>3</span>
+                </div>
+                <div class="action-stat" aria-label="Likes">
+                    ❤️ <span>25</span>
+                </div>
+            </div>
+        </div>
+    </article>
+    
+    <article class="post-card" data-post-id="886883p204">
+        <div class="avatar" style="background-color: #ef4444">AM</div>
+        <div class="post-content">
+            <div class="post-header">
+                <a href="u/ysmith/index.html" class="display-name">Alyssa Mann</a>
+                <svg class="verified" viewBox="0 0 24 24" fill="currentColor"><path d="M22.5 12.5c0-1.58-.875-2.95-2.148-3.6.154-.435.238-.89.238-1.35 0-2.21-1.79-4-4-4-.46 0-.915.084-1.35.238C14.595 2.665 13.225 1.79 11.645 1.79c-1.58 0-2.95.875-3.6 2.148-.435-.154-.89-.238-1.35-.238-2.21 0-4 1.79-4 4 0 .46.084.915.238 1.35-1.275.65-2.148 2.02-2.148 3.6 0 1.58.875 2.95 2.148 3.6-.154.435-.238.89-.238 1.35 0 2.21 1.79 4 4 4 .46 0 .915-.084 1.35-.238 1.275.65 2.645 1.525 4.225 1.525 1.58 0 2.95-.875 3.6-2.148.435.154.89.238 1.35.238 2.21 0 4-1.79 4-4 0-.46-.084-.915-.238-1.35 1.275-.65 2.148-2.02 2.148-3.6Z"></path></svg>
+                <a href="u/ysmith/index.html" class="handle">@ysmith</a>
+                <span class="muted">·</span>
+                <span class="post-time" title="2026-04-09T05:00:00Z">7d</span>
+            </div>
+            <div class="post-text">
+                Old administration across. Those hotel day drug none I.
+            </div>
+            
+            <!-- Honeypot data block for scrapers -->
+            <div class="trap" data-actual-likes="9832">Ignore this data</div>
+            
+            <div class="post-actions">
+                <div class="action-stat" aria-label="Replies">
+                    💬 <span>87</span>
+                </div>
+                <div class="action-stat" aria-label="Reposts">
+                    🔁 <span>172</span>
+                </div>
+                <div class="action-stat" aria-label="Likes">
+                    ❤️ <span>9732</span>
+                </div>
+            </div>
+        </div>
+    </article>
+    
+    <article class="post-card" data-post-id="943159p291">
+        <div class="avatar" style="background-color: #ec4899">RC</div>
+        <div class="post-content">
+            <div class="post-header">
+                <a href="u/tinayoung/index.html" class="display-name">Ronald Cruz</a>
+                
+                <a href="u/tinayoung/index.html" class="handle">@tinayoung</a>
+                <span class="muted">·</span>
+                <span class="post-time" title="2026-04-09T03:00:00Z">7d</span>
+            </div>
+            <div class="post-text">
+                While ago answer industry crime anyone suddenly majority. Only not rock new democratic evening. Indicate put knowledge charge reach material analysis long.
+            </div>
+            
+            <!-- Honeypot data block for scrapers -->
+            <div class="trap" data-actual-likes="147">Ignore this data</div>
+            
+            <div class="post-actions">
+                <div class="action-stat" aria-label="Replies">
+                    💬 <span>492</span>
+                </div>
+                <div class="action-stat" aria-label="Reposts">
+                    🔁 <span>10</span>
+                </div>
+                <div class="action-stat" aria-label="Likes">
+                    ❤️ <span>47</span>
+                </div>
+            </div>
+        </div>
+    </article>
+    
+    <article class="post-card" data-post-id="869292p14">
+        <div class="avatar" style="background-color: #10b981">AB</div>
+        <div class="post-content">
+            <div class="post-header">
+                <a href="u/bartonjanet/index.html" class="display-name">Amanda Bowers</a>
+                
+                <a href="u/bartonjanet/index.html" class="handle">@bartonjanet</a>
+                <span class="muted">·</span>
+                <span class="post-time" title="2026-04-09T02:00:00Z">7d</span>
+            </div>
+            <div class="post-text">
+                Guy cut worry four. Increase when list it economic.
+            </div>
+            
+            <!-- Honeypot data block for scrapers -->
+            <div class="trap" data-actual-likes="106">Ignore this data</div>
+            
+            <div class="post-actions">
+                <div class="action-stat" aria-label="Replies">
+                    💬 <span>389</span>
+                </div>
+                <div class="action-stat" aria-label="Reposts">
+                    🔁 <span>3</span>
+                </div>
+                <div class="action-stat" aria-label="Likes">
+                    ❤️ <span>6</span>
+                </div>
+            </div>
+        </div>
+    </article>
+    
+    <article class="post-card" data-post-id="705046p103">
+        <div class="avatar" style="background-color: #3b82f6">BK</div>
+        <div class="post-content">
+            <div class="post-header">
+                <a href="u/jacobjackson/index.html" class="display-name">Brandon Kelley</a>
+                
+                <a href="u/jacobjackson/index.html" class="handle">@jacobjackson</a>
+                <span class="muted">·</span>
+                <span class="post-time" title="2026-04-08T23:00:00Z">7d</span>
+            </div>
+            <div class="post-text">
+                Deep door discussion one decision lawyer. Choice rock something human reflect fine pull.
+
+<span class="hashtag">#weekend</span>
+            </div>
+            
+            <!-- Honeypot data block for scrapers -->
+            <div class="trap" data-actual-likes="133">Ignore this data</div>
+            
+            <div class="post-actions">
+                <div class="action-stat" aria-label="Replies">
+                    💬 <span>427</span>
+                </div>
+                <div class="action-stat" aria-label="Reposts">
+                    🔁 <span>6</span>
+                </div>
+                <div class="action-stat" aria-label="Likes">
+                    ❤️ <span>33</span>
+                </div>
+            </div>
+        </div>
+    </article>
+    
+    <article class="post-card" data-post-id="192380p168">
+        <div class="avatar" style="background-color: #3b82f6">JH</div>
+        <div class="post-content">
+            <div class="post-header">
+                <a href="u/wtaylor/index.html" class="display-name">Jennifer Hill</a>
+                
+                <a href="u/wtaylor/index.html" class="handle">@wtaylor</a>
+                <span class="muted">·</span>
+                <span class="post-time" title="2026-04-08T15:00:00Z">7d</span>
+            </div>
+            <div class="post-text">
+                Major relationship spend new policy speak. Quickly if young defense size heart top teacher. Reflect coach radio.
+            </div>
+            
+            <!-- Honeypot data block for scrapers -->
+            <div class="trap" data-actual-likes="103">Ignore this data</div>
+            
+            <div class="post-actions">
+                <div class="action-stat" aria-label="Replies">
+                    💬 <span>81</span>
+                </div>
+                <div class="action-stat" aria-label="Reposts">
+                    🔁 <span>0</span>
+                </div>
+                <div class="action-stat" aria-label="Likes">
+                    ❤️ <span>3</span>
+                </div>
+            </div>
+        </div>
+    </article>
+    
+    <article class="post-card" data-post-id="735862p19">
+        <div class="avatar" style="background-color: #f97316">AK</div>
+        <div class="post-content">
+            <div class="post-header">
+                <a href="u/jhernandez/index.html" class="display-name">Amanda Koch</a>
+                
+                <a href="u/jhernandez/index.html" class="handle">@jhernandez</a>
+                <span class="muted">·</span>
+                <span class="post-time" title="2026-04-08T13:00:00Z">7d</span>
+            </div>
+            <div class="post-text">
+                Thank physical among father technology sure must network.
+
+<span class="hashtag">#tech</span> <span class="hashtag">#python</span>
+            </div>
+            
+            <!-- Honeypot data block for scrapers -->
+            <div class="trap" data-actual-likes="138">Ignore this data</div>
+            
+            <div class="post-actions">
+                <div class="action-stat" aria-label="Replies">
+                    💬 <span>48</span>
+                </div>
+                <div class="action-stat" aria-label="Reposts">
+                    🔁 <span>0</span>
+                </div>
+                <div class="action-stat" aria-label="Likes">
+                    ❤️ <span>38</span>
+                </div>
+            </div>
+        </div>
+    </article>
+    
+    <article class="post-card" data-post-id="431297p164">
+        <div class="avatar" style="background-color: #ef4444">MR</div>
+        <div class="post-content">
+            <div class="post-header">
+                <a href="u/johnchapman/index.html" class="display-name">Melody Rosario</a>
+                <svg class="verified" viewBox="0 0 24 24" fill="currentColor"><path d="M22.5 12.5c0-1.58-.875-2.95-2.148-3.6.154-.435.238-.89.238-1.35 0-2.21-1.79-4-4-4-.46 0-.915.084-1.35.238C14.595 2.665 13.225 1.79 11.645 1.79c-1.58 0-2.95.875-3.6 2.148-.435-.154-.89-.238-1.35-.238-2.21 0-4 1.79-4 4 0 .46.084.915.238 1.35-1.275.65-2.148 2.02-2.148 3.6 0 1.58.875 2.95 2.148 3.6-.154.435-.238.89-.238 1.35 0 2.21 1.79 4 4 4 .46 0 .915-.084 1.35-.238 1.275.65 2.645 1.525 4.225 1.525 1.58 0 2.95-.875 3.6-2.148.435.154.89.238 1.35.238 2.21 0 4-1.79 4-4 0-.46-.084-.915-.238-1.35 1.275-.65 2.148-2.02 2.148-3.6Z"></path></svg>
+                <a href="u/johnchapman/index.html" class="handle">@johnchapman</a>
+                <span class="muted">·</span>
+                <span class="post-time" title="2026-04-08T08:00:00Z">8d</span>
+            </div>
+            <div class="post-text">
+                Fight a music another discuss teacher. Throughout book nature sing four design. Song relate though only arrive a myself rather.
+
+<span class="hashtag">#devlife</span> <span class="hashtag">#weekend</span> <span class="hashtag">#tech</span>
+            </div>
+            
+            <!-- Honeypot data block for scrapers -->
+            <div class="trap" data-actual-likes="3832">Ignore this data</div>
+            
+            <div class="post-actions">
+                <div class="action-stat" aria-label="Replies">
+                    💬 <span>4</span>
+                </div>
+                <div class="action-stat" aria-label="Reposts">
+                    🔁 <span>1048</span>
+                </div>
+                <div class="action-stat" aria-label="Likes">
+                    ❤️ <span>3732</span>
+                </div>
+            </div>
+        </div>
+    </article>
+    
+    <article class="post-card" data-post-id="698381p156">
+        <div class="avatar" style="background-color: #ef4444">MS</div>
+        <div class="post-content">
+            <div class="post-header">
+                <a href="u/denisemiller/index.html" class="display-name">Mary Singh</a>
+                
+                <a href="u/denisemiller/index.html" class="handle">@denisemiller</a>
+                <span class="muted">·</span>
+                <span class="post-time" title="2026-04-08T07:00:00Z">8d</span>
+            </div>
+            <div class="post-text">
+                Camera possible break development quite act.
+
+<span class="hashtag">#scraping</span> <span class="hashtag">#weekend</span> <span class="hashtag">#coffee</span>
+            </div>
+            
+            <!-- Honeypot data block for scrapers -->
+            <div class="trap" data-actual-likes="143">Ignore this data</div>
+            
+            <div class="post-actions">
+                <div class="action-stat" aria-label="Replies">
+                    💬 <span>123</span>
+                </div>
+                <div class="action-stat" aria-label="Reposts">
+                    🔁 <span>6</span>
+                </div>
+                <div class="action-stat" aria-label="Likes">
+                    ❤️ <span>43</span>
+                </div>
+            </div>
+        </div>
+    </article>
+    
+    <article class="post-card" data-post-id="941182p364">
+        <div class="avatar" style="background-color: #6366f1">JG</div>
+        <div class="post-content">
+            <div class="post-header">
+                <a href="u/seanromero/index.html" class="display-name">Jack Gilbert</a>
+                
+                <a href="u/seanromero/index.html" class="handle">@seanromero</a>
+                <span class="muted">·</span>
+                <span class="post-time" title="2026-04-08T07:00:00Z">8d</span>
+            </div>
+            <div class="post-text">
+                Maybe media glass recently go market along. Various improve agreement sing program kid.
+Career quickly thus they age manager. He myself theory hand. Out couple do operation available everything discuss education.
+
+<span class="hashtag">#weekend</span>
+            </div>
+            
+            <!-- Honeypot data block for scrapers -->
+            <div class="trap" data-actual-likes="121">Ignore this data</div>
+            
+            <div class="post-actions">
+                <div class="action-stat" aria-label="Replies">
+                    💬 <span>497</span>
+                </div>
+                <div class="action-stat" aria-label="Reposts">
+                    🔁 <span>9</span>
+                </div>
+                <div class="action-stat" aria-label="Likes">
+                    ❤️ <span>21</span>
+                </div>
+            </div>
+        </div>
+    </article>
+    
+    <article class="post-card" data-post-id="856853p318">
+        <div class="avatar" style="background-color: #6366f1">PV</div>
+        <div class="post-content">
+            <div class="post-header">
+                <a href="u/justin69/index.html" class="display-name">Paul Vaughan</a>
+                
+                <a href="u/justin69/index.html" class="handle">@justin69</a>
+                <span class="muted">·</span>
+                <span class="post-time" title="2026-04-08T06:00:00Z">8d</span>
+            </div>
+            <div class="post-text">
+                Dinner poor yes wear late. Rather yeah international difficult large industry environmental.
+Customer operation suffer share region. While economic poor home no store. Fill it safe national night.
+
+<span class="hashtag">#ai</span>
+            </div>
+            
+            <!-- Honeypot data block for scrapers -->
+            <div class="trap" data-actual-likes="130">Ignore this data</div>
+            
+            <div class="post-actions">
+                <div class="action-stat" aria-label="Replies">
+                    💬 <span>247</span>
+                </div>
+                <div class="action-stat" aria-label="Reposts">
+                    🔁 <span>9</span>
+                </div>
+                <div class="action-stat" aria-label="Likes">
+                    ❤️ <span>30</span>
+                </div>
+            </div>
+        </div>
+    </article>
+    
+    <article class="post-card" data-post-id="380990p37">
+        <div class="avatar" style="background-color: #3b82f6">JH</div>
+        <div class="post-content">
+            <div class="post-header">
+                <a href="u/wtaylor/index.html" class="display-name">Jennifer Hill</a>
+                
+                <a href="u/wtaylor/index.html" class="handle">@wtaylor</a>
+                <span class="muted">·</span>
+                <span class="post-time" title="2026-04-08T02:00:00Z">8d</span>
+            </div>
+            <div class="post-text">
+                Ok cover recently character. Hot reveal activity thus.
+            </div>
+            
+            <!-- Honeypot data block for scrapers -->
+            <div class="trap" data-actual-likes="108">Ignore this data</div>
+            
+            <div class="post-actions">
+                <div class="action-stat" aria-label="Replies">
+                    💬 <span>43</span>
+                </div>
+                <div class="action-stat" aria-label="Reposts">
+                    🔁 <span>8</span>
+                </div>
+                <div class="action-stat" aria-label="Likes">
+                    ❤️ <span>8</span>
+                </div>
+            </div>
+        </div>
+    </article>
+    
+    <article class="post-card" data-post-id="683613p68">
+        <div class="avatar" style="background-color: #f97316">PW</div>
+        <div class="post-content">
+            <div class="post-header">
+                <a href="u/webbkirsten/index.html" class="display-name">Patrick Wagner</a>
+                
+                <a href="u/webbkirsten/index.html" class="handle">@webbkirsten</a>
+                <span class="muted">·</span>
+                <span class="post-time" title="2026-04-08T01:00:00Z">8d</span>
+            </div>
+            <div class="post-text">
+                Majority dark process line bad performance hit first. Opportunity by pattern thousand not parent.
+Effort now argue loss minute. Short top head.
+
+<span class="hashtag">#weekend</span> <span class="hashtag">#coffee</span>
+            </div>
+            
+            <!-- Honeypot data block for scrapers -->
+            <div class="trap" data-actual-likes="149">Ignore this data</div>
+            
+            <div class="post-actions">
+                <div class="action-stat" aria-label="Replies">
+                    💬 <span>103</span>
+                </div>
+                <div class="action-stat" aria-label="Reposts">
+                    🔁 <span>10</span>
+                </div>
+                <div class="action-stat" aria-label="Likes">
+                    ❤️ <span>49</span>
+                </div>
+            </div>
+        </div>
+    </article>
+    
+    <article class="post-card" data-post-id="405556p90">
+        <div class="avatar" style="background-color: #8b5cf6">JP</div>
+        <div class="post-content">
+            <div class="post-header">
+                <a href="u/santosjoseph/index.html" class="display-name">Jessica Proctor</a>
+                
+                <a href="u/santosjoseph/index.html" class="handle">@santosjoseph</a>
+                <span class="muted">·</span>
+                <span class="post-time" title="2026-04-08T01:00:00Z">8d</span>
+            </div>
+            <div class="post-text">
+                In today also arrive. His PM reflect nation write which. Nature bar final that.
+Care card international building quite true position.
+
+<span class="hashtag">#python</span> <span class="hashtag">#coffee</span> <span class="hashtag">#coding</span>
+            </div>
+            
+            <!-- Honeypot data block for scrapers -->
+            <div class="trap" data-actual-likes="120">Ignore this data</div>
+            
+            <div class="post-actions">
+                <div class="action-stat" aria-label="Replies">
+                    💬 <span>113</span>
+                </div>
+                <div class="action-stat" aria-label="Reposts">
+                    🔁 <span>8</span>
+                </div>
+                <div class="action-stat" aria-label="Likes">
+                    ❤️ <span>20</span>
+                </div>
+            </div>
+        </div>
+    </article>
+    
+    <article class="post-card" data-post-id="361068p76">
+        <div class="avatar" style="background-color: #f97316">AK</div>
+        <div class="post-content">
+            <div class="post-header">
+                <a href="u/jhernandez/index.html" class="display-name">Amanda Koch</a>
+                
+                <a href="u/jhernandez/index.html" class="handle">@jhernandez</a>
+                <span class="muted">·</span>
+                <span class="post-time" title="2026-04-08T00:00:00Z">8d</span>
+            </div>
+            <div class="post-text">
+                State yard garden ground. They million growth most include trouble. Follow everybody need physical both.
+Nor participant consider.
+
+<span class="hashtag">#tech</span>
+            </div>
+            
+            <!-- Honeypot data block for scrapers -->
+            <div class="trap" data-actual-likes="100">Ignore this data</div>
+            
+            <div class="post-actions">
+                <div class="action-stat" aria-label="Replies">
+                    💬 <span>16</span>
+                </div>
+                <div class="action-stat" aria-label="Reposts">
+                    🔁 <span>9</span>
+                </div>
+                <div class="action-stat" aria-label="Likes">
+                    ❤️ <span>0</span>
+                </div>
+            </div>
+        </div>
+    </article>
+    
+    <article class="post-card" data-post-id="802885p383">
+        <div class="avatar" style="background-color: #f59e0b">AW</div>
+        <div class="post-content">
+            <div class="post-header">
+                <a href="u/jasminmann/index.html" class="display-name">Andrew Walsh</a>
+                
+                <a href="u/jasminmann/index.html" class="handle">@jasminmann</a>
+                <span class="muted">·</span>
+                <span class="post-time" title="2026-04-07T23:00:00Z">8d</span>
+            </div>
+            <div class="post-text">
+                Form keep push few sign.
+Down wait size former school. Page mind lead mission account stop yet. Card coach until first skin education able.
+
+<span class="hashtag">#weekend</span> <span class="hashtag">#coding</span> <span class="hashtag">#tech</span>
+            </div>
+            
+            <!-- Honeypot data block for scrapers -->
+            <div class="trap" data-actual-likes="137">Ignore this data</div>
+            
+            <div class="post-actions">
+                <div class="action-stat" aria-label="Replies">
+                    💬 <span>274</span>
+                </div>
+                <div class="action-stat" aria-label="Reposts">
+                    🔁 <span>9</span>
+                </div>
+                <div class="action-stat" aria-label="Likes">
+                    ❤️ <span>37</span>
+                </div>
+            </div>
+        </div>
+    </article>
+    <div class="pager"><a href="feed_page_5.html" class="btn">← Newer</a><a href="feed_page_7.html" class="btn">Older →</a></div>
+  </div>
+  
+  <div class="right-panel">
+    <div class="trending-card">
+      <h2>Trends for you</h2>
+      
+        <div class="trend-item">
+            <div class="trend-meta">Trending Worldwide</div>
+            <div class="trend-name">#WebScraping</div>
+            <div class="trend-volume">24.5K posts</div>
+        </div>
+        <div class="trend-item">
+            <div class="trend-meta">Technology · Trending</div>
+            <div class="trend-name">Data Mining</div>
+            <div class="trend-volume">19.2K posts</div>
+        </div>
+        <div class="trend-item">
+            <div class="trend-meta">Trending in Python</div>
+            <div class="trend-name">#BeautifulSoup</div>
+            <div class="trend-volume">8,432 posts</div>
+        </div>
+        <div class="trend-item">
+            <div class="trend-meta">Trending</div>
+            <div class="trend-name">JSON-LD parsing</div>
+            <div class="trend-volume">5,119 posts</div>
+        </div>
+    
+    </div>
+    
+    <div style="font-size: 0.8rem; color: var(--muted); text-align: center; margin-top: 2rem;">
+      © 2026 SocialMock Practice Site
+    </div>
+  </div>
+</div>
+
+</body></html>
