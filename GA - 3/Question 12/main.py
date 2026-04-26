@@ -1,4 +1,4 @@
-from fastapi import FastAPI, File, UploadFile, Header, HTTPException
+from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 import openai
 from pydantic import BaseModel
@@ -85,7 +85,6 @@ functions = [
 
 @app.get("/execute")
 async def execute_query(q: str):
-
     response = client.chat.completions.create(
         model="gpt-4o-mini",
         messages=[

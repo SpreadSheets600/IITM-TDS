@@ -8,7 +8,6 @@ def parse_markdown(markdown):
     output = []
 
     def parse_inlines(text):
-
         text = html.escape(text, quote=False)
 
         text = re.sub(r"`([^`]+)`", r"<code>\1</code>", text)

@@ -1,9 +1,9 @@
 /**
  * Master solver for GA-4 Exam Questions Q1-Q8
- * 
+ *
  * Uses the actual alea PRNG implementation from seedrandom.
  * Run: node master_solver.js <email>
- * 
+ *
  * Questions solved here (computationally):
  *   Q1: Excel Operational Metrics (total variance)
  *   Q2: Z-Score Outlier Count
@@ -185,7 +185,7 @@ function solveQ5(email) {
         n(); // date fraction
         n(); // invoice ID random
 
-        // k = A([6 note types], n): 1 call  
+        // k = A([6 note types], n): 1 call
         n();
 
         // T currency: n() < .6 or n() < .4
@@ -340,14 +340,14 @@ function solveQ7(email) {
     // Actually looking at the code: seed: Math.round(n() * 1e6) is called inside Mn constructor
     // But the faker's Mn uses a DIFFERENT internal RNG, not our n()
     // The seed passed to Mn constructor: Math.round(n() * 1e6) - this DOES use our n()
-    // BUT n() * 1e6 is a single call that happens at initialization: 
+    // BUT n() * 1e6 is a single call that happens at initialization:
     //   const p = new Mn({ locale: [Pn], seed: Math.round(n() * 1e6) })
     // This happens ONCE at function start, before the loop
     n(); // faker seed initialization
 
     for (let $ = 0; $ < f; $++) {
         const C = A(c_arr, n);     // 1: region
-        const E = A(e_arr, n);     // 1: segment  
+        const E = A(e_arr, n);     // 1: segment
         // customer_id: u(1e5, 999999) = 1 call
         u(100000, 999999);
 

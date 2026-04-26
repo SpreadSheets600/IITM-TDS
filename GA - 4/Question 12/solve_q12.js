@@ -1,9 +1,9 @@
 /**
  * Q12 Solver: Shell — Parse and Aggregate Messy CSV
- * 
+ *
  * Replicates the exact data generation + aggregation from Exam-1.js
  * to get the expected "Category:Amount|..." string.
- * 
+ *
  * Usage: node solve_q12.js <email>
  */
 function makeAlea(seed) {

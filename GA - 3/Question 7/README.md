@@ -39,4 +39,3 @@ curl -X POST "http://127.0.0.1:8000/ask" \
   -H "Content-Type: application/json" \
   -d '{"video_url":"https://youtu.be/kCc8FmEb1nY","topic":"all of the uh noes talk to each other uh fully so as an example if you are doing"}'
 ```
-

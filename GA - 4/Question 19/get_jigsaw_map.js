@@ -1,9 +1,9 @@
 /**
  * Q19 Helper: Get Jigsaw Tile Permutation
- * 
+ *
  * The jigsaw puzzle uses email-seeded PRNG to shuffle 25 tiles.
  * This script computes the exact permutation.
- * 
+ *
  * Usage: node get_jigsaw_map.js <email>
  */
 function makeAlea(seed) {

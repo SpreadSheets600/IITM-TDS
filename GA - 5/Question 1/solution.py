@@ -28,11 +28,13 @@ def main() -> None:
 
     api_key = os.environ.get("OPENAI_API_KEY") or os.environ.get("NVIDIA_API_KEY")
     if not api_key:
-        raise RuntimeError("Set OPENAI_API_KEY or NVIDIA_API_KEY before running this script.")
+        raise RuntimeError(
+            "Set OPENAI_API_KEY or NVIDIA_API_KEY before running this script."
+        )
 
     client = OpenAI(
         api_key="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",
-        base_url="https://integrate.api.nvidia.com/v1"
+        base_url="https://integrate.api.nvidia.com/v1",
     )
 
     response = client.embeddings.create(

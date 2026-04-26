@@ -268,7 +268,7 @@ Paste this **after all questions have loaded**. It solves every client-side hack
       const lang = langs[Math.floor(rng11() * langs.length)]; // actually this was already consumed above
       // Need to properly track RNG state - consume calls for prefix, suffix, city
       rng11(); // prefix
-      rng11(); // suffix  
+      rng11(); // suffix
       rng11(); // city
       // year
       const eraStr = eras[entities.indexOf(entity)];
@@ -421,7 +421,7 @@ Collaborate with classmates to collect 500+ unique tokens. Your token is shown i
 ### Q2: Korean Audio (5 marks) — Needs API server
 Build a FastAPI server that processes Korean audio files.
 
-### Q6: Layered Encoding (2 marks) — Needs server data  
+### Q6: Layered Encoding (2 marks) — Needs server data
 The encoded data is shown in the iframe. Decode it using the hint: "I am the first thing you gave us" = your email address.
 
 ### Q14: FastAPI TimeSeries (0.5 marks) — Needs server

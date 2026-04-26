@@ -1,6 +1,6 @@
 /**
  * Q13 Solver: Shell — Extract and Flatten Nested JSON from ZIP
- * 
+ *
  * Usage: node solve_q13.js <email>
  */
 function makeAlea(seed) {
@@ -23,7 +23,7 @@ for (let w = 0; w < e; w++) {
     const b = 5 + Math.floor(n() * 8);  // records per file
     for (let m = 0; m < b; m++) {
         n(); // id USR prefix
-        n(); // username User prefix  
+        n(); // username User prefix
         n(); // email from username
         n(); // phone
         n(); // score
